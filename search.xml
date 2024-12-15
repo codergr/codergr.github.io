@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Highest and Lowest</title>
+    <title>Codewars｜Highest and Lowest</title>
     <url>/Highest%20and%20Lowest/</url>
     <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://www.codewars.com/kata/554b4ac871d6813a03000035/train/python">https://www.codewars.com/kata/554b4ac871d6813a03000035/train/python</a></p>
 <div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>Python</strong> 解題</p>
@@ -19,7 +19,7 @@
       </categories>
   </entry>
   <entry>
-    <title>a012. 10055 - Hashmat the Brave Warrior</title>
+    <title>ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior</title>
     <url>/a012/</url>
     <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a012">https://zerojudge.tw/ShowProblem?problemid=a012</a></p>
 <div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
@@ -128,7 +128,7 @@
       </tags>
   </entry>
   <entry>
-    <title>c813. 11332 - Summing Digits</title>
+    <title>ZeroJudge｜c813. 11332 - Summing Digits</title>
     <url>/c813/</url>
     <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c813">https://zerojudge.tw/ShowProblem?problemid=c813</a></p>
 <div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
@@ -140,11 +140,7 @@
 <li>題目提到「輸入是以0值做為結束，該值不需要輸出」，所以應該需要判斷輸入的數n是否為0，如果是的話，就跳出迴圈？</li>
 </ol>
 <h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><figure class="highlight cpp"><figcaption><span>c813. 11332 - Summing Digits</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>首先，從題意我們可以看出，題目所要求的是各個位數的數字總和，例如 <strong>【內容】</strong> 區的例子，就是先將1234567892的各位數相加，之後得到一個二位數47，再執行一次，得到11，最後得到2。此時達到了題目的要求：</p>
-<blockquote>
-<p>最後得到僅有一位數字的值，並定義該值為g(n)。</p>
-</blockquote>
-<p>依照以上的邏輯，我們可以寫出一個函數：利用取除以10的餘數，來得到每一位數字。依照這個邏輯，可以寫成下列函數：</p>
+<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>首先，從題意我們可以看出，題目所要求的是各個位數的數字總和。<br>依照要求，我們可以寫出一個函數：利用取除以10的餘數，來得到每一位數字。依照這個邏輯，可以寫成下列函數：</p>
 <figure class="highlight cpp"><figcaption><span>程式碼B1 自訂函數求所有位數總和</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在以上程式碼的第3～6行，就是在執行求所有位數總和。在B1的第4行中，我們把各位數與<mark class="label warning">sumOfDigit</mark>的值相加；第5行的作用則是將已經相加過的那一位給去除，這樣才能繼續求第二位數字與<mark class="label warning">sumOfDigit</mark>的和。而7～10行的意義則是判斷<mark class="label warning">sumOfDigit</mark>是否是一位數，如果 <strong>是</strong>，那就return <mark class="label warning">sumOfDigit</mark>的值；如果 <strong>不是</strong>的話，就再執行一次<mark class="label info">theFormula</mark>，不過這次是使用<mark class="label warning">sumOfDigit</mark>來執行，也就是說，輸入<mark class="label info">theFormula</mark>函數的值n，就是<mark class="label warning">sumOfDigit</mark>。</p>
 <figure class="highlight cpp"><figcaption><span>程式碼B2 主函式main()</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
