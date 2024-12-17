@@ -19,107 +19,6 @@
       </categories>
   </entry>
   <entry>
-    <title>ZeroJudge｜c813. 11332 - Summing Digits</title>
-    <url>/c813/</url>
-    <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c813">https://zerojudge.tw/ShowProblem?problemid=c813</a></p>
-<div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
-</div>
-
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h2><span id="more"></span>
-
-<ol>
-<li>題目提到「輸入是以0值做為結束，該值不需要輸出」，所以應該需要判斷輸入的數n是否為0，如果是的話，就跳出迴圈？</li>
-</ol>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><figure class="highlight cpp"><figcaption><span>c813. 11332 - Summing Digits</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>首先，從題意我們可以看出，題目所要求的是各個位數的數字總和。<br>依照要求，我們可以寫出一個函數：利用取除以10的餘數，來得到每一位數字。依照這個邏輯，可以寫成下列函數：</p>
-<figure class="highlight cpp"><figcaption><span>程式碼B1 自訂函數求所有位數總和</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在以上程式碼的第3～6行，就是在執行求所有位數總和。在B1的第4行中，我們把各位數與<mark class="label warning">sumOfDigit</mark>的值相加；第5行的作用則是將已經相加過的那一位給去除，這樣才能繼續求第二位數字與<mark class="label warning">sumOfDigit</mark>的和。而7～10行的意義則是判斷<mark class="label warning">sumOfDigit</mark>是否是一位數，如果 <strong>是</strong>，那就return <mark class="label warning">sumOfDigit</mark>的值；如果 <strong>不是</strong>的話，就再執行一次<mark class="label info">theFormula</mark>，不過這次是使用<mark class="label warning">sumOfDigit</mark>來執行，也就是說，輸入<mark class="label info">theFormula</mark>函數的值n，就是<mark class="label warning">sumOfDigit</mark>。</p>
-<figure class="highlight cpp"><figcaption><span>程式碼B2 主函式main()</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>主函式的第三行有一個while迴圈，其條件式<code>cin&gt;&gt;n&amp;&amp;n!=0</code>就是讓程式可以輸入多個資料n，直到輸入值為0為止。</p>
-<style>
-.spoiler {
-  background-color: black;
-  color: black;
-  cursor: help;
-}
-.spoiler:hover {
-  color: white;
-}
-</style>
-<style>
-/* 基本樣式 */
-.info-container {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* 提示圖示樣式（黑白主題） */
-.info-icon {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: #000; /* 黑色背景 */
-    color: #fff;           /* 白色文字 */
-    text-align: center;
-    line-height: 18px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 5px;
-    font-family: Arial, sans-serif;
-}
-
-/* 提示文字區塊（保持不變） */
-.tooltip {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    z-index: 1000;
-}
-
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-}
-
-/* 滑鼠懸停時顯示提示文字 */
-.info-container:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-</style>
-]]></content>
-      <categories>
-        <category>ZeroJudge</category>
-        <category>UVa題庫</category>
-        <category>UVa</category>
-        <category>CPE</category>
-        <category>一顆星選集</category>
-      </categories>
-      <tags>
-        <tag>CPE</tag>
-        <tag>字元與字串</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior</title>
     <url>/a012/</url>
     <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a012">https://zerojudge.tw/ShowProblem?problemid=a012</a></p>
@@ -226,6 +125,107 @@
       </categories>
       <tags>
         <tag>CPE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ZeroJudge｜c813. 11332 - Summing Digits</title>
+    <url>/c813/</url>
+    <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c813">https://zerojudge.tw/ShowProblem?problemid=c813</a></p>
+<div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
+</div>
+
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h2><span id="more"></span>
+
+<ol>
+<li>題目提到「輸入是以0值做為結束，該值不需要輸出」，所以應該需要判斷輸入的數n是否為0，如果是的話，就跳出迴圈？</li>
+</ol>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><figure class="highlight cpp"><figcaption><span>c813. 11332 - Summing Digits</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>首先，從題意我們可以看出，題目所要求的是各個位數的數字總和。<br>依照要求，我們可以寫出一個函數：利用取除以10的餘數，來得到每一位數字。依照這個邏輯，可以寫成下列函數：</p>
+<figure class="highlight cpp"><figcaption><span>程式碼B1 自訂函數求所有位數總和</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在以上程式碼的第3～6行，就是在執行求所有位數總和。在B1的第4行中，我們把各位數與<mark class="label warning">sumOfDigit</mark>的值相加；第5行的作用則是將已經相加過的那一位給去除，這樣才能繼續求第二位數字與<mark class="label warning">sumOfDigit</mark>的和。而7～10行的意義則是判斷<mark class="label warning">sumOfDigit</mark>是否是一位數，如果 <strong>是</strong>，那就return <mark class="label warning">sumOfDigit</mark>的值；如果 <strong>不是</strong>的話，就再執行一次<mark class="label info">theFormula</mark>，不過這次是使用<mark class="label warning">sumOfDigit</mark>來執行，也就是說，輸入<mark class="label info">theFormula</mark>函數的值n，就是<mark class="label warning">sumOfDigit</mark>。</p>
+<figure class="highlight cpp"><figcaption><span>程式碼B2 主函式main()</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">long</span> <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主函式的第三行有一個while迴圈，其條件式<code>cin&gt;&gt;n&amp;&amp;n!=0</code>就是讓程式可以輸入多個資料n，直到輸入值為0為止。</p>
+<style>
+.spoiler {
+  background-color: black;
+  color: black;
+  cursor: help;
+}
+.spoiler:hover {
+  color: white;
+}
+</style>
+<style>
+/* 基本樣式 */
+.info-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 提示圖示樣式（黑白主題） */
+.info-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #000; /* 黑色背景 */
+    color: #fff;           /* 白色文字 */
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* 提示文字區塊（保持不變） */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* 滑鼠懸停時顯示提示文字 */
+.info-container:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+</style>
+]]></content>
+      <categories>
+        <category>ZeroJudge</category>
+        <category>UVa題庫</category>
+        <category>UVa</category>
+        <category>CPE</category>
+        <category>一顆星選集</category>
+      </categories>
+      <tags>
+        <tag>CPE</tag>
+        <tag>字元與字串</tag>
       </tags>
   </entry>
 </search>
