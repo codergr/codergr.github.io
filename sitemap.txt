@@ -7,6 +7,7 @@ https://codergr.github.io/categories/index.html
 https://codergr.github.io/tags/index.html
 https://codergr.github.io/
 https://codergr.github.io/tags/CPE/
+https://codergr.github.io/tags/%E5%AD%97%E5%85%83%E8%88%87%E5%AD%97%E4%B8%B2/
 https://codergr.github.io/categories/Codewars/
 https://codergr.github.io/categories/ZeroJudge/
 https://codergr.github.io/categories/Codewars/7kyu/
