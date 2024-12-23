@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://codergr.github.io/c002/</loc>
+    
+    <lastmod>2024-12-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://codergr.github.io/c813/</loc>
     
     <lastmod>2024-12-15</lastmod>
@@ -67,7 +76,7 @@
 
   <url>
     <loc>https://codergr.github.io/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,14 +84,14 @@
   
   <url>
     <loc>https://codergr.github.io/tags/CPE/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/tags/%E5%AD%97%E5%85%83%E8%88%87%E5%AD%97%E4%B8%B2/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -91,56 +100,63 @@
   
   <url>
     <loc>https://codergr.github.io/categories/Codewars/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/ZeroJudge/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/Codewars/7kyu/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/ZeroJudge/UVa%E9%A1%8C%E5%BA%AB/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/%E5%9F%BA%E7%A4%8E%E5%87%BD%E6%95%B8%E6%87%89%E7%94%A8/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/UVa/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/CPE/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://codergr.github.io/categories/CPE/%E4%B8%80%E9%A1%86%E6%98%9F/</loc>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://codergr.github.io/categories/CPE/%E4%B8%80%E9%A1%86%E6%98%9F%E9%81%B8%E9%9B%86/</loc>
-    <lastmod>2024-12-17</lastmod>
+    <lastmod>2024-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
