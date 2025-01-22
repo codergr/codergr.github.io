@@ -15,27 +15,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"codergr.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="題目網址https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a012 資訊本文使用 C++ 解題   提示">
+    <meta name="description" content="題目網址https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;c002 資訊本文使用 C++ 解題">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior">
-<meta property="og:url" content="https://codergr.github.io/a012/index.html">
+<meta property="og:title" content="ZeroJudge｜c002. 10696 - f91">
+<meta property="og:url" content="https://codergr.github.io/c002/index.html">
 <meta property="og:site_name" content="CoderGr">
-<meta property="og:description" content="題目網址https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;a012 資訊本文使用 C++ 解題   提示">
+<meta property="og:description" content="題目網址https:&#x2F;&#x2F;zerojudge.tw&#x2F;ShowProblem?problemid&#x3D;c002 資訊本文使用 C++ 解題">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2024-12-05T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-12-07T12:30:00.000Z">
+<meta property="article:published_time" content="2025-01-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-01-22T07:22:03.175Z">
 <meta property="article:author" content="棕熊">
-<meta property="article:tag" content="CPE">
+<meta property="article:tag" content="codergr,CoderGr,C++,Python,CPE,cpe">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://codergr.github.io/a012/">
+<link rel="canonical" href="https://codergr.github.io/c002/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://codergr.github.io/a012/","path":"a012/","title":"ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://codergr.github.io/c002/","path":"c002/","title":"ZeroJudge｜c002. 10696 - f91"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior | CoderGr</title>
+<title>ZeroJudge｜c002. 10696 - f91 | CoderGr</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DH5X9RQTVK"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-DH5X9RQTVK","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -138,7 +138,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E7%B6%B2%E5%9D%80"><span class="nav-number">1.</span> <span class="nav-text">題目網址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%90%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">3.</span> <span class="nav-text">程式碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%8F%E6%83%B3%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">思路／想法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B8abs"><span class="nav-number">4.1.</span> <span class="nav-text">函數abs()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%9D%E4%BB%B6%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">4.2.</span> <span class="nav-text">條件運算子?:</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E7%B6%B2%E5%9D%80"><span class="nav-number">1.</span> <span class="nav-text">題目網址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">2.</span> <span class="nav-text">程式碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%8F%E6%83%B3%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">思路／想法</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -189,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://codergr.github.io/a012/">
+    <link itemprop="mainEntityOfPage" href="https://codergr.github.io/c002/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior | CoderGr">
+      <meta itemprop="name" content="ZeroJudge｜c002. 10696 - f91 | CoderGr">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior
+          ZeroJudge｜c002. 10696 - f91
         </h1>
 
         <div class="post-meta-container">
@@ -217,15 +217,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2024-12-06 00:00:00" itemprop="dateCreated datePublished" datetime="2024-12-06T00:00:00+08:00">2024-12-06</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2024-12-07 20:30:00" itemprop="dateModified" datetime="2024-12-07T20:30:00+08:00">2024-12-07</time>
+      <time title="創建時間：2025-01-22 00:00:00 / 修改時間：15:22:03" itemprop="dateCreated datePublished" datetime="2025-01-22T00:00:00+08:00">2025-01-22</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -251,10 +245,6 @@
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/CPE/%E4%B8%80%E9%A1%86%E6%98%9F/" itemprop="url" rel="index"><span itemprop="name">一顆星</span></a>
         </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/CPE/%E4%B8%80%E9%A1%86%E6%98%9F%E9%81%B8%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">一顆星選集</span></a>
-        </span>
     </span>
 
   
@@ -266,8 +256,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/a012/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="a012/" itemprop="commentCount"></span>
+    <a title="disqus" href="/c002/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="c002/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -277,7 +267,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>2.1k</span>
+      <span>1.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -294,30 +284,25 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a012">https://zerojudge.tw/ShowProblem?problemid=a012</a></p>
+    <div class="post-body" itemprop="articleBody"><h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c002">https://zerojudge.tw/ShowProblem?problemid=c002</a></p>
 <div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
 </div>
-
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h2><span id="more"></span>
+<span id="more"></span>
 <!-- <p>
 <span class="info-container">
     <span class="info-icon">ⓘ</span>
     <span class="tooltip">將滑鼠懸停在黑色遮蔽條上以查看遮蓋住的提示文字！</span>
 </span></p> -->
+<!--<span class="spoiler">防雷內容</span>-->
 
-<ol>
-<li>本題要求輸出雙方士兵的數量差，而這個數必須是正數，所以你也許會需要用到數學上的<span class="spoiler">絕對值</span>？</li>
-<li>題目提到Hashmat及敵人的士兵數不會超過2^63，但人數有可能是2^62或之類的，而這麼大的數字，也許需要使用<span class="spoiler">long long int</span>？</li>
-<li>從範例輸入&#x2F;輸出來看，這題也許是直到EOF為止？</li>
-</ol>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><div class="tabs" id="程式碼"><ul class="nav-tabs"><li class="tab active"><a href="#程式碼-1">使用<mark class="label info">abs()</mark></a></li><li class="tab"><a href="#程式碼-2">使用條件運算子<mark class="label success">?:</mark></a></li></ul><div class="tab-content"><div class="tab-pane active" id="程式碼-1"><figure class="highlight cpp"><figcaption><span>a012. 10055 - Hashmat the Brave Warrior</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> <span class="type">int</span> n1,n2;</span><br><span class="line">  <span class="keyword">while</span>(cin&gt;&gt;n1&gt;&gt;n2)</span><br><span class="line">    cout&lt;&lt;<span class="built_in">abs</span>(n1-n2)&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="程式碼-2"><figure class="highlight cpp"><figcaption><span>a012. 10055 - Hashmat the Brave Warrior</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> <span class="type">int</span> n1,n2;</span><br><span class="line">  <span class="keyword">while</span>(cin&gt;&gt;n1&gt;&gt;n2)</span><br><span class="line">    n1&gt;n2?cout&lt;&lt;n1-n2&lt;&lt;endl:cout&lt;&lt;n2-n1&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
-<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>推測本題是直到EOF為止，因此使用abs()版本程式碼跟條件運算子<code>?:</code>版本的第8行使用<code>while(cin&gt;&gt;n1&gt;&gt;n2)</code>。</p>
-<h3 id="函數abs"><a href="#函數abs" class="headerlink" title="函數abs()"></a>函數<code>abs()</code></h3><p><code>abs()</code>是用來取<strong>絕對值</strong>的函數，使用時應引入<code>&lt;cmath&gt;</code>函式庫。<br>如果要輸出a-b的絕對值（也就是|a-b|），程式碼如下：</p>
-<figure class="highlight cpp"><figcaption><span>abs()示例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout&lt;&lt;<span class="built_in">abs</span>(a-b)&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
-<h3 id="條件運算子"><a href="#條件運算子" class="headerlink" title="條件運算子?:"></a>條件運算子<code>?:</code></h3><p><code>?:</code>的使用方式如下：<code>&lt;條件式&gt;?&lt;True表達式&gt;:&lt;False表達式&gt;</code>。<br>來看看今天的程式碼：</p>
-<figure class="highlight cpp"><figcaption><span>條件運算子示例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n1&gt;n2?cout&lt;&lt;n1-n2&lt;&lt;endl:cout&lt;&lt;n2-n1&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<p>他的意思其實就是：n1有大於n2嗎？<strong>有</strong>的話，就輸出<code>n1-n2</code>的結果；<strong>否則</strong>輸出<code>n2-n1</code>的結果。</p>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><figure class="highlight cpp"><figcaption><span>c002. 10696 - f91</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定義一個叫做f91的函數</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">f91</span><span class="params">(<span class="type">int</span> N)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(N&lt;=<span class="number">100</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">f91</span>(<span class="built_in">f91</span>(N<span class="number">+11</span>));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> N<span class="number">-10</span>;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> N;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;N&amp;&amp;N!=<span class="number">0</span>)</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;f91(&quot;</span>&lt;&lt;N&lt;&lt;<span class="string">&quot;) = &quot;</span>&lt;&lt;<span class="built_in">f91</span>(N)&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>這題，根據題目要求，可以寫出下列自訂函數</p>
+<figure class="highlight cpp"><figcaption><span>程式碼B1 自訂函數f91</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">f91</span><span class="params">(<span class="type">int</span> N)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(N&lt;=<span class="number">100</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">f91</span>(<span class="built_in">f91</span>(N<span class="number">+11</span>));</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> N<span class="number">-10</span>;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<p>透過B1，我們定義了一個叫做<code>f91</code>的函數，輸入值叫做<code>N</code>，資料型態是<code>int</code>。<br><code>f91</code>會判斷<code>N</code>是否&lt;&#x3D;100，是的話，就return <code>f91(f91(N+11))</code>，否則回傳<code>N-10</code>。</p>
+<p>而在主程式，也就是</p>
+<figure class="highlight cpp"><figcaption><span>程式碼B2 主程式main()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> N;</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;N&amp;&amp;N!=<span class="number">0</span>)</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;f91(&quot;</span>&lt;&lt;N&lt;&lt;<span class="string">&quot;) = &quot;</span>&lt;&lt;<span class="built_in">f91</span>(N)&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我們不斷的輸入N，並輸出<code>f91(N)</code>的結果，<code>N==0</code>時才跳出迴圈。</p>
+<!--以下為CSS-->
 <style>
 .spoiler {
   background-color: black;
@@ -396,22 +381,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/CPE/" rel="tag"><i class="fa fa-tag"></i> CPE</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/Highest%20and%20Lowest/" rel="prev" title="Codewars｜Highest and Lowest">
-                  <i class="fa fa-angle-left"></i> Codewars｜Highest and Lowest
+                <a href="/c813/" rel="prev" title="ZeroJudge｜c813. 11332 - Summing Digits">
+                  <i class="fa fa-angle-left"></i> ZeroJudge｜c813. 11332 - Summing Digits
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/c813/" rel="next" title="ZeroJudge｜c813. 11332 - Summing Digits">
-                  ZeroJudge｜c813. 11332 - Summing Digits <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
