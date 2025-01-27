@@ -6,9 +6,8 @@
     <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a>題目網址</h2><p><a href="https://www.codewars.com/kata/554b4ac871d6813a03000035/train/python">https://www.codewars.com/kata/554b4ac871d6813a03000035/train/python</a></p>
 <div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>Python</strong> 解題</p>
 </div>
-
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><span id="more"></span>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># *-----------------*</span></span><br><span class="line"><span class="comment"># |      棕 熊      |</span></span><br><span class="line"><span class="comment"># *-----------------*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">high_and_low</span>(<span class="params">numbers</span>):</span><br><span class="line">    a=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,numbers.split(<span class="string">&quot; &quot;</span>)))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">max</span>(a))+<span class="string">&quot; &quot;</span>+<span class="built_in">str</span>(<span class="built_in">min</span>(a))</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># *-----------------*</span></span><br><span class="line"><span class="comment"># |      棕 熊      |</span></span><br><span class="line"><span class="comment"># *-----------------*</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">high_and_low</span>(<span class="params">numbers</span>):</span><br><span class="line">    a=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,numbers.split(<span class="string">&quot; &quot;</span>)))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">max</span>(a))+<span class="string">&quot; &quot;</span>+<span class="built_in">str</span>(<span class="built_in">min</span>(a))</span><br></pre></td></tr></table></figure>
 
 <h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>簡單的<code>min()</code>、<code>max()</code>函數應用。</p>
 ]]></content>
@@ -17,6 +16,115 @@
         <category>7kyu</category>
         <category>基礎函數應用</category>
       </categories>
+  </entry>
+  <entry>
+    <title>ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior</title>
+    <url>/a012/</url>
+    <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a012">https://zerojudge.tw/ShowProblem?problemid=a012</a></p>
+<div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
+</div>
+<span id="more"></span>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h2><!-- <p>
+<span class="info-container">
+    <span class="info-icon">ⓘ</span>
+    <span class="tooltip">將滑鼠懸停在黑色遮蔽條上以查看遮蓋住的提示文字！</span>
+</span></p> -->
+
+<ol>
+<li>本題要求輸出雙方士兵的數量差，而這個數必須是正數，所以你也許會需要用到數學上的<span class="spoiler">絕對值</span>？</li>
+<li>題目提到Hashmat及敵人的士兵數不會超過2^63，但人數有可能是2^62或之類的，而這麼大的數字，也許需要使用<span class="spoiler">long long int</span>？</li>
+<li>從範例輸入&#x2F;輸出來看，這題也許是直到EOF為止？</li>
+</ol>
+<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><div class="tabs" id="程式碼"><ul class="nav-tabs"><li class="tab active"><a href="#程式碼-1">使用<mark class="label info">abs()</mark></a></li><li class="tab"><a href="#程式碼-2">使用條件運算子<mark class="label success">?:</mark></a></li></ul><div class="tab-content"><div class="tab-pane active" id="程式碼-1"><figure class="highlight cpp"><figcaption><span>a012. 10055 - Hashmat the Brave Warrior</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> <span class="type">int</span> n1,n2;</span><br><span class="line">  <span class="keyword">while</span>(cin&gt;&gt;n1&gt;&gt;n2)</span><br><span class="line">    cout&lt;&lt;<span class="built_in">abs</span>(n1-n2)&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="程式碼-2"><figure class="highlight cpp"><figcaption><span>a012. 10055 - Hashmat the Brave Warrior</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> <span class="type">int</span> n1,n2;</span><br><span class="line">  <span class="keyword">while</span>(cin&gt;&gt;n1&gt;&gt;n2)</span><br><span class="line">    n1&gt;n2?cout&lt;&lt;n1-n2&lt;&lt;endl:cout&lt;&lt;n2-n1&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>推測本題是直到EOF為止，因此使用abs()版本程式碼跟條件運算子<code>?:</code>版本的第8行使用<code>while(cin&gt;&gt;n1&gt;&gt;n2)</code>。</p>
+<h3 id="函數abs"><a href="#函數abs" class="headerlink" title="函數abs()"></a>函數<code>abs()</code></h3><p><code>abs()</code>是用來取<strong>絕對值</strong>的函數，使用時應引入<code>&lt;cmath&gt;</code>函式庫。<br>如果要輸出a-b的絕對值（也就是|a-b|），程式碼如下：</p>
+<figure class="highlight cpp"><figcaption><span>abs()示例</span></figcaption><table><tr><td class="code"><pre><span class="line">cout&lt;&lt;<span class="built_in">abs</span>(a-b)&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+<h3 id="條件運算子"><a href="#條件運算子" class="headerlink" title="條件運算子?:"></a>條件運算子<code>?:</code></h3><p><code>?:</code>的使用方式如下：<code>&lt;條件式&gt;?&lt;True表達式&gt;:&lt;False表達式&gt;</code>。<br>來看看今天的程式碼：</p>
+<figure class="highlight cpp"><figcaption><span>條件運算子示例</span></figcaption><table><tr><td class="code"><pre><span class="line">n1&gt;n2?cout&lt;&lt;n1-n2&lt;&lt;endl:cout&lt;&lt;n2-n1&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+<p>他的意思其實就是：n1有大於n2嗎？<strong>有</strong>的話，就輸出<code>n1-n2</code>的結果；<strong>否則</strong>輸出<code>n2-n1</code>的結果。</p>
+<style>
+.spoiler {
+  background-color: black;
+  color: black;
+  cursor: help;
+}
+.spoiler:hover {
+  color: white;
+}
+</style>
+<style>
+/* 基本樣式 */
+.info-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* 提示圖示樣式（黑白主題） */
+.info-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #000; /* 黑色背景 */
+    color: #fff;           /* 白色文字 */
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* 提示文字區塊（保持不變） */
+.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* 滑鼠懸停時顯示提示文字 */
+.info-container:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+</style>
+]]></content>
+      <categories>
+        <category>ZeroJudge</category>
+        <category>UVa題庫</category>
+        <category>UVa</category>
+        <category>CPE</category>
+        <category>一顆星</category>
+        <category>一顆星選集</category>
+      </categories>
+      <tags>
+        <tag>CPE</tag>
+      </tags>
   </entry>
   <entry>
     <title>ZeroJudge｜c002. 10696 - f91</title>
@@ -125,10 +233,8 @@
     <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a>題目網址</h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=c813">https://zerojudge.tw/ShowProblem?problemid=c813</a></p>
 <div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
 </div>
-
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><span id="more"></span>
-
-<ol>
+<span id="more"></span>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><ol>
 <li>題目提到「輸入是以0值做為結束，該值不需要輸出」，所以應該需要判斷輸入的數n是否為0，如果是的話，就跳出迴圈？</li>
 </ol>
 <h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h2><figure class="highlight cpp"><figcaption><span>c813. 11332 - Summing Digits</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">theFormula</span><span class="params">(<span class="type">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sumOfDigit=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        sumOfDigit+=(n%<span class="number">10</span>);</span><br><span class="line">        n/=<span class="number">10</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span>(sumOfDigit&lt;<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">return</span> sumOfDigit;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">theFormula</span>(sumOfDigit);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;	</span><br><span class="line">    <span class="keyword">while</span>(cin&gt;&gt;n&amp;&amp;n!=<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="type">int</span> result=<span class="built_in">theFormula</span>(n);</span><br><span class="line">        cout&lt;&lt;result&lt;&lt;endl;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -219,116 +325,6 @@
       <tags>
         <tag>CPE</tag>
         <tag>字元與字串</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ZeroJudge｜a012. 10055 - Hashmat the Brave Warrior</title>
-    <url>/a012/</url>
-    <content><![CDATA[<h2 id="題目網址"><a href="#題目網址" class="headerlink" title="題目網址"></a><strong>題目網址</strong></h2><p><a href="https://zerojudge.tw/ShowProblem?problemid=a012">https://zerojudge.tw/ShowProblem?problemid=a012</a></p>
-<div class="note info"><p><strong>資訊</strong><br>本文使用 <strong>C++</strong> 解題</p>
-</div>
-
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a><strong>提示</strong></h2><span id="more"></span>
-<!-- <p>
-<span class="info-container">
-    <span class="info-icon">ⓘ</span>
-    <span class="tooltip">將滑鼠懸停在黑色遮蔽條上以查看遮蓋住的提示文字！</span>
-</span></p> -->
-
-<ol>
-<li>本題要求輸出雙方士兵的數量差，而這個數必須是正數，所以你也許會需要用到數學上的<span class="spoiler">絕對值</span>？</li>
-<li>題目提到Hashmat及敵人的士兵數不會超過2^63，但人數有可能是2^62或之類的，而這麼大的數字，也許需要使用<span class="spoiler">long long int</span>？</li>
-<li>從範例輸入&#x2F;輸出來看，這題也許是直到EOF為止？</li>
-</ol>
-<h2 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a><strong>程式碼</strong></h2><div class="tabs" id="程式碼"><ul class="nav-tabs"><li class="tab active"><a href="#程式碼-1">使用<mark class="label info">abs()</mark></a></li><li class="tab"><a href="#程式碼-2">使用條件運算子<mark class="label success">?:</mark></a></li></ul><div class="tab-content"><div class="tab-pane active" id="程式碼-1"><figure class="highlight cpp"><figcaption><span>a012. 10055 - Hashmat the Brave Warrior</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> <span class="type">int</span> n1,n2;</span><br><span class="line">  <span class="keyword">while</span>(cin&gt;&gt;n1&gt;&gt;n2)</span><br><span class="line">    cout&lt;&lt;<span class="built_in">abs</span>(n1-n2)&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="程式碼-2"><figure class="highlight cpp"><figcaption><span>a012. 10055 - Hashmat the Brave Warrior</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="type">long</span> <span class="type">long</span> <span class="type">int</span> n1,n2;</span><br><span class="line">  <span class="keyword">while</span>(cin&gt;&gt;n1&gt;&gt;n2)</span><br><span class="line">    n1&gt;n2?cout&lt;&lt;n1-n2&lt;&lt;endl:cout&lt;&lt;n2-n1&lt;&lt;endl;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
-<h2 id="思路／想法"><a href="#思路／想法" class="headerlink" title="思路／想法"></a>思路／想法</h2><p>推測本題是直到EOF為止，因此使用abs()版本程式碼跟條件運算子<code>?:</code>版本的第8行使用<code>while(cin&gt;&gt;n1&gt;&gt;n2)</code>。</p>
-<h3 id="函數abs"><a href="#函數abs" class="headerlink" title="函數abs()"></a>函數<code>abs()</code></h3><p><code>abs()</code>是用來取<strong>絕對值</strong>的函數，使用時應引入<code>&lt;cmath&gt;</code>函式庫。<br>如果要輸出a-b的絕對值（也就是|a-b|），程式碼如下：</p>
-<figure class="highlight cpp"><figcaption><span>abs()示例</span></figcaption><table><tr><td class="code"><pre><span class="line">cout&lt;&lt;<span class="built_in">abs</span>(a-b)&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
-<h3 id="條件運算子"><a href="#條件運算子" class="headerlink" title="條件運算子?:"></a>條件運算子<code>?:</code></h3><p><code>?:</code>的使用方式如下：<code>&lt;條件式&gt;?&lt;True表達式&gt;:&lt;False表達式&gt;</code>。<br>來看看今天的程式碼：</p>
-<figure class="highlight cpp"><figcaption><span>條件運算子示例</span></figcaption><table><tr><td class="code"><pre><span class="line">n1&gt;n2?cout&lt;&lt;n1-n2&lt;&lt;endl:cout&lt;&lt;n2-n1&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-<p>他的意思其實就是：n1有大於n2嗎？<strong>有</strong>的話，就輸出<code>n1-n2</code>的結果；<strong>否則</strong>輸出<code>n2-n1</code>的結果。</p>
-<style>
-.spoiler {
-  background-color: black;
-  color: black;
-  cursor: help;
-}
-.spoiler:hover {
-  color: white;
-}
-</style>
-<style>
-/* 基本樣式 */
-.info-container {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* 提示圖示樣式（黑白主題） */
-.info-icon {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: #000; /* 黑色背景 */
-    color: #fff;           /* 白色文字 */
-    text-align: center;
-    line-height: 18px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 5px;
-    font-family: Arial, sans-serif;
-}
-
-/* 提示文字區塊（保持不變） */
-.tooltip {
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    z-index: 1000;
-}
-
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 5px;
-    border-style: solid;
-    border-color: #333 transparent transparent transparent;
-}
-
-/* 滑鼠懸停時顯示提示文字 */
-.info-container:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-</style>
-]]></content>
-      <categories>
-        <category>ZeroJudge</category>
-        <category>UVa題庫</category>
-        <category>UVa</category>
-        <category>CPE</category>
-        <category>一顆星</category>
-        <category>一顆星選集</category>
-      </categories>
-      <tags>
-        <tag>CPE</tag>
       </tags>
   </entry>
 </search>
