@@ -11,12 +11,12 @@ https://codergr.github.io/tags/index.html
 https://codergr.github.io/
 https://codergr.github.io/tags/CPE/
 https://codergr.github.io/tags/%E5%AD%97%E5%85%83%E8%88%87%E5%AD%97%E4%B8%B2/
-https://codergr.github.io/categories/ZeroJudge/
 https://codergr.github.io/categories/Codewars/
-https://codergr.github.io/categories/ZeroJudge/UVa%E9%A1%8C%E5%BA%AB/
+https://codergr.github.io/categories/ZeroJudge/
 https://codergr.github.io/categories/Codewars/7kyu/
-https://codergr.github.io/categories/UVa/
+https://codergr.github.io/categories/ZeroJudge/UVa%E9%A1%8C%E5%BA%AB/
 https://codergr.github.io/categories/%E5%9F%BA%E7%A4%8E%E5%87%BD%E6%95%B8%E6%87%89%E7%94%A8/
+https://codergr.github.io/categories/UVa/
 https://codergr.github.io/categories/CPE/
 https://codergr.github.io/categories/CPE/%E4%B8%80%E9%A1%86%E6%98%9F/
 https://codergr.github.io/categories/CPE/%E4%B8%80%E9%A1%86%E6%98%9F%E9%81%B8%E9%9B%86/
