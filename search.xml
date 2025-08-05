@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>題解｜ZeroJudge a135. 12250 - Language Detection</title>
+    <url>/2025/08/test/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a135">a135. 12250 - Language Detection</a></p>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>a135.py</span></figcaption><table><tr><td class="code"><pre><span class="line">a=&#123;<span class="string">&quot;HELLO&quot;</span>:<span class="string">&quot;ENGLISH&quot;</span>, <span class="string">&quot;HOLA&quot;</span>:<span class="string">&quot;SPANISH&quot;</span>,<span class="string">&quot;HALLO&quot;</span>:<span class="string">&quot;GERMAN&quot;</span>,<span class="string">&quot;BONJOUR&quot;</span>:<span class="string">&quot;FRENCH&quot;</span>,<span class="string">&quot;CIAO&quot;</span>:<span class="string">&quot;ITALIAN&quot;</span>,<span class="string">&quot;ZDRAVSTVUJTE&quot;</span>:<span class="string">&quot;RUSSIAN&quot;</span>&#125;</span><br><span class="line">w=<span class="built_in">input</span>()</span><br><span class="line">count=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(w!=<span class="string">&quot;#&quot;</span>):</span><br><span class="line">    <span class="keyword">if</span> (a.get(w)!=<span class="literal">None</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Case &quot;</span>,count,<span class="string">&quot;: &quot;</span>,a.get(w),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Case &quot;</span>,count,<span class="string">&quot;: &quot;</span>,<span class="string">&quot;UNKNOWN&quot;</span>,sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    count+=<span class="number">1</span></span><br><span class="line">    w=<span class="built_in">input</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先，我們建立一個字典a，由題目，我們可以得知各語言的HELLO，所以我們先以以下格式建立字典<code>&quot;單字&quot;:&quot;語言&quot;</code>，例如HELLO是英文，我們就在字典加入<code>&quot;HELLO&quot;:&quot;ENGLISH&quot;</code>，依此類推。<br>可以看到，第5行有一個<code>a.get(w)!=None</code>，這是用來檢查輸入的單字是否是已知的（在字典a內的）單字，如果不是（不在字典a內）的話，<code>a.get(w)==None</code>。</p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="為什麼要用a-get-w-？我記得a-w-不是也是一樣意思嗎？有差嗎？"><a href="#為什麼要用a-get-w-？我記得a-w-不是也是一樣意思嗎？有差嗎？" class="headerlink" title="為什麼要用a.get(w)？我記得a[w]不是也是一樣意思嗎？有差嗎？"></a>為什麼要用<code>a.get(w)</code>？我記得<code>a[w]</code>不是也是一樣意思嗎？有差嗎？</h2><p>有差！差別就在…<br>如果你用<code>a[w]</code>，而字典裡沒有<code>w</code>這個key的話，你會得到一個<strong>KeyError</strong>，但是，如果使用<code>a.get(w)</code>的話，他只會return <code>None</code>而不報錯。</p>
+<h2 id="print-裡的sep是甚麼？"><a href="#print-裡的sep是甚麼？" class="headerlink" title="print()裡的sep是甚麼？"></a>print()裡的<code>sep</code>是甚麼？</h2><p>當在<code>print()</code>函數中使用逗號(<code>,</code>)分隔時，<code>print()</code>預設會有一個空格，例如：<code>print(&quot;hello&quot;,&quot;world&quot;)</code>會輸出<code>hello world</code>，但是，假如我們在<code>print()</code>中加入<code>sep</code>，就可以將空格替換成其他東西，例如：<code>print(&quot;hello&quot;,&quot;world&quot;,sep=&quot;&amp;&quot;)</code>會輸出<code>hello&amp;world</code>。<br>這裡，我們寫<code>sep=&quot;&quot;</code>，表示不要有東西，因此當我們寫<code>print(&quot;hello&quot;,&quot;world&quot;,sep=&quot;&quot;)</code>，輸出就會是<code>helloworld</code>。</p>
+<h2 id="while迴圈裡的w-是甚麼？"><a href="#while迴圈裡的w-是甚麼？" class="headerlink" title="while迴圈裡的w!=&quot;#&quot;是甚麼？"></a>while迴圈裡的<code>w!=&quot;#&quot;</code>是甚麼？</h2><p>從【輸入說明】可以看到</p>
+<blockquote>
+<p>輸入以僅含有一個「#」的一行作為結束，該行不需處理。</p>
+</blockquote>
+<p><code>w!=&quot;#&quot;</code>就是用來判斷輸入是不是<code>#</code>，如果是的話，就跳出迴圈，結束程式。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+  </entry>
+</search>
