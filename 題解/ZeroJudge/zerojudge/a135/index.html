@@ -15,28 +15,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"codergr.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/seti-ui","dark":"base16/seti-ui"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="【題目】e578. 10222 - Decode the Mad man">
+    <meta name="description" content="【題目】a135. 12250 - Language Detection">
 <meta property="og:type" content="article">
-<meta property="og:title" content="題解｜ZeroJudge e578. 10222 - Decode the Mad man">
-<meta property="og:url" content="https://codergr.github.io/2025/08/zerojudge/e578/index.html">
+<meta property="og:title" content="題解｜ZeroJudge a135. 12250 - Language Detection">
+<meta property="og:url" content="https://codergr.github.io/%E9%A1%8C%E8%A7%A3/ZeroJudge/zerojudge/a135/index.html">
 <meta property="og:site_name" content="大學生想當工程師">
-<meta property="og:description" content="【題目】e578. 10222 - Decode the Mad man">
+<meta property="og:description" content="【題目】a135. 12250 - Language Detection">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2025-08-06T00:35:12.236Z">
-<meta property="article:modified_time" content="2025-08-06T03:57:52.656Z">
+<meta property="article:published_time" content="2025-08-05T07:38:16.759Z">
+<meta property="article:modified_time" content="2025-08-06T02:19:12.716Z">
 <meta property="article:author" content="棕熊">
 <meta property="article:tag" content="字典">
-<meta property="article:tag" content="EOF">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://codergr.github.io/2025/08/zerojudge/e578/">
+<link rel="canonical" href="https://codergr.github.io/%E9%A1%8C%E8%A7%A3/ZeroJudge/zerojudge/a135/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://codergr.github.io/2025/08/zerojudge/e578/","path":"2025/08/zerojudge/e578/","title":"題解｜ZeroJudge e578. 10222 - Decode the Mad man"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://codergr.github.io/%E9%A1%8C%E8%A7%A3/ZeroJudge/zerojudge/a135/","path":"題解/ZeroJudge/zerojudge/a135/","title":"題解｜ZeroJudge a135. 12250 - Language Detection"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>題解｜ZeroJudge e578. 10222 - Decode the Mad man | 大學生想當工程師</title>
+<title>題解｜ZeroJudge a135. 12250 - Language Detection | 大學生想當工程師</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9NXXYGRKY"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-Z9NXXYGRKY","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -158,7 +157,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">題解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E8%AA%AA"><span class="nav-number">2.</span> <span class="nav-text">解說</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ"><span class="nav-number">3.</span> <span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#print-%E8%A3%A1%E7%9A%84end%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">print()裡的end是甚麼？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">4.</span> <span class="nav-text">結語</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%8C%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">題解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E8%AA%AA"><span class="nav-number">2.</span> <span class="nav-text">解說</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ"><span class="nav-number">3.</span> <span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8a-get-w-%EF%BC%9F%E6%88%91%E8%A8%98%E5%BE%97a-w-%E4%B8%8D%E6%98%AF%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E6%84%8F%E6%80%9D%E5%97%8E%EF%BC%9F%E6%9C%89%E5%B7%AE%E5%97%8E%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">為什麼要用a.get(w)？我記得a[w]不是也是一樣意思嗎？有差嗎？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#print-%E8%A3%A1%E7%9A%84sep%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">print()裡的sep是甚麼？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while%E8%BF%B4%E5%9C%88%E8%A3%A1%E7%9A%84w-%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F"><span class="nav-number">3.3.</span> <span class="nav-text">while迴圈裡的w!&#x3D;&quot;#&quot;是甚麼？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">4.</span> <span class="nav-text">結語</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +166,7 @@
     <img class="site-author-image" itemprop="image" alt="棕熊"
       src="/image/avatar.jpg">
   <p class="site-author-name" itemprop="name">棕熊</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">我想成為工程師！</div>
 </div>
 <div class="site-state-wrap animated">
   <nav class="site-state">
@@ -226,7 +225,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://codergr.github.io/2025/08/zerojudge/e578/">
+    <link itemprop="mainEntityOfPage" href="https://codergr.github.io/%E9%A1%8C%E8%A7%A3/ZeroJudge/zerojudge/a135/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/image/avatar.jpg">
@@ -235,16 +234,16 @@
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="大學生想當工程師">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="我想成為工程師！">
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="題解｜ZeroJudge e578. 10222 - Decode the Mad man | 大學生想當工程師">
+      <meta itemprop="name" content="題解｜ZeroJudge a135. 12250 - Language Detection | 大學生想當工程師">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          題解｜ZeroJudge e578. 10222 - Decode the Mad man
+          題解｜ZeroJudge a135. 12250 - Language Detection
         </h1>
 
         <div class="post-meta-container">
@@ -255,14 +254,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2025-08-06 08:35:12" itemprop="dateCreated datePublished" datetime="2025-08-06T08:35:12+08:00">2025-08-06</time>
+      <time title="創建時間：2025-08-05 15:38:16" itemprop="dateCreated datePublished" datetime="2025-08-05T15:38:16+08:00">2025-08-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-08-06 11:57:52" itemprop="dateModified" datetime="2025-08-06T11:57:52+08:00">2025-08-06</time>
+      <time title="修改時間：2025-08-06 10:19:12" itemprop="dateModified" datetime="2025-08-06T10:19:12+08:00">2025-08-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -285,7 +284,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>475</span>
+      <span>449</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -302,22 +301,18 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>【題目】<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=e578">e578. 10222 - Decode the Mad man</a></p>
+    <div class="post-body" itemprop="articleBody"><p>【題目】<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a135">a135. 12250 - Language Detection</a></p>
 <span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>e578.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d=&#123;<span class="string">&quot; &quot;</span>:<span class="string">&quot; &quot;</span>,<span class="string">&quot;e&quot;</span>:<span class="string">&quot;q&quot;</span>,<span class="string">&quot;r&quot;</span>:<span class="string">&quot;w&quot;</span>,<span class="string">&quot;t&quot;</span>:<span class="string">&quot;e&quot;</span>,<span class="string">&quot;y&quot;</span>:<span class="string">&quot;r&quot;</span>,<span class="string">&quot;u&quot;</span>:<span class="string">&quot;t&quot;</span>,<span class="string">&quot;i&quot;</span>:<span class="string">&quot;y&quot;</span>,<span class="string">&quot;o&quot;</span>:<span class="string">&quot;u&quot;</span>,<span class="string">&quot;p&quot;</span>:<span class="string">&quot;i&quot;</span>,<span class="string">&quot;[&quot;</span>:<span class="string">&quot;o&quot;</span>,<span class="string">&quot;]&quot;</span>:<span class="string">&quot;p&quot;</span>,<span class="string">&quot;\\&quot;</span>:<span class="string">&quot;[&quot;</span>,<span class="string">&quot;d&quot;</span>:<span class="string">&quot;a&quot;</span>,<span class="string">&quot;f&quot;</span>:<span class="string">&quot;s&quot;</span>,<span class="string">&quot;g&quot;</span>:<span class="string">&quot;d&quot;</span>,<span class="string">&quot;h&quot;</span>:<span class="string">&quot;f&quot;</span>,<span class="string">&quot;j&quot;</span>:<span class="string">&quot;g&quot;</span>,<span class="string">&quot;k&quot;</span>:<span class="string">&quot;h&quot;</span>,<span class="string">&quot;l&quot;</span>:<span class="string">&quot;j&quot;</span>,<span class="string">&quot;;&quot;</span>:<span class="string">&quot;k&quot;</span>,<span class="string">&quot;&#x27;&quot;</span>:<span class="string">&quot;l&quot;</span>,<span class="string">&quot;c&quot;</span>:<span class="string">&quot;z&quot;</span>,<span class="string">&quot;v&quot;</span>:<span class="string">&quot;x&quot;</span>,<span class="string">&quot;b&quot;</span>:<span class="string">&quot;c&quot;</span>,<span class="string">&quot;n&quot;</span>:<span class="string">&quot;v&quot;</span>,<span class="string">&quot;m&quot;</span>:<span class="string">&quot;b&quot;</span>,<span class="string">&quot;,&quot;</span>:<span class="string">&quot;n&quot;</span>,<span class="string">&quot;.&quot;</span>:<span class="string">&quot;m&quot;</span>,<span class="string">&quot;/&quot;</span>:<span class="string">&quot;,&quot;</span>,<span class="string">&quot;2&quot;</span>:<span class="string">&quot;`&quot;</span>,<span class="string">&quot;3&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;4&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;5&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;6&quot;</span>:<span class="string">&quot;4&quot;</span>,<span class="string">&quot;7&quot;</span>:<span class="string">&quot;5&quot;</span>,<span class="string">&quot;8&quot;</span>:<span class="string">&quot;6&quot;</span>,<span class="string">&quot;9&quot;</span>:<span class="string">&quot;7&quot;</span>,<span class="string">&quot;0&quot;</span>:<span class="string">&quot;8&quot;</span>,<span class="string">&quot;-&quot;</span>:<span class="string">&quot;9&quot;</span>,<span class="string">&quot;=&quot;</span>:<span class="string">&quot;0&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n=<span class="built_in">list</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):</span><br><span class="line">            <span class="built_in">print</span>(d.get(n[i]),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>a135.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a=&#123;<span class="string">&quot;HELLO&quot;</span>:<span class="string">&quot;ENGLISH&quot;</span>, <span class="string">&quot;HOLA&quot;</span>:<span class="string">&quot;SPANISH&quot;</span>,<span class="string">&quot;HALLO&quot;</span>:<span class="string">&quot;GERMAN&quot;</span>,<span class="string">&quot;BONJOUR&quot;</span>:<span class="string">&quot;FRENCH&quot;</span>,<span class="string">&quot;CIAO&quot;</span>:<span class="string">&quot;ITALIAN&quot;</span>,<span class="string">&quot;ZDRAVSTVUJTE&quot;</span>:<span class="string">&quot;RUSSIAN&quot;</span>&#125;</span><br><span class="line">w=<span class="built_in">input</span>()</span><br><span class="line">count=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(w!=<span class="string">&quot;#&quot;</span>):</span><br><span class="line">    <span class="keyword">if</span> (a.get(w)!=<span class="literal">None</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Case &quot;</span>,count,<span class="string">&quot;: &quot;</span>,a.get(w),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Case &quot;</span>,count,<span class="string">&quot;: &quot;</span>,<span class="string">&quot;UNKNOWN&quot;</span>,sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    count+=<span class="number">1</span></span><br><span class="line">    w=<span class="built_in">input</span>()</span><br></pre></td></tr></table></figure>
 
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們可以先看向題目的<code>【輸出說明】</code>，這裡我們可以注意到一句話：</p>
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先，我們建立一個字典a，由題目，我們可以得知各語言的HELLO，所以我們先以以下格式建立字典<code>&quot;單字&quot;:&quot;語言&quot;</code>，例如HELLO是英文，我們就在字典加入<code>&quot;HELLO&quot;:&quot;ENGLISH&quot;</code>，依此類推。<br>可以看到，第5行有一個<code>a.get(w)!=None</code>，這是用來檢查輸入的單字是否是已知的（在字典a內的）單字，如果不是（不在字典a內）的話，<code>a.get(w)==None</code>。</p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="為什麼要用a-get-w-？我記得a-w-不是也是一樣意思嗎？有差嗎？"><a href="#為什麼要用a-get-w-？我記得a-w-不是也是一樣意思嗎？有差嗎？" class="headerlink" title="為什麼要用a.get(w)？我記得a[w]不是也是一樣意思嗎？有差嗎？"></a>為什麼要用<code>a.get(w)</code>？我記得<code>a[w]</code>不是也是一樣意思嗎？有差嗎？</h2><p>有差！差別就在…<br>如果你用<code>a[w]</code>，而字典裡沒有<code>w</code>這個key的話，你會得到一個<strong>KeyError</strong>，但是，如果使用<code>a.get(w)</code>的話，他只會return <code>None</code>而不報錯。</p>
+<h2 id="print-裡的sep是甚麼？"><a href="#print-裡的sep是甚麼？" class="headerlink" title="print()裡的sep是甚麼？"></a>print()裡的<code>sep</code>是甚麼？</h2><p>當在<code>print()</code>函數中使用逗號(<code>,</code>)分隔時，<code>print()</code>預設會有一個空格，例如：<code>print(&quot;hello&quot;,&quot;world&quot;)</code>會輸出<code>hello world</code>，但是，假如我們在<code>print()</code>中加入<code>sep</code>，就可以將空格替換成其他東西，例如：<code>print(&quot;hello&quot;,&quot;world&quot;,sep=&quot;&amp;&quot;)</code>會輸出<code>hello&amp;world</code>。<br>這裡，我們寫<code>sep=&quot;&quot;</code>，表示不要有東西，因此當我們寫<code>print(&quot;hello&quot;,&quot;world&quot;,sep=&quot;&quot;)</code>，輸出就會是<code>helloworld</code>。</p>
+<h2 id="while迴圈裡的w-是甚麼？"><a href="#while迴圈裡的w-是甚麼？" class="headerlink" title="while迴圈裡的w!=&quot;#&quot;是甚麼？"></a>while迴圈裡的<code>w!=&quot;#&quot;</code>是甚麼？</h2><p>從【輸入說明】可以看到</p>
 <blockquote>
-<p>只要把每個字母或符號以鍵盤上它左邊第二個鍵的符號來取代就行了。</p>
+<p>輸入以僅含有一個「#」的一行作為結束，該行不需處理。</p>
 </blockquote>
-<p>所以，在寫這題時，我的第一個動作是先建立一個字典d，裡面放的是QWERTY鍵盤字母左移兩個鍵之後的結果。<br>注意到<code>【輸出說明】</code>有說空白和換行直接輸出<br>之後，我們觀察範例輸入，可以發現輸入可能有多行資料，所以我們的程式寫法是直到EOF結束。<br>直到EOF結束的程式架構大概是這樣的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>這個的意思是：<br>持續執行try裡面的程式，直到出現Except的情況（<code>EOFError</code>）。<br>接著，我們就可以寫try裡面的程式啦！<br>那這裡我們用<code>d.get(n[i])</code>，至於為什麼不是用<code>d[n[i]]</code>，請見<a href="/2025/08/zerojudge/a135/#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8a-get-w-%EF%BC%9F%E6%88%91%E8%A8%98%E5%BE%97a-w-%E4%B8%8D%E6%98%AF%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E6%84%8F%E6%80%9D%E5%97%8E%EF%BC%9F%E6%9C%89%E5%B7%AE%E5%97%8E%EF%BC%9F">這篇文</a></p>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="print-裡的end是甚麼？"><a href="#print-裡的end是甚麼？" class="headerlink" title="print()裡的end是甚麼？"></a>print()裡的<code>end</code>是甚麼？</h2><p>這裡的<code>end</code>是在控制<code>print()</code>的結尾，舉例：<code>print(&quot;Hello World&quot;,end=&quot;&amp;&amp;&quot;)</code>，輸出結果會是<code>Hello World&amp;&amp;</code>，在沒有另外設置end的情況下，<code>print()</code>的預設<code>end</code>是<code>&#39;\n&#39;</code>，也就是換行，這就是為什麼執行以下程式碼：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>的結果是</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br></pre></td></tr></table></figure>
-
+<p><code>w!=&quot;#&quot;</code>就是用來判斷輸入是不是<code>#</code>，如果是的話，就跳出迴圈，結束程式。</p>
 <h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
 
     </div>
@@ -336,7 +331,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://codergr.github.io/2025/08/zerojudge/e578/" title="題解｜ZeroJudge e578. 10222 - Decode the Mad man">https://codergr.github.io/2025/08/zerojudge/e578/</a>
+      <a href="https://codergr.github.io/%E9%A1%8C%E8%A7%A3/ZeroJudge/zerojudge/a135/" title="題解｜ZeroJudge a135. 12250 - Language Detection">https://codergr.github.io/題解/ZeroJudge/zerojudge/a135/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -346,18 +341,17 @@
 
           <div class="post-tags">
               <a href="/tags/%E5%AD%97%E5%85%B8/" rel="tag"># 字典</a>
-              <a href="/tags/EOF/" rel="tag"># EOF</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2025/08/zerojudge/a135/" rel="prev" title="題解｜ZeroJudge a135. 12250 - Language Detection">
-                  <i class="fa fa-angle-left"></i> 題解｜ZeroJudge a135. 12250 - Language Detection
-                </a>
             </div>
             <div class="post-nav-item">
+                <a href="/%E9%A1%8C%E8%A7%A3/ZeroJudge/zerojudge/e578/" rel="next" title="題解｜ZeroJudge e578. 10222 - Decode the Mad man">
+                  題解｜ZeroJudge e578. 10222 - Decode the Mad man <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
