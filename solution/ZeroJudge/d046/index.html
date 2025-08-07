@@ -15,29 +15,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"codergr.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/seti-ui","dark":"base16/seti-ui"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="【題目】c004. 10812 - Beat the Spread!">
+    <meta name="description" content="【題目】d046. 文文採西瓜">
 <meta property="og:type" content="article">
-<meta property="og:title" content="題解｜ZeroJudge c004. 10812 - Beat the Spread!">
-<meta property="og:url" content="https://codergr.github.io/solution/ZeroJudge/c004/index.html">
+<meta property="og:title" content="題解｜ZeroJudge d046. 文文採西瓜">
+<meta property="og:url" content="https://codergr.github.io/solution/ZeroJudge/d046/index.html">
 <meta property="og:site_name" content="大學生想當工程師">
-<meta property="og:description" content="【題目】c004. 10812 - Beat the Spread!">
+<meta property="og:description" content="【題目】d046. 文文採西瓜">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2025-08-07T00:58:55.652Z">
-<meta property="article:modified_time" content="2025-08-07T16:38:02.350Z">
+<meta property="article:published_time" content="2025-08-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-07T16:36:57.189Z">
 <meta property="article:author" content="棕熊">
 <meta property="article:tag" content="if">
 <meta property="article:tag" content="迴圈">
-<meta property="article:tag" content="數學">
+<meta property="article:tag" content="陣列">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://codergr.github.io/solution/ZeroJudge/c004/">
+<link rel="canonical" href="https://codergr.github.io/solution/ZeroJudge/d046/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://codergr.github.io/solution/ZeroJudge/c004/","path":"solution/ZeroJudge/c004/","title":"題解｜ZeroJudge c004. 10812 - Beat the Spread!"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://codergr.github.io/solution/ZeroJudge/d046/","path":"solution/ZeroJudge/d046/","title":"題解｜ZeroJudge d046. 文文採西瓜"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>題解｜ZeroJudge c004. 10812 - Beat the Spread! | 大學生想當工程師</title>
+<title>題解｜ZeroJudge d046. 文文採西瓜 | 大學生想當工程師</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9NXXYGRKY"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-Z9NXXYGRKY","only_pageview":false,"measure_protocol_api_secret":null}</script>
@@ -227,7 +227,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://codergr.github.io/solution/ZeroJudge/c004/">
+    <link itemprop="mainEntityOfPage" href="https://codergr.github.io/solution/ZeroJudge/d046/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/image/avatar.jpg">
@@ -240,12 +240,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="題解｜ZeroJudge c004. 10812 - Beat the Spread! | 大學生想當工程師">
+      <meta itemprop="name" content="題解｜ZeroJudge d046. 文文採西瓜 | 大學生想當工程師">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          題解｜ZeroJudge c004. 10812 - Beat the Spread!
+          題解｜ZeroJudge d046. 文文採西瓜
         </h1>
 
         <div class="post-meta-container">
@@ -256,14 +256,14 @@
       </span>
       <span class="post-meta-item-text">發表於</span>
 
-      <time title="創建時間：2025-08-07 08:58:55" itemprop="dateCreated datePublished" datetime="2025-08-07T08:58:55+08:00">2025-08-07</time>
+      <time title="創建時間：2025-08-08 00:00:00" itemprop="dateCreated datePublished" datetime="2025-08-08T00:00:00+08:00">2025-08-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2025-08-08 00:38:02" itemprop="dateModified" datetime="2025-08-08T00:38:02+08:00">2025-08-08</time>
+      <time title="修改時間：2025-08-08 00:36:57" itemprop="dateModified" datetime="2025-08-08T00:36:57+08:00">2025-08-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,7 +286,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>425</span>
+      <span>523</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -303,26 +303,15 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>【題目】<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c004">c004. 10812 - Beat the Spread!</a></p>
+    <div class="post-body" itemprop="articleBody"><p>【題目】<a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=d046">d046. 文文採西瓜</a></p>
 <span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c004.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    <span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;impossible&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y=(a-b)//<span class="number">2</span></span><br><span class="line">        x=(a+b)//<span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">max</span>(x,y),<span class="built_in">min</span>(x,y))</span><br></pre></td></tr></table></figure>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><div class="tabs" id="s"><ul class="nav-tabs"><li class="tab active"><a href="#s-1">Python解法</a></li><li class="tab"><a href="#s-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="s-1"><figure class="highlight py"><figcaption><span>d046.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">melons=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">count=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> melons:</span><br><span class="line">    <span class="keyword">if</span> m&lt;=<span class="number">10</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="s-2"><figure class="highlight cpp"><figcaption><span>d046.cpp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n,y=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="type">int</span> w[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		cin&gt;&gt;w[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(w[i]&lt;=<span class="number">10</span>) &#123;</span><br><span class="line">			y+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;y;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>程式第3行的</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br></pre></td></tr></table></figure>
-<p>這段的意義在於把輸入的測資（例如【範例輸入#1】中的<code>40 20</code>）先用<code>split()</code>分開，再分別轉換成<code>int</code>型態，然後分別指派給a跟b。<br>之後，可以注意到，第4行的程式</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>是用來判斷</p>
-<ol>
-<li>a跟b的大小關係，因為輸入說明有提到輸入的數字s及d分別是分數的總和及差的絕對值，因此當<code>a&lt;b</code>就是不可能發生的case。</li>
-<li>a+b跟a-b是否可以被2整除，因為稍後我們會用到聯立方程式，倘若不能被2整除，代表分數是非整數，是不合法的case。</li>
-</ol>
-<p>接著，在else的部分可以看到</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y=(a-b)//<span class="number">2</span></span><br><span class="line">x=(a+b)//<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>這就是在執行聯立方程式，因為</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">令兩隊分數分別為x及y</span><br><span class="line">x+y=s</span><br><span class="line">x-y=d</span><br><span class="line">解聯立，得</span><br><span class="line">   x+y+x-y=s+d</span><br><span class="line">⇒ 2x=s+d</span><br><span class="line">⇒ x=(s+d)//2</span><br><span class="line"></span><br><span class="line">   x+y-(x-y)=s-d</span><br><span class="line">⇒ 2y=s-d</span><br><span class="line">⇒ y=(s-d)//2</span><br></pre></td></tr></table></figure>
-<p>只不過，我的程式裡令s、d為a跟b。</p>
-<p>之後，再依照題目要求輸出2隊分數即可（注意分數較高者在前）</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題說穿了，就是要你找出陣列中&lt;&#x3D;10的數值的數量，所以該怎麼做呢？</p>
+<div class="tabs" id="t"><ul class="nav-tabs"><li class="tab active"><a href="#t-1">Python解法</a></li><li class="tab"><a href="#t-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="t-1"><p>首先我們令一個變數n來接第一行輸入，也就是要採收的西瓜的數量<br>再來，我們令一個list，名叫melon，負責用來記錄西瓜重量，至於<code>map</code>，我們曾在<a href="/solution/ZeroJudge/c004/#%E8%A7%A3%E8%AA%AA">這篇</a>提及，這裡我們再來看一下他在這裡的應用：<br>這裡，他是把一大串的輸入（如<code>1 3 5 7 9 11</code>）一個一個分開、遇到空格就把他們分開…<code>split()</code><br>然後，把分開後的，一個個轉為int型態…<code>map(int,input().split())</code><br>再然後，把他們變成一個list…<code>list()</code><br>接著，我們就可以找&lt;&#x3D;10的數啦！<br>我們用for迴圈遍歷陣列，遇到&lt;&#x3D;10的數字，就把用來記錄數量的變數<code>count</code>+1<br>最後，再輸出<code>count</code>即為所求！</p></div><div class="tab-pane" id="t-2"><p>首先，我們令一個變數n，用來接收第一行輸入，也就是要採收的西瓜的數量<br>然後，我們再宣告一個長度為100的array（這裡選100是因為輸入說明有提到西瓜數量不大於100，所以選擇100是安全且合理的）<br>用for迴圈，將數值一個一個輸入到陣列中<br>接著，就是要找出&lt;&#x3D;10的數值的數量！<br>用for迴圈遍歷陣列，當遇到&lt;&#x3D;10的數字，用來計數的變數<code>y</code>就+1<br>最後，再輸出<code>y</code>即為所求！</p></div></div></div>
+
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>今天這題主要利用迴圈、if來解題！<br>以上就是今天的題解，倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
 
     </div>
 
@@ -340,7 +329,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>文章連結：</strong>
-      <a href="https://codergr.github.io/solution/ZeroJudge/c004/" title="題解｜ZeroJudge c004. 10812 - Beat the Spread!">https://codergr.github.io/solution/ZeroJudge/c004/</a>
+      <a href="https://codergr.github.io/solution/ZeroJudge/d046/" title="題解｜ZeroJudge d046. 文文採西瓜">https://codergr.github.io/solution/ZeroJudge/d046/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -351,21 +340,18 @@
           <div class="post-tags">
               <a href="/tags/if/" rel="tag"># if</a>
               <a href="/tags/%E8%BF%B4%E5%9C%88/" rel="tag"># 迴圈</a>
-              <a href="/tags/%E6%95%B8%E5%AD%B8/" rel="tag"># 數學</a>
+              <a href="/tags/%E9%99%A3%E5%88%97/" rel="tag"># 陣列</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/solution/ZeroJudge/e578/" rel="prev" title="題解｜ZeroJudge e578. 10222 - Decode the Mad man">
-                  <i class="fa fa-angle-left"></i> 題解｜ZeroJudge e578. 10222 - Decode the Mad man
+                <a href="/solution/ZeroJudge/c004/" rel="prev" title="題解｜ZeroJudge c004. 10812 - Beat the Spread!">
+                  <i class="fa fa-angle-left"></i> 題解｜ZeroJudge c004. 10812 - Beat the Spread!
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/solution/ZeroJudge/d046/" rel="next" title="題解｜ZeroJudge d046. 文文採西瓜">
-                  題解｜ZeroJudge d046. 文文採西瓜 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
