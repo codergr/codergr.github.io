@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>題解｜ZeroJudge c004. 10812 - Beat the Spread!</title>
+    <url>/solution/ZeroJudge/c004/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c004">c004. 10812 - Beat the Spread!</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c004.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    <span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;impossible&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y=(a-b)//<span class="number">2</span></span><br><span class="line">        x=(a+b)//<span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">max</span>(x,y),<span class="built_in">min</span>(x,y))</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>程式第3行的</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br></pre></td></tr></table></figure>
+<p>這段的意義在於把輸入的測資（例如【範例輸入#1】中的<code>40 20</code>）先用<code>split()</code>分開，再分別轉換成<code>int</code>型態，然後分別指派給a跟b。<br>之後，可以注意到，第4行的程式</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>是用來判斷</p>
+<ol>
+<li>a跟b的大小關係，因為輸入說明有提到輸入的數字s及d分別是分數的總和及差的絕對值，因此當<code>a&lt;b</code>就是不可能發生的case。</li>
+<li>a+b跟a-b是否可以被2整除，因為稍後我們會用到聯立方程式，倘若不能被2整除，代表分數是非整數，是不合法的case。</li>
+</ol>
+<p>接著，在else的部分可以看到</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">y=(a-b)//<span class="number">2</span></span><br><span class="line">x=(a+b)//<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>這就是在執行聯立方程式，因為</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">令兩隊分數分別為x及y</span><br><span class="line">x+y=s</span><br><span class="line">x-y=d</span><br><span class="line">解聯立，得</span><br><span class="line">   x+y+x-y=s+d</span><br><span class="line">⇒ 2x=s+d</span><br><span class="line">⇒ x=(s+d)//2</span><br><span class="line"></span><br><span class="line">   x+y-(x-y)=s-d</span><br><span class="line">⇒ 2y=s-d</span><br><span class="line">⇒ y=(s-d)//2</span><br></pre></td></tr></table></figure>
+<p>只不過，我的程式裡令s、d為a跟b。</p>
+<p>之後，再依照題目要求輸出2隊分數即可（注意分數較高者在前）</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>數學</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>題解｜ZeroJudge a135. 12250 - Language Detection</title>
     <url>/solution/ZeroJudge/a135/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a135">a135. 12250 - Language Detection</a></p>
@@ -66,38 +98,6 @@
       <tags>
         <tag>字典</tag>
         <tag>EOF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>題解｜ZeroJudge c004. 10812 - Beat the Spread!</title>
-    <url>/solution/ZeroJudge/c004/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c004">c004. 10812 - Beat the Spread!</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c004.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    <span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;impossible&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y=(a-b)//<span class="number">2</span></span><br><span class="line">        x=(a+b)//<span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">max</span>(x,y),<span class="built_in">min</span>(x,y))</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>程式第3行的</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br></pre></td></tr></table></figure>
-<p>這段的意義在於把輸入的測資（例如【範例輸入#1】中的<code>40 20</code>）先用<code>split()</code>分開，再分別轉換成<code>int</code>型態，然後分別指派給a跟b。<br>之後，可以注意到，第4行的程式</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>是用來判斷</p>
-<ol>
-<li>a跟b的大小關係，因為輸入說明有提到輸入的數字s及d分別是分數的總和及差的絕對值，因此當<code>a&lt;b</code>就是不可能發生的case。</li>
-<li>a+b跟a-b是否可以被2整除，因為稍後我們會用到聯立方程式，倘若不能被2整除，代表分數是非整數，是不合法的case。</li>
-</ol>
-<p>接著，在else的部分可以看到</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">y=(a-b)//<span class="number">2</span></span><br><span class="line">x=(a+b)//<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>這就是在執行聯立方程式，因為</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">令兩隊分數分別為x及y</span><br><span class="line">x+y=s</span><br><span class="line">x-y=d</span><br><span class="line">解聯立，得</span><br><span class="line">   x+y+x-y=s+d</span><br><span class="line">⇒ 2x=s+d</span><br><span class="line">⇒ x=(s+d)//2</span><br><span class="line"></span><br><span class="line">   x+y-(x-y)=s-d</span><br><span class="line">⇒ 2y=s-d</span><br><span class="line">⇒ y=(s-d)//2</span><br></pre></td></tr></table></figure>
-<p>只不過，我的程式裡令s、d為a跟b。</p>
-<p>之後，再依照題目要求輸出2隊分數即可（注意分數較高者在前）</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>數學</tag>
       </tags>
   </entry>
 </search>
