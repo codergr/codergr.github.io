@@ -41,38 +41,6 @@
       </tags>
   </entry>
   <entry>
-    <title>題解｜ZeroJudge e578. 10222 - Decode the Mad man</title>
-    <url>/solution/ZeroJudge/e578/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=e578">e578. 10222 - Decode the Mad man</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>e578.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d=&#123;<span class="string">&quot; &quot;</span>:<span class="string">&quot; &quot;</span>,<span class="string">&quot;e&quot;</span>:<span class="string">&quot;q&quot;</span>,<span class="string">&quot;r&quot;</span>:<span class="string">&quot;w&quot;</span>,<span class="string">&quot;t&quot;</span>:<span class="string">&quot;e&quot;</span>,<span class="string">&quot;y&quot;</span>:<span class="string">&quot;r&quot;</span>,<span class="string">&quot;u&quot;</span>:<span class="string">&quot;t&quot;</span>,<span class="string">&quot;i&quot;</span>:<span class="string">&quot;y&quot;</span>,<span class="string">&quot;o&quot;</span>:<span class="string">&quot;u&quot;</span>,<span class="string">&quot;p&quot;</span>:<span class="string">&quot;i&quot;</span>,<span class="string">&quot;[&quot;</span>:<span class="string">&quot;o&quot;</span>,<span class="string">&quot;]&quot;</span>:<span class="string">&quot;p&quot;</span>,<span class="string">&quot;\\&quot;</span>:<span class="string">&quot;[&quot;</span>,<span class="string">&quot;d&quot;</span>:<span class="string">&quot;a&quot;</span>,<span class="string">&quot;f&quot;</span>:<span class="string">&quot;s&quot;</span>,<span class="string">&quot;g&quot;</span>:<span class="string">&quot;d&quot;</span>,<span class="string">&quot;h&quot;</span>:<span class="string">&quot;f&quot;</span>,<span class="string">&quot;j&quot;</span>:<span class="string">&quot;g&quot;</span>,<span class="string">&quot;k&quot;</span>:<span class="string">&quot;h&quot;</span>,<span class="string">&quot;l&quot;</span>:<span class="string">&quot;j&quot;</span>,<span class="string">&quot;;&quot;</span>:<span class="string">&quot;k&quot;</span>,<span class="string">&quot;&#x27;&quot;</span>:<span class="string">&quot;l&quot;</span>,<span class="string">&quot;c&quot;</span>:<span class="string">&quot;z&quot;</span>,<span class="string">&quot;v&quot;</span>:<span class="string">&quot;x&quot;</span>,<span class="string">&quot;b&quot;</span>:<span class="string">&quot;c&quot;</span>,<span class="string">&quot;n&quot;</span>:<span class="string">&quot;v&quot;</span>,<span class="string">&quot;m&quot;</span>:<span class="string">&quot;b&quot;</span>,<span class="string">&quot;,&quot;</span>:<span class="string">&quot;n&quot;</span>,<span class="string">&quot;.&quot;</span>:<span class="string">&quot;m&quot;</span>,<span class="string">&quot;/&quot;</span>:<span class="string">&quot;,&quot;</span>,<span class="string">&quot;2&quot;</span>:<span class="string">&quot;`&quot;</span>,<span class="string">&quot;3&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;4&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;5&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;6&quot;</span>:<span class="string">&quot;4&quot;</span>,<span class="string">&quot;7&quot;</span>:<span class="string">&quot;5&quot;</span>,<span class="string">&quot;8&quot;</span>:<span class="string">&quot;6&quot;</span>,<span class="string">&quot;9&quot;</span>:<span class="string">&quot;7&quot;</span>,<span class="string">&quot;0&quot;</span>:<span class="string">&quot;8&quot;</span>,<span class="string">&quot;-&quot;</span>:<span class="string">&quot;9&quot;</span>,<span class="string">&quot;=&quot;</span>:<span class="string">&quot;0&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n=<span class="built_in">list</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):</span><br><span class="line">            <span class="built_in">print</span>(d.get(n[i]),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們可以先看向題目的<code>【輸出說明】</code>，這裡我們可以注意到一句話：</p>
-<blockquote>
-<p>只要把每個字母或符號以鍵盤上它左邊第二個鍵的符號來取代就行了。</p>
-</blockquote>
-<p>所以，在寫這題時，我的第一個動作是先建立一個字典d，裡面放的是QWERTY鍵盤字母左移兩個鍵之後的結果。<br>注意到<code>【輸出說明】</code>有說空白和換行直接輸出<br>之後，我們觀察範例輸入，可以發現輸入可能有多行資料，所以我們的程式寫法是直到EOF結束。<br>直到EOF結束的程式架構大概是這樣的：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>這個的意思是：<br>持續執行try裡面的程式，直到出現Except的情況（<code>EOFError</code>）。<br>接著，我們就可以寫try裡面的程式啦！<br>那這裡我們用<code>d.get(n[i])</code>，至於為什麼不是用<code>d[n[i]]</code>，請見<a href="/solution/ZeroJudge/a135/#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8a-get-w-%EF%BC%9F%E6%88%91%E8%A8%98%E5%BE%97a-w-%E4%B8%8D%E6%98%AF%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E6%84%8F%E6%80%9D%E5%97%8E%EF%BC%9F%E6%9C%89%E5%B7%AE%E5%97%8E%EF%BC%9F">這篇文</a></p>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="print-裡的end是甚麼？"><a href="#print-裡的end是甚麼？" class="headerlink" title="print()裡的end是甚麼？"></a>print()裡的<code>end</code>是甚麼？</h2><p>這裡的<code>end</code>是在控制<code>print()</code>的結尾，舉例：<code>print(&quot;Hello World&quot;,end=&quot;&amp;&amp;&quot;)</code>，輸出結果會是<code>Hello World&amp;&amp;</code>，在沒有另外設置end的情況下，<code>print()</code>的預設<code>end</code>是<code>&#39;\n&#39;</code>，也就是換行，這就是為什麼執行以下程式碼：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>的結果是</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br></pre></td></tr></table></figure>
-
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>字典</tag>
-        <tag>迴圈</tag>
-        <tag>EOF</tag>
-        <tag>例外處理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>題解｜ZeroJudge d046. 文文採西瓜</title>
     <url>/solution/ZeroJudge/d046/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d046">d046. 文文採西瓜</a></p>
@@ -127,6 +95,61 @@
         <tag>if</tag>
         <tag>迴圈</tag>
         <tag>數學</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge c002. 10696 - f91</title>
+    <url>/solution/ZeroJudge/c002/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c002">c002. 10696 - f91</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c002.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f91</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n-<span class="number">10</span></span><br><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f91(&quot;</span>,n,<span class="string">&quot;) = &quot;</span>,f91(n),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們根據題意，建立一個函數<code>f91</code>，而這個函數要做甚麼呢？<br>根據題意，如果輸入的數字&lt;&#x3D;100，那麼f91(n)的return值等於<code>f91(f91(n+11))</code>，所以我們可以寫出</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">    <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+<p>第二種case就是&gt;100的情況下，那我們就直接return<code>n-10</code><br>接下來我們就來處理函數以外的部分…</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br></pre></td></tr></table></figure>
+<p>這是因為題目有提到輸入&#x3D;0代表結束，所以只要輸入不等於0，我們就要一直做下去。<br>然後就是輸出，至於<code>print()</code>裡面的<code>sep</code>是甚麼意思，我們曾在<a href="/solution/ZeroJudge/a135/#print-%E8%A3%A1%E7%9A%84sep%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F">這裡</a>提及，在此不再贅述。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題主要是練習自訂函數。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>迴圈</tag>
+        <tag>自訂函數</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge e578. 10222 - Decode the Mad man</title>
+    <url>/solution/ZeroJudge/e578/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=e578">e578. 10222 - Decode the Mad man</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>e578.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d=&#123;<span class="string">&quot; &quot;</span>:<span class="string">&quot; &quot;</span>,<span class="string">&quot;e&quot;</span>:<span class="string">&quot;q&quot;</span>,<span class="string">&quot;r&quot;</span>:<span class="string">&quot;w&quot;</span>,<span class="string">&quot;t&quot;</span>:<span class="string">&quot;e&quot;</span>,<span class="string">&quot;y&quot;</span>:<span class="string">&quot;r&quot;</span>,<span class="string">&quot;u&quot;</span>:<span class="string">&quot;t&quot;</span>,<span class="string">&quot;i&quot;</span>:<span class="string">&quot;y&quot;</span>,<span class="string">&quot;o&quot;</span>:<span class="string">&quot;u&quot;</span>,<span class="string">&quot;p&quot;</span>:<span class="string">&quot;i&quot;</span>,<span class="string">&quot;[&quot;</span>:<span class="string">&quot;o&quot;</span>,<span class="string">&quot;]&quot;</span>:<span class="string">&quot;p&quot;</span>,<span class="string">&quot;\\&quot;</span>:<span class="string">&quot;[&quot;</span>,<span class="string">&quot;d&quot;</span>:<span class="string">&quot;a&quot;</span>,<span class="string">&quot;f&quot;</span>:<span class="string">&quot;s&quot;</span>,<span class="string">&quot;g&quot;</span>:<span class="string">&quot;d&quot;</span>,<span class="string">&quot;h&quot;</span>:<span class="string">&quot;f&quot;</span>,<span class="string">&quot;j&quot;</span>:<span class="string">&quot;g&quot;</span>,<span class="string">&quot;k&quot;</span>:<span class="string">&quot;h&quot;</span>,<span class="string">&quot;l&quot;</span>:<span class="string">&quot;j&quot;</span>,<span class="string">&quot;;&quot;</span>:<span class="string">&quot;k&quot;</span>,<span class="string">&quot;&#x27;&quot;</span>:<span class="string">&quot;l&quot;</span>,<span class="string">&quot;c&quot;</span>:<span class="string">&quot;z&quot;</span>,<span class="string">&quot;v&quot;</span>:<span class="string">&quot;x&quot;</span>,<span class="string">&quot;b&quot;</span>:<span class="string">&quot;c&quot;</span>,<span class="string">&quot;n&quot;</span>:<span class="string">&quot;v&quot;</span>,<span class="string">&quot;m&quot;</span>:<span class="string">&quot;b&quot;</span>,<span class="string">&quot;,&quot;</span>:<span class="string">&quot;n&quot;</span>,<span class="string">&quot;.&quot;</span>:<span class="string">&quot;m&quot;</span>,<span class="string">&quot;/&quot;</span>:<span class="string">&quot;,&quot;</span>,<span class="string">&quot;2&quot;</span>:<span class="string">&quot;`&quot;</span>,<span class="string">&quot;3&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;4&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;5&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;6&quot;</span>:<span class="string">&quot;4&quot;</span>,<span class="string">&quot;7&quot;</span>:<span class="string">&quot;5&quot;</span>,<span class="string">&quot;8&quot;</span>:<span class="string">&quot;6&quot;</span>,<span class="string">&quot;9&quot;</span>:<span class="string">&quot;7&quot;</span>,<span class="string">&quot;0&quot;</span>:<span class="string">&quot;8&quot;</span>,<span class="string">&quot;-&quot;</span>:<span class="string">&quot;9&quot;</span>,<span class="string">&quot;=&quot;</span>:<span class="string">&quot;0&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n=<span class="built_in">list</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):</span><br><span class="line">            <span class="built_in">print</span>(d.get(n[i]),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們可以先看向題目的<code>【輸出說明】</code>，這裡我們可以注意到一句話：</p>
+<blockquote>
+<p>只要把每個字母或符號以鍵盤上它左邊第二個鍵的符號來取代就行了。</p>
+</blockquote>
+<p>所以，在寫這題時，我的第一個動作是先建立一個字典d，裡面放的是QWERTY鍵盤字母左移兩個鍵之後的結果。<br>注意到<code>【輸出說明】</code>有說空白和換行直接輸出<br>之後，我們觀察範例輸入，可以發現輸入可能有多行資料，所以我們的程式寫法是直到EOF結束。<br>直到EOF結束的程式架構大概是這樣的：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>這個的意思是：<br>持續執行try裡面的程式，直到出現Except的情況（<code>EOFError</code>）。<br>接著，我們就可以寫try裡面的程式啦！<br>那這裡我們用<code>d.get(n[i])</code>，至於為什麼不是用<code>d[n[i]]</code>，請見<a href="/solution/ZeroJudge/a135/#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8a-get-w-%EF%BC%9F%E6%88%91%E8%A8%98%E5%BE%97a-w-%E4%B8%8D%E6%98%AF%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E6%84%8F%E6%80%9D%E5%97%8E%EF%BC%9F%E6%9C%89%E5%B7%AE%E5%97%8E%EF%BC%9F">這篇文</a></p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="print-裡的end是甚麼？"><a href="#print-裡的end是甚麼？" class="headerlink" title="print()裡的end是甚麼？"></a>print()裡的<code>end</code>是甚麼？</h2><p>這裡的<code>end</code>是在控制<code>print()</code>的結尾，舉例：<code>print(&quot;Hello World&quot;,end=&quot;&amp;&amp;&quot;)</code>，輸出結果會是<code>Hello World&amp;&amp;</code>，在沒有另外設置end的情況下，<code>print()</code>的預設<code>end</code>是<code>&#39;\n&#39;</code>，也就是換行，這就是為什麼執行以下程式碼：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>的結果是</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br></pre></td></tr></table></figure>
+
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>字典</tag>
+        <tag>迴圈</tag>
+        <tag>EOF</tag>
+        <tag>例外處理</tag>
       </tags>
   </entry>
 </search>
