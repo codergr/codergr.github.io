@@ -135,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://wmcs.dev/tags/if/</loc>
+    <loc>https://wmcs.dev/tags/EOF/</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -149,7 +149,14 @@
   </url>
   
   <url>
-    <loc>https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/</loc>
+    <loc>https://wmcs.dev/tags/%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wmcs.dev/tags/if/</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -163,21 +170,14 @@
   </url>
   
   <url>
+    <loc>https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wmcs.dev/tags/%E9%99%A3%E5%88%97/</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wmcs.dev/tags/EOF/</loc>
-    <lastmod>2025-08-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wmcs.dev/tags/%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
