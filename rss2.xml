@@ -15,8 +15,35 @@
     <atom:link href="https://wmcs.dev/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我要成為工程師！</description>
-    <pubDate>Sun, 10 Aug 2025 13:55:29 GMT</pubDate>
+    <pubDate>Wed, 13 Aug 2025 15:53:30 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>題解｜ZeroJudge a012. 10055 - Hashmat the Brave Warrior</title>
+      <link>https://wmcs.dev/solution/ZeroJudge/a012/</link>
+      <guid>https://wmcs.dev/solution/ZeroJudge/a012/</guid>
+      <pubDate>Wed, 13 Aug 2025 07:57:19 GMT</pubDate>
+      
+      <description>&lt;p&gt;【題目】&lt;a href=&quot;https://zerojudge.tw/ShowProblem?problemid=a012&quot;&gt;a012. 10055 - Hashmat the Brave Warrior&lt;/a&gt;&lt;/p&gt;</description>
+      
+      
+      
+      
+      <category domain="https://wmcs.dev/categories/solution/">題解</category>
+      
+      <category domain="https://wmcs.dev/categories/solution/ZeroJudge/">ZeroJudge</category>
+      
+      
+      <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
+      
+      <category domain="https://wmcs.dev/tags/EOF/">EOF</category>
+      
+      <category domain="https://wmcs.dev/tags/%E7%B5%95%E5%B0%8D%E5%80%BC/">絕對值</category>
+      
+      
+      <comments>https://wmcs.dev/solution/ZeroJudge/a012/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>題解｜ZeroJudge d068. 該減肥了！</title>
@@ -82,9 +109,9 @@
       <category domain="https://wmcs.dev/categories/solution/ZeroJudge/">ZeroJudge</category>
       
       
-      <category domain="https://wmcs.dev/tags/if/">if</category>
-      
       <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
+      
+      <category domain="https://wmcs.dev/tags/if/">if</category>
       
       <category domain="https://wmcs.dev/tags/%E9%99%A3%E5%88%97/">陣列</category>
       
@@ -109,11 +136,11 @@
       <category domain="https://wmcs.dev/categories/solution/ZeroJudge/">ZeroJudge</category>
       
       
-      <category domain="https://wmcs.dev/tags/if/">if</category>
-      
       <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
       
       <category domain="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/">數學</category>
+      
+      <category domain="https://wmcs.dev/tags/if/">if</category>
       
       
       <comments>https://wmcs.dev/solution/ZeroJudge/c004/#disqus_thread</comments>
@@ -136,11 +163,11 @@
       <category domain="https://wmcs.dev/categories/solution/ZeroJudge/">ZeroJudge</category>
       
       
-      <category domain="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/">字典</category>
-      
       <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
       
       <category domain="https://wmcs.dev/tags/EOF/">EOF</category>
+      
+      <category domain="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/">字典</category>
       
       <category domain="https://wmcs.dev/tags/%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/">例外處理</category>
       
@@ -165,11 +192,11 @@
       <category domain="https://wmcs.dev/categories/solution/ZeroJudge/">ZeroJudge</category>
       
       
-      <category domain="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/">字典</category>
+      <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
       
       <category domain="https://wmcs.dev/tags/if/">if</category>
       
-      <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
+      <category domain="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/">字典</category>
       
       
       <comments>https://wmcs.dev/solution/ZeroJudge/a135/#disqus_thread</comments>

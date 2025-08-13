@@ -6,7 +6,7 @@
   <link href="https://wmcs.dev/atom.xml" rel="self"/>
   
   <link href="https://wmcs.dev/"/>
-  <updated>2025-08-10T13:55:29.980Z</updated>
+  <updated>2025-08-13T15:53:30.764Z</updated>
   <id>https://wmcs.dev/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>題解｜ZeroJudge a012. 10055 - Hashmat the Brave Warrior</title>
+    <link href="https://wmcs.dev/solution/ZeroJudge/a012/"/>
+    <id>https://wmcs.dev/solution/ZeroJudge/a012/</id>
+    <published>2025-08-13T07:57:19.979Z</published>
+    <updated>2025-08-13T15:53:30.764Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;【題目】&lt;a href=&quot;https://zerojudge.tw/ShowProblem?problemid=a012&quot;&gt;a012. 10055 - Hashmat the Brave Warrior&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="題解" scheme="https://wmcs.dev/categories/solution/"/>
+    
+    <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
+    
+    
+    <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    
+    <category term="EOF" scheme="https://wmcs.dev/tags/EOF/"/>
+    
+    <category term="絕對值" scheme="https://wmcs.dev/tags/%E7%B5%95%E5%B0%8D%E5%80%BC/"/>
+    
+  </entry>
   
   <entry>
     <title>題解｜ZeroJudge d068. 該減肥了！</title>
@@ -77,9 +102,9 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
     <category term="陣列" scheme="https://wmcs.dev/tags/%E9%99%A3%E5%88%97/"/>
     
@@ -102,11 +127,11 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
     <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
   </entry>
   
@@ -127,11 +152,11 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
     <category term="EOF" scheme="https://wmcs.dev/tags/EOF/"/>
+    
+    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
     
     <category term="例外處理" scheme="https://wmcs.dev/tags/%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/"/>
     
@@ -154,11 +179,11 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
+    <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
     <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
-    <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
     
   </entry>
   
