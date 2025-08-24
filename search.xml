@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>題解｜ZeroJudge c002. 10696 - f91</title>
+    <url>/solution/ZeroJudge/c002/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c002">c002. 10696 - f91</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c002.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f91</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n-<span class="number">10</span></span><br><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f91(&quot;</span>,n,<span class="string">&quot;) = &quot;</span>,f91(n),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們根據題意，建立一個函數<code>f91</code>，而這個函數要做甚麼呢？<br>根據題意，如果輸入的數字&lt;&#x3D;100，那麼f91(n)的return值等於<code>f91(f91(n+11))</code>，所以我們可以寫出</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">    <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+<p>第二種case就是&gt;100的情況下，那我們就直接return<code>n-10</code><br>接下來我們就來處理函數以外的部分…</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br></pre></td></tr></table></figure>
+<p>這是因為題目有提到輸入&#x3D;0代表結束，所以只要輸入不等於0，我們就要一直做下去。<br>然後就是輸出，至於<code>print()</code>裡面的<code>sep</code>是甚麼意思，我們曾在<a href="/solution/ZeroJudge/a135/#print-%E8%A3%A1%E7%9A%84sep%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F">這裡</a>提及，在此不再贅述。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題主要是練習自訂函數。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>自訂函數</tag>
+        <tag>迴圈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>題解｜ZeroJudge a012. 10055 - Hashmat the Brave Warrior</title>
     <url>/solution/ZeroJudge/a012/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a012">a012. 10055 - Hashmat the Brave Warrior</a></p>
@@ -24,37 +47,50 @@
       </tags>
   </entry>
   <entry>
-    <title>題解｜ZeroJudge c004. 10812 - Beat the Spread!</title>
-    <url>/solution/ZeroJudge/c004/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c004">c004. 10812 - Beat the Spread!</a></p>
+    <title>題解｜ZeroJudge d068. 該減肥了！</title>
+    <url>/solution/ZeroJudge/d068/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d068">d068. 該減肥了！</a></p>
 <span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c004.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    <span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;impossible&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y=(a-b)//<span class="number">2</span></span><br><span class="line">        x=(a+b)//<span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">max</span>(x,y),<span class="built_in">min</span>(x,y))</span><br></pre></td></tr></table></figure>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
 
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>程式第3行的</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br></pre></td></tr></table></figure>
-<p>這段的意義在於把輸入的測資（例如【範例輸入#1】中的<code>40 20</code>）先用<code>split()</code>分開，再分別轉換成<code>int</code>型態，然後分別指派給a跟b。<br>之後，可以注意到，第4行的程式</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>是用來判斷</p>
-<ol>
-<li>a跟b的大小關係，因為輸入說明有提到輸入的數字s及d分別是分數的總和及差的絕對值，因此當<code>a&lt;b</code>就是不可能發生的case。</li>
-<li>a+b跟a-b是否可以被2整除，因為稍後我們會用到聯立方程式，倘若不能被2整除，代表分數是非整數，是不合法的case。</li>
-</ol>
-<p>接著，在else的部分可以看到</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">y=(a-b)//<span class="number">2</span></span><br><span class="line">x=(a+b)//<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>這就是在執行聯立方程式，因為</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">令兩隊分數分別為x及y</span><br><span class="line">x+y=s</span><br><span class="line">x-y=d</span><br><span class="line">解聯立，得</span><br><span class="line">   x+y+x-y=s+d</span><br><span class="line">⇒ 2x=s+d</span><br><span class="line">⇒ x=(s+d)//2</span><br><span class="line"></span><br><span class="line">   x+y-(x-y)=s-d</span><br><span class="line">⇒ 2y=s-d</span><br><span class="line">⇒ y=(s-d)//2</span><br></pre></td></tr></table></figure>
-<p>只不過，我的程式裡令s、d為a跟b。</p>
-<p>之後，再依照題目要求輸出2隊分數即可（注意分數較高者在前）</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題的意思其實就是，顧客入店時的體重是否&gt;50，是的話輸出就是<code>原體重-1</code>，否則輸出原體重<br>好，那在使用<code>if</code>的情況下，我們的程式也許會長得像這樣…</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">if</span> w&gt;<span class="number">50</span>:</span><br><span class="line">    <span class="built_in">print</span>(w-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(w)</span><br></pre></td></tr></table></figure>
+<p>但今天題目提示區有提到，不用<code>if</code>，我們能解出本題嗎？</p>
+<p>可以。</p>
+<p>我們來看一下本題題解</p>
+<figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
+<p>當我們寫出<code>w-(w&gt;50)</code>時，若<code>w&lt;=50</code>，那這是<code>False</code>，而在Python中，<code>False</code>換成<code>int</code>型態時是0</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+<p>輸出為<code>0</code></p>
+<p>反之，若w&gt;50，則為<code>True</code>，轉換為<code>int</code>時為1</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+<p>輸出為<code>1</code></p>
+<p>因此，我們可以利用此一性質，寫出本題<br>就安心寫下<code>print(w-(w&gt;50))</code>，Python會自動將<code>bool</code>轉為<code>int</code>。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題除複習比較運算子，也練習了Python中<code>True</code>、<code>False</code>轉換為整數<code>1</code>、<code>0</code>的特性，方便在運算中省略<code>if</code>。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
 ]]></content>
       <categories>
         <category>題解</category>
         <category>ZeroJudge</category>
       </categories>
       <tags>
-        <tag>迴圈</tag>
-        <tag>數學</tag>
         <tag>if</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge a001. 哈囉</title>
+    <url>/solution/ZeroJudge/a001/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a001">a001. 哈囉</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>a001.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,&quot;</span>,n)</span><br></pre></td></tr></table></figure>
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>題目要求我們輸出<code>hello, &lt;輸入的字串&gt;</code><br>所以我們依照題意，先宣告一個變數n用來接收輸入的字串，<br>然後我們再寫<code>print(&quot;hello,&quot;,n)</code>，<br>至於輸出結果的逗號跟變數之間的空格不用擔心，因為<code>print()</code>函數預設的<code>sep</code>是一個空格（延伸閱讀：<a href="/solution/ZeroJudge/a135/">題解｜ZeroJudge a135. 12250 - Language Detection</a>）</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>基本輸入輸出</tag>
       </tags>
   </entry>
   <entry>
@@ -98,59 +134,6 @@
       </tags>
   </entry>
   <entry>
-    <title>題解｜ZeroJudge c002. 10696 - f91</title>
-    <url>/solution/ZeroJudge/c002/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c002">c002. 10696 - f91</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c002.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f91</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n-<span class="number">10</span></span><br><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f91(&quot;</span>,n,<span class="string">&quot;) = &quot;</span>,f91(n),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們根據題意，建立一個函數<code>f91</code>，而這個函數要做甚麼呢？<br>根據題意，如果輸入的數字&lt;&#x3D;100，那麼f91(n)的return值等於<code>f91(f91(n+11))</code>，所以我們可以寫出</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">    <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
-<p>第二種case就是&gt;100的情況下，那我們就直接return<code>n-10</code><br>接下來我們就來處理函數以外的部分…</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br></pre></td></tr></table></figure>
-<p>這是因為題目有提到輸入&#x3D;0代表結束，所以只要輸入不等於0，我們就要一直做下去。<br>然後就是輸出，至於<code>print()</code>裡面的<code>sep</code>是甚麼意思，我們曾在<a href="/solution/ZeroJudge/a135/#print-%E8%A3%A1%E7%9A%84sep%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F">這裡</a>提及，在此不再贅述。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題主要是練習自訂函數。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>迴圈</tag>
-        <tag>自訂函數</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>題解｜ZeroJudge d068. 該減肥了！</title>
-    <url>/solution/ZeroJudge/d068/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d068">d068. 該減肥了！</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題的意思其實就是，顧客入店時的體重是否&gt;50，是的話輸出就是<code>原體重-1</code>，否則輸出原體重<br>好，那在使用<code>if</code>的情況下，我們的程式也許會長得像這樣…</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">if</span> w&gt;<span class="number">50</span>:</span><br><span class="line">    <span class="built_in">print</span>(w-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(w)</span><br></pre></td></tr></table></figure>
-<p>但今天題目提示區有提到，不用<code>if</code>，我們能解出本題嗎？</p>
-<p>可以。</p>
-<p>我們來看一下本題題解</p>
-<figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
-<p>當我們寫出<code>w-(w&gt;50)</code>時，若<code>w&lt;=50</code>，那這是<code>False</code>，而在Python中，<code>False</code>換成<code>int</code>型態時是0</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
-<p>輸出為<code>0</code></p>
-<p>反之，若w&gt;50，則為<code>True</code>，轉換為<code>int</code>時為1</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
-<p>輸出為<code>1</code></p>
-<p>因此，我們可以利用此一性質，寫出本題<br>就安心寫下<code>print(w-(w&gt;50))</code>，Python會自動將<code>bool</code>轉為<code>int</code>。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題除複習比較運算子，也練習了Python中<code>True</code>、<code>False</code>轉換為整數<code>1</code>、<code>0</code>的特性，方便在運算中省略<code>if</code>。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>if</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>題解｜ZeroJudge e578. 10222 - Decode the Mad man</title>
     <url>/solution/ZeroJudge/e578/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=e578">e578. 10222 - Decode the Mad man</a></p>
@@ -180,6 +163,40 @@
         <tag>EOF</tag>
         <tag>字典</tag>
         <tag>例外處理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge c004. 10812 - Beat the Spread!</title>
+    <url>/solution/ZeroJudge/c004/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c004">c004. 10812 - Beat the Spread!</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c004.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br><span class="line">    <span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;impossible&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        y=(a-b)//<span class="number">2</span></span><br><span class="line">        x=(a+b)//<span class="number">2</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">max</span>(x,y),<span class="built_in">min</span>(x,y))</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>程式第3行的</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">a,b=<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split())</span><br></pre></td></tr></table></figure>
+<p>這段的意義在於把輸入的測資（例如【範例輸入#1】中的<code>40 20</code>）先用<code>split()</code>分開，再分別轉換成<code>int</code>型態，然後分別指派給a跟b。<br>之後，可以注意到，第4行的程式</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> a&lt;b <span class="keyword">or</span> ((a+b)%<span class="number">2</span>!=<span class="number">0</span> <span class="keyword">or</span> (a-b)%<span class="number">2</span>!=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>是用來判斷</p>
+<ol>
+<li>a跟b的大小關係，因為輸入說明有提到輸入的數字s及d分別是分數的總和及差的絕對值，因此當<code>a&lt;b</code>就是不可能發生的case。</li>
+<li>a+b跟a-b是否可以被2整除，因為稍後我們會用到聯立方程式，倘若不能被2整除，代表分數是非整數，是不合法的case。</li>
+</ol>
+<p>接著，在else的部分可以看到</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">y=(a-b)//<span class="number">2</span></span><br><span class="line">x=(a+b)//<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>這就是在執行聯立方程式，因為</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">令兩隊分數分別為x及y</span><br><span class="line">x+y=s</span><br><span class="line">x-y=d</span><br><span class="line">解聯立，得</span><br><span class="line">   x+y+x-y=s+d</span><br><span class="line">⇒ 2x=s+d</span><br><span class="line">⇒ x=(s+d)//2</span><br><span class="line"></span><br><span class="line">   x+y-(x-y)=s-d</span><br><span class="line">⇒ 2y=s-d</span><br><span class="line">⇒ y=(s-d)//2</span><br></pre></td></tr></table></figure>
+<p>只不過，我的程式裡令s、d為a跟b。</p>
+<p>之後，再依照題目要求輸出2隊分數即可（注意分數較高者在前）</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>迴圈</tag>
+        <tag>if</tag>
+        <tag>數學</tag>
       </tags>
   </entry>
   <entry>
