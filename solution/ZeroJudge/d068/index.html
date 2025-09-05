@@ -206,21 +206,39 @@
   </div>
 <div class="sidebar-widget custom-search">
 <p>快速跳轉至特定解題頁面↓</p>
-  <div class="search-box" style="display:flex; margin-bottom:1em;">
-    <input type="text" id="problemId" placeholder="輸入題號、按ENTER" style="flex:1; padding:0.5em;"/>
+  <div style="margin-bottom: 0.5em;">
+    <input type="text" id="problemId" placeholder="輸入題號、按 ENTER" style="flex:1; padding:0.5em;">
   </div>
+  <small id="errorMsg" style="color:red; display:none;"></small>
 </div>
 
 <script>
   document.getElementById('problemId').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
       const id = this.value.trim().toLowerCase();
-      if (id) {
-        window.location.href = `/solution/ZeroJudge/${id}/`;
+      const errorMsg = document.getElementById('errorMsg');
+
+      // 1. 如果空白，提示錯誤
+      if (!id) {
+        errorMsg.textContent = '請輸入題號';
+        errorMsg.style.display = 'block';
+        return;
       }
+      // 2. 發送 HEAD 請求檢查頁面是否存在
+      fetch(`/solution/ZeroJudge/${id}/`, { method: 'HEAD' })
+        .then(res => {
+          if (res.ok) {
+            errorMsg.style.display = 'none';
+            window.location.href = `/solution/ZeroJudge/${id}/`;
+          } else {
+            errorMsg.textContent = '抱歉！棕熊還沒為此題編寫題解...';
+            errorMsg.style.display = 'block';
+          }
+        })
     }
   });
 </script>
+
         </div>
       </div>
     </div>

@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>題解｜ZeroJudge a001. 哈囉</title>
-    <url>/solution/ZeroJudge/a001/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a001">a001. 哈囉</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>a001.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,&quot;</span>,n)</span><br></pre></td></tr></table></figure>
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>題目要求我們輸出<code>hello, &lt;輸入的字串&gt;</code><br>所以我們依照題意，先宣告一個變數n用來接收輸入的字串，<br>然後我們再寫<code>print(&quot;hello,&quot;,n)</code>，<br>至於輸出結果的逗號跟變數之間的空格不用擔心，因為<code>print()</code>函數預設的<code>sep</code>是一個空格（延伸閱讀：<a href="/solution/ZeroJudge/a135/">題解｜ZeroJudge a135. 12250 - Language Detection</a>）</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>基本輸入輸出</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>題解｜ZeroJudge a012. 10055 - Hashmat the Brave Warrior</title>
     <url>/solution/ZeroJudge/a012/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a012">a012. 10055 - Hashmat the Brave Warrior</a></p>
@@ -38,6 +21,23 @@
         <tag>迴圈</tag>
         <tag>EOF</tag>
         <tag>絕對值</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge a001. 哈囉</title>
+    <url>/solution/ZeroJudge/a001/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a001">a001. 哈囉</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>a001.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">input</span>()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,&quot;</span>,n)</span><br></pre></td></tr></table></figure>
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>題目要求我們輸出<code>hello, &lt;輸入的字串&gt;</code><br>所以我們依照題意，先宣告一個變數n用來接收輸入的字串，<br>然後我們再寫<code>print(&quot;hello,&quot;,n)</code>，<br>至於輸出結果的逗號跟變數之間的空格不用擔心，因為<code>print()</code>函數預設的<code>sep</code>是一個空格（延伸閱讀：<a href="/solution/ZeroJudge/a135/">題解｜ZeroJudge a135. 12250 - Language Detection</a>）</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>基本輸入輸出</tag>
       </tags>
   </entry>
   <entry>
@@ -72,34 +72,6 @@
         <tag>迴圈</tag>
         <tag>數學</tag>
         <tag>if</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>題解｜ZeroJudge d051. 糟糕，我發燒了！</title>
-    <url>/solution/ZeroJudge/d051/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d051">d051. 糟糕，我發燒了！</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d051.py</span></figcaption><table><tr><td class="code"><pre><span class="line">f=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>本題簡單來說就是希望華氏溫標轉攝氏溫標。<br>提示：<strong><u>攝氏&#x3D;(華氏-32)*5&#x2F;9</u></strong><br>所以我們可以寫出公式：</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br></pre></td></tr></table></figure>
-<p>接著就是輸出格式的部分，<br>在看到題目說小數點以下三位，可能會很本能地想用<code>round()</code><br>但是！請注意，假如使用<code>round()</code>，可能導致輸出結果並非固定到小數點後3位。<br>例如</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">3.100000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(x, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-<p>輸出結果為</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3.1</span><br></pre></td></tr></table></figure>
-<p>我們必須保證輸出結果必為顯示到小數點後3位。<br>因此我們今天採用f-string的寫法</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><code>&#123;c:.3f&#125;</code>的意義是：對於變數c，我希望我的輸出是到小數點後第3位<br>假如今天題目要求是輸出到小數點後第2位，則改成<code>&#123;c:.2f&#125;</code>，依此類推…<br>這樣，即可保證輸出結果到小數點後第3位。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，今天練習了f-string跟浮點數的輸出。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>數學</tag>
-        <tag>f-string</tag>
-        <tag>小數點</tag>
       </tags>
   </entry>
   <entry>
@@ -250,6 +222,34 @@
       </categories>
       <tags>
         <tag>if</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge d051. 糟糕，我發燒了！</title>
+    <url>/solution/ZeroJudge/d051/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d051">d051. 糟糕，我發燒了！</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d051.py</span></figcaption><table><tr><td class="code"><pre><span class="line">f=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>本題簡單來說就是希望華氏溫標轉攝氏溫標。<br>提示：<strong><u>攝氏&#x3D;(華氏-32)*5&#x2F;9</u></strong><br>所以我們可以寫出公式：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p>接著就是輸出格式的部分，<br>在看到題目說小數點以下三位，可能會很本能地想用<code>round()</code><br>但是！請注意，假如使用<code>round()</code>，可能導致輸出結果並非固定到小數點後3位。<br>例如</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">3.100000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(x, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>輸出結果為</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3.1</span><br></pre></td></tr></table></figure>
+<p>我們必須保證輸出結果必為顯示到小數點後3位。<br>因此我們今天採用f-string的寫法</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>&#123;c:.3f&#125;</code>的意義是：對於變數c，我希望我的輸出是到小數點後第3位<br>假如今天題目要求是輸出到小數點後第2位，則改成<code>&#123;c:.2f&#125;</code>，依此類推…<br>這樣，即可保證輸出結果到小數點後第3位。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，今天練習了f-string跟浮點數的輸出。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>數學</tag>
+        <tag>f-string</tag>
+        <tag>小數點</tag>
       </tags>
   </entry>
   <entry>
