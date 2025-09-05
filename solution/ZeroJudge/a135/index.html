@@ -26,8 +26,8 @@
 <meta property="article:modified_time" content="2025-08-07T16:38:29.797Z">
 <meta property="article:author" content="棕熊">
 <meta property="article:tag" content="迴圈">
-<meta property="article:tag" content="字典">
 <meta property="article:tag" content="if">
+<meta property="article:tag" content="字典">
 <meta name="twitter:card" content="summary">
 
 
@@ -206,7 +206,23 @@
   <div class="cc-license animated" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
+<div class="sidebar-widget custom-search">
+<p>快速跳轉至特定解題頁面↓</p>
+  <div class="search-box" style="display:flex; margin-bottom:1em;">
+    <input type="text" id="problemId" placeholder="輸入題號、按ENTER" style="flex:1; padding:0.5em;"/>
+  </div>
+</div>
 
+<script>
+  document.getElementById('problemId').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      const id = this.value.trim();
+      if (id) {
+        window.location.href = `/solution/ZeroJudge/${id}/`;
+      }
+    }
+  });
+</script>
         </div>
       </div>
     </div>
@@ -369,8 +385,8 @@
 
           <div class="post-tags">
               <a href="/tags/%E8%BF%B4%E5%9C%88/" rel="tag"># 迴圈</a>
-              <a href="/tags/%E5%AD%97%E5%85%B8/" rel="tag"># 字典</a>
               <a href="/tags/if/" rel="tag"># if</a>
+              <a href="/tags/%E5%AD%97%E5%85%B8/" rel="tag"># 字典</a>
           </div>
 
         

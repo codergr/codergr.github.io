@@ -221,7 +221,23 @@
   <div class="cc-license animated" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
+<div class="sidebar-widget custom-search">
+<p>快速跳轉至特定解題頁面↓</p>
+  <div class="search-box" style="display:flex; margin-bottom:1em;">
+    <input type="text" id="problemId" placeholder="輸入題號、按ENTER" style="flex:1; padding:0.5em;"/>
+  </div>
+</div>
 
+<script>
+  document.getElementById('problemId').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      const id = this.value.trim();
+      if (id) {
+        window.location.href = `/solution/ZeroJudge/${id}/`;
+      }
+    }
+  });
+</script>
         </div>
       </div>
     </div>
