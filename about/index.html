@@ -235,7 +235,7 @@
 <script>
   document.getElementById('problemId').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
-      const id = this.value.trim();
+      const id = this.value.trim().toLowerCase();
       if (id) {
         window.location.href = `/solution/ZeroJudge/${id}/`;
       }
