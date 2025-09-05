@@ -33,9 +33,9 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
-    
     <category term="f-string" scheme="https://wmcs.dev/tags/f-string/"/>
+    
+    <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
     
     <category term="小數點" scheme="https://wmcs.dev/tags/%E5%B0%8F%E6%95%B8%E9%BB%9E/"/>
     
@@ -200,9 +200,9 @@
     
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
-    <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
-    
     <category term="if" scheme="https://wmcs.dev/tags/if/"/>
+    
+    <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
     
   </entry>
   
@@ -252,9 +252,9 @@
     
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
   </entry>
   

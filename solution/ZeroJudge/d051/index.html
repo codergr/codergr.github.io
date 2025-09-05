@@ -25,8 +25,8 @@
 <meta property="article:published_time" content="2025-09-04T14:16:39.294Z">
 <meta property="article:modified_time" content="2025-09-04T15:31:18.567Z">
 <meta property="article:author" content="棕熊">
-<meta property="article:tag" content="數學">
 <meta property="article:tag" content="f-string">
+<meta property="article:tag" content="數學">
 <meta property="article:tag" content="小數點">
 <meta name="twitter:card" content="summary">
 
@@ -206,40 +206,6 @@
   <div class="cc-license animated" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
   </div>
-<div class="sidebar-widget custom-search">
-<p>快速跳轉至特定解題頁面↓</p>
-  <div style="margin-bottom: 0.5em;">
-    <input type="text" id="problemId" placeholder="輸入題號、按 ENTER" style="flex:1; padding:0.5em;">
-  </div>
-  <small id="errorMsg" style="color:red; display:none;"></small>
-</div>
-
-<script>
-  document.getElementById('problemId').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-      const id = this.value.trim().toLowerCase();
-      const errorMsg = document.getElementById('errorMsg');
-
-      // 1. 如果空白，提示錯誤
-      if (!id) {
-        errorMsg.textContent = '請輸入題號';
-        errorMsg.style.display = 'block';
-        return;
-      }
-      // 2. 發送 HEAD 請求檢查頁面是否存在
-      fetch(`/solution/ZeroJudge/${id}/`, { method: 'HEAD' })
-        .then(res => {
-          if (res.ok) {
-            errorMsg.style.display = 'none';
-            window.location.href = `/solution/ZeroJudge/${id}/`;
-          } else {
-            errorMsg.textContent = '抱歉！棕熊還沒為此題編寫題解...';
-            errorMsg.style.display = 'block';
-          }
-        })
-    }
-  });
-</script>
 
         </div>
       </div>
@@ -384,8 +350,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%95%B8%E5%AD%B8/" rel="tag"># 數學</a>
               <a href="/tags/f-string/" rel="tag"># f-string</a>
+              <a href="/tags/%E6%95%B8%E5%AD%B8/" rel="tag"># 數學</a>
               <a href="/tags/%E5%B0%8F%E6%95%B8%E9%BB%9E/" rel="tag"># 小數點</a>
           </div>
 
