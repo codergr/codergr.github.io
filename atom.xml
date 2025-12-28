@@ -6,7 +6,7 @@
   <link href="https://wmcs.dev/atom.xml" rel="self"/>
   
   <link href="https://wmcs.dev/"/>
-  <updated>2025-09-04T15:31:18.567Z</updated>
+  <updated>2025-12-28T12:45:53.658Z</updated>
   <id>https://wmcs.dev/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C語言簡介：基本輸入輸出</title>
+    <link href="https://wmcs.dev/c-intro/c-intro-io/"/>
+    <id>https://wmcs.dev/c-intro/c-intro-io/</id>
+    <published>2025-12-01T13:18:18.564Z</published>
+    <updated>2025-12-28T12:45:53.658Z</updated>
+    
+    
+    <summary type="html">本篇主題：基本輸入輸出</summary>
+    
+    
+    
+    <category term="C語言簡介" scheme="https://wmcs.dev/categories/c-intro/"/>
+    
+    
+    <category term="基本輸入輸出" scheme="https://wmcs.dev/tags/%E5%9F%BA%E6%9C%AC%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>題解｜ZeroJudge d051. 糟糕，我發燒了！</title>
@@ -33,9 +52,9 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="f-string" scheme="https://wmcs.dev/tags/f-string/"/>
-    
     <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
+    
+    <category term="f-string" scheme="https://wmcs.dev/tags/f-string/"/>
     
     <category term="小數點" scheme="https://wmcs.dev/tags/%E5%B0%8F%E6%95%B8%E9%BB%9E/"/>
     

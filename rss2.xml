@@ -15,8 +15,29 @@
     <atom:link href="https://wmcs.dev/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我要成為工程師！</description>
-    <pubDate>Thu, 04 Sep 2025 15:31:18 GMT</pubDate>
+    <pubDate>Sun, 28 Dec 2025 12:45:53 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>C語言簡介：基本輸入輸出</title>
+      <link>https://wmcs.dev/c-intro/c-intro-io/</link>
+      <guid>https://wmcs.dev/c-intro/c-intro-io/</guid>
+      <pubDate>Mon, 01 Dec 2025 13:18:18 GMT</pubDate>
+      
+      <description>本篇主題：基本輸入輸出</description>
+      
+      
+      
+      
+      <category domain="https://wmcs.dev/categories/c-intro/">C語言簡介</category>
+      
+      
+      <category domain="https://wmcs.dev/tags/%E5%9F%BA%E6%9C%AC%E8%BC%B8%E5%85%A5%E8%BC%B8%E5%87%BA/">基本輸入輸出</category>
+      
+      
+      <comments>https://wmcs.dev/c-intro/c-intro-io/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>題解｜ZeroJudge d051. 糟糕，我發燒了！</title>
@@ -34,9 +55,9 @@
       <category domain="https://wmcs.dev/categories/solution/ZeroJudge/">ZeroJudge</category>
       
       
-      <category domain="https://wmcs.dev/tags/f-string/">f-string</category>
-      
       <category domain="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/">數學</category>
+      
+      <category domain="https://wmcs.dev/tags/f-string/">f-string</category>
       
       <category domain="https://wmcs.dev/tags/%E5%B0%8F%E6%95%B8%E9%BB%9E/">小數點</category>
       
