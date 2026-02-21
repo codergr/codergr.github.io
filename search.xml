@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>題解｜ZeroJudge a012. 10055 - Hashmat the Brave Warrior</title>
-    <url>/solution/ZeroJudge/a012/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a012">a012. 10055 - Hashmat the Brave Warrior</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>a012.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a,b = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">abs</span>(a-b))</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題要我們列出雙方士兵的數目差，首先我們先以<code>map(int, input().split())</code>的方式來接收變數（延伸閱讀：<a href="/solution/ZeroJudge/c004/">題解｜ZeroJudge c004. 10812 - Beat the Spread!</a>），並分別指派給變數a及b。<br>接下來我們要計算差值<code>a-b</code>，請注意，因為我們沒辦法限制題目在輸入時先輸入較大的數字，因此可能發生a&lt;b的情況，這個時候a-b會變成負數<br>因此，我們會需要加上<strong>絕對值</strong>來確保求出的答案都是正數<br>所以，我們將<code>a-b</code>放入函數<code>abs()</code>中，變成<code>abs(a-b)</code>，這樣求出來的結果就是a-b的絕對值了。</p>
-<p>接著，由於我們不知道一組測資有多少筆資料，因此我們讓程式一直執行，直到EOF，所以我們加上這個結構</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>（延伸閱讀：<a href="/solution/ZeroJudge/e578/">題解｜ZeroJudge e578. 10222 - Decode the Mad man</a>）<br>這樣，就可以讓<code>try</code>裡面的程式重複執行直至<code>EOFError</code>。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>迴圈</tag>
-        <tag>EOF</tag>
-        <tag>絕對值</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>題解｜ZeroJudge a001. 哈囉</title>
     <url>/solution/ZeroJudge/a001/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a001">a001. 哈囉</a></p>
@@ -38,62 +15,6 @@
       </categories>
       <tags>
         <tag>基本輸入輸出</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C語言簡介：條件判斷</title>
-    <url>/c-intro/c-intro-conditional/</url>
-    <content><![CDATA[<div class="note info"><p>本教學面向新手，故教學內容多為基礎知識，倘若您希望學習進階內容，本文並不符合您的需求。</p>
-</div>
-<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第二篇文章，前一篇文章為<a href="/c-intro/c-intro-io/">C語言簡介：基本輸入輸出</a>。</p>
-</div>
-
-<h2 id="如果…（if）"><a href="#如果…（if）" class="headerlink" title="如果…（if）"></a>如果…（if）</h2><p>我們生活中很多時候會依照不同情況做不同的決定，例如我們說</p>
-<blockquote>
-<p>如果明天早上下雨了，我就帶雨傘出門。</p>
-</blockquote>
-<p>這裡我們可以看到，「下雨」是我們的「條件」，而有沒有帶雨傘則是條件滿足或不滿足所帶來的結果。</p>
-<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p>那我們要怎麼使用「如果…」的<strong>條件判斷</strong>呢？<br>我們可以使用 <code>if</code> 來實作，語法如下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>當條件為 <code>true</code>，或是說「成立」時，<code>if</code> 裡面的程式，也就是我們上面寫的 <code>&lt;若滿足條件要執行的程式&gt;</code> 才會執行。</p>
-<blockquote>
-<p>註：在 C 語言中，條件判斷其實是看「運算結果是否為 0」：0 代表 <code>false</code>，非 0 代表 <code>true</code>。如果想在程式碼裡直接寫 <code>true</code> 或 <code>false</code>，則需要引入 <code>stdbool.h</code>。</p>
-</blockquote>
-<h2 id="如果…不然的話就…-if-else"><a href="#如果…不然的話就…-if-else" class="headerlink" title="如果…不然的話就… (if - else)"></a>如果…不然的話就… (if - else)</h2><p>延續剛剛的例子，如果我們說</p>
-<blockquote>
-<p>如果明天早上下雨了，我就帶雨傘出門；不然的話我就戴墨鏡出門。</p>
-</blockquote>
-<p>這樣要如何表示呢？<br>我們可以用 <code>else</code> 來表示類似「<strong>不然的話</strong>」，或者是說「<strong>否則</strong>」的概念。<br>語法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以我們可以根據上面的文意寫出一段pseudo-code</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (明天早上下雨) &#123;</span><br><span class="line">  帶雨傘出門;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  戴墨鏡出門;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，當使用者輸入偶數時，印出 <code>even number</code>，否則印出 <code>odd number</code>。</p>
-<h4 id="範例輸入1"><a href="#範例輸入1" class="headerlink" title="範例輸入1"></a>範例輸入1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
-<h4 id="範例輸出1"><a href="#範例輸出1" class="headerlink" title="範例輸出1"></a>範例輸出1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">odd number</span><br></pre></td></tr></table></figure>
-<h4 id="範例輸入2"><a href="#範例輸入2" class="headerlink" title="範例輸入2"></a>範例輸入2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
-<h4 id="範例輸出2"><a href="#範例輸出2" class="headerlink" title="範例輸出2"></a>範例輸出2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">even number</span><br></pre></td></tr></table></figure>
-
-<h2 id="如果…不然的話如果…不然的話…-if-else-if-else"><a href="#如果…不然的話如果…不然的話…-if-else-if-else" class="headerlink" title="如果…不然的話如果…不然的話… (if - else if - else)"></a>如果…不然的話如果…不然的話… (if - else if - else)</h2><p>假設今天我們說</p>
-<blockquote>
-<p>如果便當一份100元(含)以下我就吃便當，不然的話要是早餐店A套餐一份100元(含)以下我就吃早餐店A套餐，如果以上條件都沒辦法滿足，那我就去早餐店吃「豬排漢堡 + 薯條 + 紅茶」。</p>
-</blockquote>
-<p>我們可以怎麼用pseudo-code表示？<br>先來說語法，<code>if - else if - else</code> 的語法長這樣</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以pseudo-code應該長得像是這樣</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (便當價格 &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">  吃便當;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (早餐店A套餐價格 &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">  吃早餐店A套餐;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  去早餐店吃「豬排漢堡 + 薯條 + 紅茶」;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，若使用者輸入之數大於 <code>100</code>，則輸出 <code>bigger than 100</code>，否則若使用者輸入之數大於等於 <code>50</code>，則輸出 <code>bigger than or equal to 50</code>，否則輸出<code>smaller than 50</code></p>
-<h4 id="參考解答"><a href="#參考解答" class="headerlink" title="參考解答"></a>參考解答</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than 100&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= <span class="number">50</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than or equal to 50&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;smaller than 50&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="What-if…"><a href="#What-if…" class="headerlink" title="What if…"></a>What if…</h4><p>如果將條件順序顛倒，意即先判斷使用者輸入之數是否大於等於 <code>50</code>，再判斷使用者輸入之數是否大於 <code>100</code>，輸出會有所不同嗎？</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言條件判斷簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>C語言簡介</category>
-      </categories>
-      <tags>
-        <tag>條件判斷</tag>
-        <tag>if</tag>
       </tags>
   </entry>
   <entry>
@@ -251,23 +172,23 @@
         <category>ZeroJudge</category>
       </categories>
       <tags>
-        <tag>迴圈</tag>
-        <tag>if</tag>
         <tag>字典</tag>
+        <tag>if</tag>
+        <tag>迴圈</tag>
       </tags>
   </entry>
   <entry>
-    <title>題解｜ZeroJudge d046. 文文採西瓜</title>
-    <url>/solution/ZeroJudge/d046/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d046">d046. 文文採西瓜</a></p>
+    <title>題解｜ZeroJudge a012. 10055 - Hashmat the Brave Warrior</title>
+    <url>/solution/ZeroJudge/a012/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=a012">a012. 10055 - Hashmat the Brave Warrior</a></p>
 <span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><div class="tabs" id="s"><ul class="nav-tabs"><li class="tab active"><a href="#s-1">Python解法</a></li><li class="tab"><a href="#s-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="s-1"><figure class="highlight py"><figcaption><span>d046.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">melons=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">count=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> melons:</span><br><span class="line">    <span class="keyword">if</span> m&lt;=<span class="number">10</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="s-2"><figure class="highlight cpp"><figcaption><span>d046.cpp</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n,y=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="type">int</span> w[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		cin&gt;&gt;w[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(w[i]&lt;=<span class="number">10</span>) &#123;</span><br><span class="line">			y+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;y;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>a012.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        a,b = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">abs</span>(a-b))</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題說穿了，就是要你找出陣列中&lt;&#x3D;10的數值的數量，所以該怎麼做呢？</p>
-<div class="tabs" id="t"><ul class="nav-tabs"><li class="tab active"><a href="#t-1">Python解法</a></li><li class="tab"><a href="#t-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="t-1"><p>首先我們令一個變數n來接第一行輸入，也就是要採收的西瓜的數量<br>再來，我們令一個list，名叫<code>melons</code>，負責用來記錄西瓜重量，至於<code>map</code>，我們曾在<a href="/solution/ZeroJudge/c004/#%E8%A7%A3%E8%AA%AA">這篇</a>提及，這裡我們再來看一下他在這裡的應用：<br>這裡，他是把一大串的輸入（如<code>1 3 5 7 9 11</code>）一個一個分開、遇到空格就把他們分開…<code>split()</code><br>然後，把分開後的，一個個轉為int型態…<code>map(int,input().split())</code><br>再然後，把他們變成一個list…<code>list()</code><br>接著，我們就可以找&lt;&#x3D;10的數啦！<br>我們用for迴圈遍歷陣列，遇到&lt;&#x3D;10的數字，就把用來記錄數量的變數<code>count</code>+1<br>最後，再輸出<code>count</code>即為所求！</p></div><div class="tab-pane" id="t-2"><p>首先，我們令一個變數n，用來接收第一行輸入，也就是要採收的西瓜的數量<br>然後，我們再宣告一個長度為100的array（這裡選100是因為輸入說明有提到西瓜數量不大於100）<br>用for迴圈，將數值一個一個輸入到陣列中<br>接著，就是要找出&lt;&#x3D;10的數值的數量！<br>用for迴圈遍歷陣列，當遇到&lt;&#x3D;10的數字，用來計數的變數<code>y</code>就+1<br>最後，再輸出<code>y</code>即為所求！</p></div></div></div>
-
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>今天這題主要利用迴圈、if來解題！<br>以上就是今天的題解，倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題要我們列出雙方士兵的數目差，首先我們先以<code>map(int, input().split())</code>的方式來接收變數（延伸閱讀：<a href="/solution/ZeroJudge/c004/">題解｜ZeroJudge c004. 10812 - Beat the Spread!</a>），並分別指派給變數a及b。<br>接下來我們要計算差值<code>a-b</code>，請注意，因為我們沒辦法限制題目在輸入時先輸入較大的數字，因此可能發生a&lt;b的情況，這個時候a-b會變成負數<br>因此，我們會需要加上<strong>絕對值</strong>來確保求出的答案都是正數<br>所以，我們將<code>a-b</code>放入函數<code>abs()</code>中，變成<code>abs(a-b)</code>，這樣求出來的結果就是a-b的絕對值了。</p>
+<p>接著，由於我們不知道一組測資有多少筆資料，因此我們讓程式一直執行，直到EOF，所以我們加上這個結構</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>（延伸閱讀：<a href="/solution/ZeroJudge/e578/">題解｜ZeroJudge e578. 10222 - Decode the Mad man</a>）<br>這樣，就可以讓<code>try</code>裡面的程式重複執行直至<code>EOFError</code>。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
 ]]></content>
       <categories>
         <category>題解</category>
@@ -275,38 +196,8 @@
       </categories>
       <tags>
         <tag>迴圈</tag>
-        <tag>if</tag>
-        <tag>陣列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>題解｜ZeroJudge d068. 該減肥了！</title>
-    <url>/solution/ZeroJudge/d068/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d068">d068. 該減肥了！</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題的意思其實就是，顧客入店時的體重是否&gt;50，是的話輸出就是<code>原體重-1</code>，否則輸出原體重<br>好，那在使用<code>if</code>的情況下，我們的程式也許會長得像這樣…</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">if</span> w&gt;<span class="number">50</span>:</span><br><span class="line">    <span class="built_in">print</span>(w-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(w)</span><br></pre></td></tr></table></figure>
-<p>但今天題目提示區有提到，不用<code>if</code>，我們能解出本題嗎？</p>
-<p>可以。</p>
-<p>我們來看一下本題題解</p>
-<figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
-<p>當我們寫出<code>w-(w&gt;50)</code>時，若<code>w&lt;=50</code>，那這是<code>False</code>，而在Python中，<code>False</code>換成<code>int</code>型態時是0</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
-<p>輸出為<code>0</code></p>
-<p>反之，若w&gt;50，則為<code>True</code>，轉換為<code>int</code>時為1</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
-<p>輸出為<code>1</code></p>
-<p>因此，我們可以利用此一性質，寫出本題<br>就安心寫下<code>print(w-(w&gt;50))</code>，Python會自動將<code>bool</code>轉為<code>int</code>。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題除複習比較運算子，也練習了Python中<code>True</code>、<code>False</code>轉換為整數<code>1</code>、<code>0</code>的特性，方便在運算中省略<code>if</code>。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>if</tag>
+        <tag>EOF</tag>
+        <tag>絕對值</tag>
       </tags>
   </entry>
   <entry>
@@ -338,9 +229,111 @@
         <category>ZeroJudge</category>
       </categories>
       <tags>
-        <tag>迴圈</tag>
         <tag>if</tag>
+        <tag>迴圈</tag>
         <tag>數學</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C語言簡介：條件判斷</title>
+    <url>/c-intro/c-intro-conditional/</url>
+    <content><![CDATA[<div class="note info"><p>本教學面向新手，故教學內容多為基礎知識，倘若您希望學習進階內容，本文並不符合您的需求。</p>
+</div>
+<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第二篇文章，前一篇文章為<a href="/c-intro/c-intro-io/">C語言簡介：基本輸入輸出</a>。</p>
+</div>
+
+<h2 id="如果…（if）"><a href="#如果…（if）" class="headerlink" title="如果…（if）"></a>如果…（if）</h2><p>我們生活中很多時候會依照不同情況做不同的決定，例如我們說</p>
+<blockquote>
+<p>如果明天早上下雨了，我就帶雨傘出門。</p>
+</blockquote>
+<p>這裡我們可以看到，「下雨」是我們的「條件」，而有沒有帶雨傘則是條件滿足或不滿足所帶來的結果。</p>
+<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p>那我們要怎麼使用「如果…」的<strong>條件判斷</strong>呢？<br>我們可以使用 <code>if</code> 來實作，語法如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>當條件為 <code>true</code>，或是說「成立」時，<code>if</code> 裡面的程式，也就是我們上面寫的 <code>&lt;若滿足條件要執行的程式&gt;</code> 才會執行。</p>
+<blockquote>
+<p>註：在 C 語言中，條件判斷其實是看「運算結果是否為 0」：0 代表 <code>false</code>，非 0 代表 <code>true</code>。如果想在程式碼裡直接寫 <code>true</code> 或 <code>false</code>，則需要引入 <code>stdbool.h</code>。</p>
+</blockquote>
+<h2 id="如果…不然的話就…-if-else"><a href="#如果…不然的話就…-if-else" class="headerlink" title="如果…不然的話就… (if - else)"></a>如果…不然的話就… (if - else)</h2><p>延續剛剛的例子，如果我們說</p>
+<blockquote>
+<p>如果明天早上下雨了，我就帶雨傘出門；不然的話我就戴墨鏡出門。</p>
+</blockquote>
+<p>這樣要如何表示呢？<br>我們可以用 <code>else</code> 來表示類似「<strong>不然的話</strong>」，或者是說「<strong>否則</strong>」的概念。<br>語法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以我們可以根據上面的文意寫出一段pseudo-code</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (明天早上下雨) &#123;</span><br><span class="line">  帶雨傘出門;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  戴墨鏡出門;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，當使用者輸入偶數時，印出 <code>even number</code>，否則印出 <code>odd number</code>。</p>
+<h4 id="範例輸入1"><a href="#範例輸入1" class="headerlink" title="範例輸入1"></a>範例輸入1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸出1"><a href="#範例輸出1" class="headerlink" title="範例輸出1"></a>範例輸出1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">odd number</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸入2"><a href="#範例輸入2" class="headerlink" title="範例輸入2"></a>範例輸入2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸出2"><a href="#範例輸出2" class="headerlink" title="範例輸出2"></a>範例輸出2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">even number</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果…不然的話如果…不然的話…-if-else-if-else"><a href="#如果…不然的話如果…不然的話…-if-else-if-else" class="headerlink" title="如果…不然的話如果…不然的話… (if - else if - else)"></a>如果…不然的話如果…不然的話… (if - else if - else)</h2><p>假設今天我們說</p>
+<blockquote>
+<p>如果便當一份100元(含)以下我就吃便當，不然的話要是早餐店A套餐一份100元(含)以下我就吃早餐店A套餐，如果以上條件都沒辦法滿足，那我就去早餐店吃「豬排漢堡 + 薯條 + 紅茶」。</p>
+</blockquote>
+<p>我們可以怎麼用pseudo-code表示？<br>先來說語法，<code>if - else if - else</code> 的語法長這樣</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以pseudo-code應該長得像是這樣</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (便當價格 &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">  吃便當;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (早餐店A套餐價格 &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">  吃早餐店A套餐;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  去早餐店吃「豬排漢堡 + 薯條 + 紅茶」;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，若使用者輸入之數大於 <code>100</code>，則輸出 <code>bigger than 100</code>，否則若使用者輸入之數大於等於 <code>50</code>，則輸出 <code>bigger than or equal to 50</code>，否則輸出<code>smaller than 50</code></p>
+<h4 id="參考解答"><a href="#參考解答" class="headerlink" title="參考解答"></a>參考解答</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than 100&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= <span class="number">50</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than or equal to 50&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;smaller than 50&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="What-if…"><a href="#What-if…" class="headerlink" title="What if…"></a>What if…</h4><p>如果將條件順序顛倒，意即先判斷使用者輸入之數是否大於等於 <code>50</code>，再判斷使用者輸入之數是否大於 <code>100</code>，輸出會有所不同嗎？</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言條件判斷簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>C語言簡介</category>
+      </categories>
+      <tags>
+        <tag>if</tag>
+        <tag>條件判斷</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge d046. 文文採西瓜</title>
+    <url>/solution/ZeroJudge/d046/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d046">d046. 文文採西瓜</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><div class="tabs" id="s"><ul class="nav-tabs"><li class="tab active"><a href="#s-1">Python解法</a></li><li class="tab"><a href="#s-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="s-1"><figure class="highlight py"><figcaption><span>d046.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">melons=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">count=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> melons:</span><br><span class="line">    <span class="keyword">if</span> m&lt;=<span class="number">10</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="s-2"><figure class="highlight cpp"><figcaption><span>d046.cpp</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n,y=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="type">int</span> w[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		cin&gt;&gt;w[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(w[i]&lt;=<span class="number">10</span>) &#123;</span><br><span class="line">			y+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;y;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題說穿了，就是要你找出陣列中&lt;&#x3D;10的數值的數量，所以該怎麼做呢？</p>
+<div class="tabs" id="t"><ul class="nav-tabs"><li class="tab active"><a href="#t-1">Python解法</a></li><li class="tab"><a href="#t-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="t-1"><p>首先我們令一個變數n來接第一行輸入，也就是要採收的西瓜的數量<br>再來，我們令一個list，名叫<code>melons</code>，負責用來記錄西瓜重量，至於<code>map</code>，我們曾在<a href="/solution/ZeroJudge/c004/#%E8%A7%A3%E8%AA%AA">這篇</a>提及，這裡我們再來看一下他在這裡的應用：<br>這裡，他是把一大串的輸入（如<code>1 3 5 7 9 11</code>）一個一個分開、遇到空格就把他們分開…<code>split()</code><br>然後，把分開後的，一個個轉為int型態…<code>map(int,input().split())</code><br>再然後，把他們變成一個list…<code>list()</code><br>接著，我們就可以找&lt;&#x3D;10的數啦！<br>我們用for迴圈遍歷陣列，遇到&lt;&#x3D;10的數字，就把用來記錄數量的變數<code>count</code>+1<br>最後，再輸出<code>count</code>即為所求！</p></div><div class="tab-pane" id="t-2"><p>首先，我們令一個變數n，用來接收第一行輸入，也就是要採收的西瓜的數量<br>然後，我們再宣告一個長度為100的array（這裡選100是因為輸入說明有提到西瓜數量不大於100）<br>用for迴圈，將數值一個一個輸入到陣列中<br>接著，就是要找出&lt;&#x3D;10的數值的數量！<br>用for迴圈遍歷陣列，當遇到&lt;&#x3D;10的數字，用來計數的變數<code>y</code>就+1<br>最後，再輸出<code>y</code>即為所求！</p></div></div></div>
+
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>今天這題主要利用迴圈、if來解題！<br>以上就是今天的題解，倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>if</tag>
+        <tag>迴圈</tag>
+        <tag>陣列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge c002. 10696 - f91</title>
+    <url>/solution/ZeroJudge/c002/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c002">c002. 10696 - f91</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c002.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f91</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n-<span class="number">10</span></span><br><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f91(&quot;</span>,n,<span class="string">&quot;) = &quot;</span>,f91(n),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們根據題意，建立一個函數<code>f91</code>，而這個函數要做甚麼呢？<br>根據題意，如果輸入的數字&lt;&#x3D;100，那麼f91(n)的return值等於<code>f91(f91(n+11))</code>，所以我們可以寫出</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">    <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+<p>第二種case就是&gt;100的情況下，那我們就直接return<code>n-10</code><br>接下來我們就來處理函數以外的部分…</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br></pre></td></tr></table></figure>
+<p>這是因為題目有提到輸入&#x3D;0代表結束，所以只要輸入不等於0，我們就要一直做下去。<br>然後就是輸出，至於<code>print()</code>裡面的<code>sep</code>是甚麼意思，我們曾在<a href="/solution/ZeroJudge/a135/#print-%E8%A3%A1%E7%9A%84sep%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F">這裡</a>提及，在此不再贅述。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題主要是練習自訂函數。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>迴圈</tag>
+        <tag>自訂函數</tag>
       </tags>
   </entry>
   <entry>
@@ -400,8 +393,38 @@
         <category>ZeroJudge</category>
       </categories>
       <tags>
+        <tag>if</tag>
         <tag>迴圈</tag>
         <tag>絕對值</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge d068. 該減肥了！</title>
+    <url>/solution/ZeroJudge/d068/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d068">d068. 該減肥了！</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題的意思其實就是，顧客入店時的體重是否&gt;50，是的話輸出就是<code>原體重-1</code>，否則輸出原體重<br>好，那在使用<code>if</code>的情況下，我們的程式也許會長得像這樣…</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">if</span> w&gt;<span class="number">50</span>:</span><br><span class="line">    <span class="built_in">print</span>(w-<span class="number">1</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(w)</span><br></pre></td></tr></table></figure>
+<p>但今天題目提示區有提到，不用<code>if</code>，我們能解出本題嗎？</p>
+<p>可以。</p>
+<p>我們來看一下本題題解</p>
+<figure class="highlight py"><figcaption><span>d068.py</span></figcaption><table><tr><td class="code"><pre><span class="line">w=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">print</span>(w-(w&gt;<span class="number">50</span>))</span><br></pre></td></tr></table></figure>
+<p>當我們寫出<code>w-(w&gt;50)</code>時，若<code>w&lt;=50</code>，那這是<code>False</code>，而在Python中，<code>False</code>換成<code>int</code>型態時是0</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+<p>輸出為<code>0</code></p>
+<p>反之，若w&gt;50，則為<code>True</code>，轉換為<code>int</code>時為1</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+<p>輸出為<code>1</code></p>
+<p>因此，我們可以利用此一性質，寫出本題<br>就安心寫下<code>print(w-(w&gt;50))</code>，Python會自動將<code>bool</code>轉為<code>int</code>。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題除複習比較運算子，也練習了Python中<code>True</code>、<code>False</code>轉換為整數<code>1</code>、<code>0</code>的特性，方便在運算中省略<code>if</code>。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
         <tag>if</tag>
       </tags>
   </entry>
@@ -431,33 +454,10 @@
         <category>ZeroJudge</category>
       </categories>
       <tags>
+        <tag>字典</tag>
         <tag>迴圈</tag>
         <tag>EOF</tag>
-        <tag>字典</tag>
         <tag>例外處理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>題解｜ZeroJudge c002. 10696 - f91</title>
-    <url>/solution/ZeroJudge/c002/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c002">c002. 10696 - f91</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>c002.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f91</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> n-<span class="number">10</span></span><br><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;f91(&quot;</span>,n,<span class="string">&quot;) = &quot;</span>,f91(n),sep=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們根據題意，建立一個函數<code>f91</code>，而這個函數要做甚麼呢？<br>根據題意，如果輸入的數字&lt;&#x3D;100，那麼f91(n)的return值等於<code>f91(f91(n+11))</code>，所以我們可以寫出</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> n&lt;=<span class="number">100</span>:</span><br><span class="line">    <span class="keyword">return</span> f91(f91(n+<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
-<p>第二種case就是&gt;100的情況下，那我們就直接return<code>n-10</code><br>接下來我們就來處理函數以外的部分…</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(n!=<span class="number">0</span>):</span><br></pre></td></tr></table></figure>
-<p>這是因為題目有提到輸入&#x3D;0代表結束，所以只要輸入不等於0，我們就要一直做下去。<br>然後就是輸出，至於<code>print()</code>裡面的<code>sep</code>是甚麼意思，我們曾在<a href="/solution/ZeroJudge/a135/#print-%E8%A3%A1%E7%9A%84sep%E6%98%AF%E7%94%9A%E9%BA%BC%EF%BC%9F">這裡</a>提及，在此不再贅述。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，本題主要是練習自訂函數。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>迴圈</tag>
-        <tag>自訂函數</tag>
       </tags>
   </entry>
 </search>
