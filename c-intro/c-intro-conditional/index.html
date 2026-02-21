@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wmcs.dev","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/seti-ui","dark":"base16/seti-ui"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本篇主題：條件判斷">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C語言簡介：條件判斷">
+<meta property="og:url" content="https://wmcs.dev/c-intro/c-intro-conditional/index.html">
+<meta property="og:site_name" content="大學生想當工程師">
+<meta property="og:description" content="本篇主題：條件判斷">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-02-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-21T15:33:26.182Z">
+<meta property="article:author" content="棕熊">
+<meta property="article:tag" content="條件判斷">
+<meta property="article:tag" content="if">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wmcs.dev/c-intro/c-intro-conditional/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wmcs.dev/c-intro/c-intro-conditional/","path":"c-intro/c-intro-conditional/","title":"C語言簡介：條件判斷"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C語言簡介：條件判斷 | 大學生想當工程師</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9NXXYGRKY"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-Z9NXXYGRKY","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://wmcs.dev/c-intro/c-intro-conditional/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="大學生想當工程師" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="大學生想當工程師" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">大學生想當工程師</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">程式筆記資料庫</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-政策"><a href="/policy/" rel="section"><i class="fa fa-file-lines fa-fw"></i>政策</a></li><li class="menu-item menu-item-聯絡表單"><a href="https://forms.gle/mRr7jmkjqd9Htxoa9" rel="section" target="_blank"><i class="fa fa-envelope fa-fw"></i>聯絡表單</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E2%80%A6%EF%BC%88if%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">如果…（if）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%9E%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">語法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E2%80%A6%E4%B8%8D%E7%84%B6%E7%9A%84%E8%A9%B1%E5%B0%B1%E2%80%A6-if-else"><span class="nav-number">2.</span> <span class="nav-text">如果…不然的話就… (if - else)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A9%A6%E8%A9%A6%E7%9C%8B"><span class="nav-number">2.1.</span> <span class="nav-text">試試看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A51"><span class="nav-number">2.1.1.</span> <span class="nav-text">範例輸入1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA1"><span class="nav-number">2.1.2.</span> <span class="nav-text">範例輸出1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%85%A52"><span class="nav-number">2.1.3.</span> <span class="nav-text">範例輸入2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B%E8%BC%B8%E5%87%BA2"><span class="nav-number">2.1.4.</span> <span class="nav-text">範例輸出2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E2%80%A6%E4%B8%8D%E7%84%B6%E7%9A%84%E8%A9%B1%E5%A6%82%E6%9E%9C%E2%80%A6%E4%B8%8D%E7%84%B6%E7%9A%84%E8%A9%B1%E2%80%A6-if-else-if-else"><span class="nav-number">3.</span> <span class="nav-text">如果…不然的話如果…不然的話… (if - else if - else)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A9%A6%E8%A9%A6%E7%9C%8B-1"><span class="nav-number">3.1.</span> <span class="nav-text">試試看</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%83%E8%80%83%E8%A7%A3%E7%AD%94"><span class="nav-number">3.1.1.</span> <span class="nav-text">參考解答</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#What-if%E2%80%A6"><span class="nav-number">3.1.2.</span> <span class="nav-text">What if…</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">4.</span> <span class="nav-text">結語</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="棕熊"
+      src="/image/avatar.jpg">
+  <p class="site-author-name" itemprop="name">棕熊</p>
+  <div class="site-description" itemprop="description">我要成為工程師！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>Atom</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          連結
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://zerojudge.tw/" title="https:&#x2F;&#x2F;zerojudge.tw&#x2F;" rel="noopener" target="_blank">ZeroJudge</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://wmcs.dev/c-intro/c-intro-conditional/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/avatar.jpg">
+      <meta itemprop="name" content="棕熊">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大學生想當工程師">
+      <meta itemprop="description" content="我要成為工程師！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C語言簡介：條件判斷 | 大學生想當工程師">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C語言簡介：條件判斷
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2026-02-21 00:00:00 / 修改時間：23:33:26" itemprop="dateCreated datePublished" datetime="2026-02-21T00:00:00+08:00">2026-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c-intro/" itemprop="url" rel="index"><span itemprop="name">C語言簡介</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>927</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>3 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div class="note info"><p>本教學面向新手，故教學內容多為基礎知識，倘若您希望學習進階內容，本文並不符合您的需求。</p>
+</div>
+<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第二篇文章，前一篇文章為<a href="/c-intro/c-intro-io/">C語言簡介：基本輸入輸出</a>。</p>
+</div>
+
+<h2 id="如果…（if）"><a href="#如果…（if）" class="headerlink" title="如果…（if）"></a>如果…（if）</h2><p>我們生活中很多時候會依照不同情況做不同的決定，例如我們說</p>
+<blockquote>
+<p>如果明天早上下雨了，我就帶雨傘出門。</p>
+</blockquote>
+<p>這裡我們可以看到，「下雨」是我們的「條件」，而有沒有帶雨傘則是條件滿足或不滿足所帶來的結果。</p>
+<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p>那我們要怎麼使用「如果…」的<strong>條件判斷</strong>呢？<br>我們可以使用 <code>if</code> 來實作，語法如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>當條件為 <code>true</code>，或是說「成立」時，<code>if</code> 裡面的程式，也就是我們上面寫的 <code>&lt;若滿足條件要執行的程式&gt;</code> 才會執行。</p>
+<blockquote>
+<p>註：在 C 語言中，條件判斷其實是看「運算結果是否為 0」：0 代表 <code>false</code>，非 0 代表 <code>true</code>。如果想在程式碼裡直接寫 <code>true</code> 或 <code>false</code>，則需要引入 <code>stdbool.h</code>。</p>
+</blockquote>
+<h2 id="如果…不然的話就…-if-else"><a href="#如果…不然的話就…-if-else" class="headerlink" title="如果…不然的話就… (if - else)"></a>如果…不然的話就… (if - else)</h2><p>延續剛剛的例子，如果我們說</p>
+<blockquote>
+<p>如果明天早上下雨了，我就帶雨傘出門；不然的話我就戴墨鏡出門。</p>
+</blockquote>
+<p>這樣要如何表示呢？<br>我們可以用 <code>else</code> 來表示類似「<strong>不然的話</strong>」，或者是說「<strong>否則</strong>」的概念。<br>語法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以我們可以根據上面的文意寫出一段pseudo-code</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (明天早上下雨) &#123;</span><br><span class="line">  帶雨傘出門;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  戴墨鏡出門;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，當使用者輸入偶數時，印出 <code>even number</code>，否則印出 <code>odd number</code>。</p>
+<h4 id="範例輸入1"><a href="#範例輸入1" class="headerlink" title="範例輸入1"></a>範例輸入1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸出1"><a href="#範例輸出1" class="headerlink" title="範例輸出1"></a>範例輸出1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">odd number</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸入2"><a href="#範例輸入2" class="headerlink" title="範例輸入2"></a>範例輸入2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸出2"><a href="#範例輸出2" class="headerlink" title="範例輸出2"></a>範例輸出2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">even number</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果…不然的話如果…不然的話…-if-else-if-else"><a href="#如果…不然的話如果…不然的話…-if-else-if-else" class="headerlink" title="如果…不然的話如果…不然的話… (if - else if - else)"></a>如果…不然的話如果…不然的話… (if - else if - else)</h2><p>假設今天我們說</p>
+<blockquote>
+<p>如果便當一份100元(含)以下我就吃便當，不然的話要是早餐店A套餐一份100元(含)以下我就吃早餐店A套餐，如果以上條件都沒辦法滿足，那我就去早餐店吃「豬排漢堡 + 薯條 + 紅茶」。</p>
+</blockquote>
+<p>我們可以怎麼用pseudo-code表示？<br>先來說語法，<code>if - else if - else</code> 的語法長這樣</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以pseudo-code應該長得像是這樣</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (便當價格 &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">  吃便當;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (早餐店A套餐價格 &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">  吃早餐店A套餐;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  去早餐店吃「豬排漢堡 + 薯條 + 紅茶」;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，若使用者輸入之數大於 <code>100</code>，則輸出 <code>bigger than 100</code>，否則若使用者輸入之數大於等於 <code>50</code>，則輸出 <code>bigger than or equal to 50</code>，否則輸出<code>smaller than 50</code></p>
+<h4 id="參考解答"><a href="#參考解答" class="headerlink" title="參考解答"></a>參考解答</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than 100&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= <span class="number">50</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than or equal to 50&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;smaller than 50&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="What-if…"><a href="#What-if…" class="headerlink" title="What if…"></a>What if…</h4><p>如果將條件順序顛倒，意即先判斷使用者輸入之數是否大於等於 <code>50</code>，再判斷使用者輸入之數是否大於 <code>100</code>，輸出會有所不同嗎？</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言條件判斷簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>棕熊
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://wmcs.dev/c-intro/c-intro-conditional/" title="C語言簡介：條件判斷">https://wmcs.dev/c-intro/c-intro-conditional/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7/" rel="tag"># 條件判斷</a>
+              <a href="/tags/if/" rel="tag"># if</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/c-intro/c-intro-io/" rel="prev" title="C語言簡介：基本輸入輸出">
+                  <i class="fa fa-angle-left"></i> C語言簡介：基本輸入輸出
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-solid fa-code-pull-request"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder"><a href="/about" target="_blank" rel="noopener">棕熊</a></span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>總字數：</span>
+    <span title="總字數">6k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>所需總閱讀時間 &asymp;</span>
+    <span title="所需總閱讀時間">21 分鐘</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"wmcsdev-grizzlybr","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js" defer></script>
+
+</body>
+</html>
