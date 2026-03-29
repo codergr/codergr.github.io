@@ -15,7 +15,7 @@
     <atom:link href="https://wmcs.dev/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我要成為工程師！</description>
-    <pubDate>Sun, 29 Mar 2026 14:50:33 GMT</pubDate>
+    <pubDate>Sun, 29 Mar 2026 14:58:43 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -128,9 +128,9 @@
       
       <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
       
-      <category domain="https://wmcs.dev/tags/if/">if</category>
-      
       <category domain="https://wmcs.dev/tags/%E7%B5%95%E5%B0%8D%E5%80%BC/">絕對值</category>
+      
+      <category domain="https://wmcs.dev/tags/if/">if</category>
       
       
       <comments>https://wmcs.dev/solution/ZeroJudge/d235/#disqus_thread</comments>

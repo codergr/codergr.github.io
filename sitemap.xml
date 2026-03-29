@@ -205,20 +205,6 @@
   </url>
   
   <url>
-    <loc>https://wmcs.dev/tags/%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wmcs.dev/tags/if/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wmcs.dev/tags/EOF/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -233,7 +219,14 @@
   </url>
   
   <url>
-    <loc>https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/</loc>
+    <loc>https://wmcs.dev/tags/%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wmcs.dev/tags/if/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -254,7 +247,7 @@
   </url>
   
   <url>
-    <loc>https://wmcs.dev/tags/%E9%99%A3%E5%88%97/</loc>
+    <loc>https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -269,6 +262,13 @@
   
   <url>
     <loc>https://wmcs.dev/tags/%E5%B0%8F%E6%95%B8%E9%BB%9E/</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wmcs.dev/tags/%E9%99%A3%E5%88%97/</loc>
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
