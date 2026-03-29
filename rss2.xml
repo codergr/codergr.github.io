@@ -15,8 +15,29 @@
     <atom:link href="https://wmcs.dev/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我要成為工程師！</description>
-    <pubDate>Sat, 21 Feb 2026 15:33:26 GMT</pubDate>
+    <pubDate>Sun, 29 Mar 2026 14:35:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>C語言簡介：迴圈</title>
+      <link>https://wmcs.dev/c-intro/c-intro-loop/</link>
+      <guid>https://wmcs.dev/c-intro/c-intro-loop/</guid>
+      <pubDate>Sun, 29 Mar 2026 14:30:00 GMT</pubDate>
+      
+      <description>本篇主題：迴圈</description>
+      
+      
+      
+      
+      <category domain="https://wmcs.dev/categories/c-intro/">C語言簡介</category>
+      
+      
+      <category domain="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/">迴圈</category>
+      
+      
+      <comments>https://wmcs.dev/c-intro/c-intro-loop/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>C語言簡介：條件判斷</title>
