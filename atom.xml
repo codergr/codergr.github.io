@@ -6,7 +6,7 @@
   <link href="https://wmcs.dev/atom.xml" rel="self"/>
   
   <link href="https://wmcs.dev/"/>
-  <updated>2026-03-29T14:44:30.146Z</updated>
+  <updated>2026-03-29T14:50:33.169Z</updated>
   <id>https://wmcs.dev/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wmcs.dev/c-intro/c-intro-loop/"/>
     <id>https://wmcs.dev/c-intro/c-intro-loop/</id>
     <published>2026-03-29T14:30:00.000Z</published>
-    <updated>2026-03-29T14:44:30.146Z</updated>
+    <updated>2026-03-29T14:50:33.169Z</updated>
     
     
     <summary type="html">本篇主題：迴圈</summary>
@@ -50,9 +50,9 @@
     <category term="C語言簡介" scheme="https://wmcs.dev/categories/c-intro/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="條件判斷" scheme="https://wmcs.dev/tags/%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
   </entry>
   
@@ -117,9 +117,9 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
     <category term="絕對值" scheme="https://wmcs.dev/tags/%E7%B5%95%E5%B0%8D%E5%80%BC/"/>
     
@@ -232,9 +232,9 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
     <category term="陣列" scheme="https://wmcs.dev/tags/%E9%99%A3%E5%88%97/"/>
     
@@ -257,9 +257,9 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
     <category term="數學" scheme="https://wmcs.dev/tags/%E6%95%B8%E5%AD%B8/"/>
     
@@ -282,11 +282,11 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
-    
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
     <category term="EOF" scheme="https://wmcs.dev/tags/EOF/"/>
+    
+    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
     
     <category term="例外處理" scheme="https://wmcs.dev/tags/%E4%BE%8B%E5%A4%96%E8%99%95%E7%90%86/"/>
     
@@ -309,11 +309,11 @@
     <category term="ZeroJudge" scheme="https://wmcs.dev/categories/solution/ZeroJudge/"/>
     
     
-    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
+    <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
     <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
-    <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
+    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
     
   </entry>
   
