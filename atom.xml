@@ -69,9 +69,9 @@
     <category term="C語言簡介" scheme="https://wmcs.dev/categories/c-intro/"/>
     
     
-    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
-    
     <category term="條件判斷" scheme="https://wmcs.dev/tags/%E6%A2%9D%E4%BB%B6%E5%88%A4%E6%96%B7/"/>
+    
+    <category term="if" scheme="https://wmcs.dev/tags/if/"/>
     
   </entry>
   
@@ -330,9 +330,9 @@
     
     <category term="迴圈" scheme="https://wmcs.dev/tags/%E8%BF%B4%E5%9C%88/"/>
     
-    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
-    
     <category term="if" scheme="https://wmcs.dev/tags/if/"/>
+    
+    <category term="字典" scheme="https://wmcs.dev/tags/%E5%AD%97%E5%85%B8/"/>
     
   </entry>
   
