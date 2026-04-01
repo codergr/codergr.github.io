@@ -81,37 +81,59 @@
       </tags>
   </entry>
   <entry>
-    <title>C語言簡介：迴圈控制</title>
-    <url>/c-intro/c-intro-loop-control-statements/</url>
-    <content><![CDATA[<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第四篇文章，前一篇文章為<a href="/c-intro/c-intro-loop/">C語言簡介：迴圈</a>。</p>
+    <title>C語言簡介：條件判斷</title>
+    <url>/c-intro/c-intro-conditional/</url>
+    <content><![CDATA[<div class="note info"><p>本教學面向新手，故教學內容多為基礎知識，倘若您希望學習進階內容，本文並不符合您的需求。</p>
 </div>
-<p>在<a href="/c-intro/c-intro-loop/">上篇</a>提到薛西弗斯的故事，如果今天眾神給薛西弗斯優待，只要達到某些條件就能提前結束推石頭的任務？<br>或者，在程式上，當我有以下程式</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但我想遇到特定情況就退出迴圈，或是只要符合某些特定條件就不要輸出呢？</p>
-<h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><p>假設今天我要讓我的迴圈輸出我所輸入的數直到EOF，我們可以寫出</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>對吧？<br>不過，如果我今天加上一個限制：只要輸入的數字是 <code>-1</code>，我不但不輸出 <code>-1</code>，還直接退出迴圈呢？<br>這時 <code>break</code> 就能派上用場啦！<br>先提供以下程式碼給各位參考</p>
-<figure class="highlight c"><figcaption><span>break_example.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">-1</span>) &#123; <span class="comment">// 當 n 為 -1 時</span></span><br><span class="line">      <span class="keyword">break</span>; <span class="comment">// 跳出迴圈</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第5至7行的程式的意思是說，如果我輸入的數是 <code>-1</code>（<code>if (n == -1)</code>），則跳出迴圈（<code>break</code>）。<br>由此可見，<code>break</code> 的作用是使程式離開當前的迴圈。</p>
-<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>試寫出一程式，輸出使用者輸入的數直到EOF，當輸入的數為-1或7時跳出迴圈。</p>
-<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>觀察以下程式碼，並試推論輸出為何？</p>
-<figure class="highlight c"><figcaption><span>break_try.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">2</span> &amp;&amp; j == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;i = %d, j = %d\n&quot;</span>, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h2><p>如果我想把程式改成「輸出使用者輸入的數直到EOF，但當使用者輸入的數為10時，不輸出但也<strong>不結束程式</strong>」怎麼辦呢？<br>一樣，先提供以下程式碼給各位參考</p>
-<figure class="highlight c"><figcaption><span>continue_example.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">10</span>) &#123; <span class="comment">// 當 n 為 10 時</span></span><br><span class="line">      <span class="keyword">continue</span>; <span class="comment">// 跳過本次迴圈</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>第6行備註寫「跳過本次迴圈」，這裡的意思是指回到第4行的 <code>scanf()</code> 繼續讀取輸入，而不是執行第8行的 <code>printf(&quot;%d\n&quot;, n)</code>。也就是說，<strong>跳過本次迴圈剩餘的程式，直接進入下一次的迴圈</strong>。</p>
-<h3 id="試試看-2"><a href="#試試看-2" class="headerlink" title="試試看"></a>試試看</h3><p>試寫出一程式，輸出使用者輸入的數直到EOF，當輸入的數為-1時不輸出但<strong>不結束程式</strong>。</p>
-<h2 id="break與continue的特性"><a href="#break與continue的特性" class="headerlink" title="break與continue的特性"></a>break與continue的特性</h2><p><code>break</code> 與 <code>continue</code> 有一個共同的特性就是：他作用的是他所在的最內層的迴圈。<br>舉個例子</p>
-<figure class="highlight c"><figcaption><span>break1.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123; <span class="comment">// 迴圈1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123; <span class="comment">// 迴圈2</span></span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;i = %d, j = %d\n&quot;</span>, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>大家可以觀察一下，實際執行後會發現 <code>break1.c</code> 的 <code>break</code> 跳離的是<strong>迴圈2</strong>但並未跳出迴圈1，這就是我所指的，<code>break</code> 會使程式離開他所屬的最內層的迴圈。</p>
-<h3 id="試試看-3"><a href="#試試看-3" class="headerlink" title="試試看"></a>試試看</h3><p>觀察以下程式碼，並試推論輸出為何？</p>
-<figure class="highlight c"><figcaption><span>continue_try.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">2</span> &amp;&amp; j == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;i = %d, j = %d\n&quot;</span>, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言迴圈控制（break與continue部分）的簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第二篇文章，前一篇文章為<a href="/c-intro/c-intro-io/">C語言簡介：基本輸入輸出</a>。</p>
+</div>
+
+<h2 id="如果…（if）"><a href="#如果…（if）" class="headerlink" title="如果…（if）"></a>如果…（if）</h2><p>我們生活中很多時候會依照不同情況做不同的決定，例如我們說</p>
+<blockquote>
+<p>如果明天早上下雨了，我就帶雨傘出門。</p>
+</blockquote>
+<p>這裡我們可以看到，「下雨」是我們的「條件」，而有沒有帶雨傘則是條件滿足或不滿足所帶來的結果。</p>
+<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p>那我們要怎麼使用「如果…」的<strong>條件判斷</strong>呢？<br>我們可以使用 <code>if</code> 來實作，語法如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>當條件為 <code>true</code>，或是說「成立」時，<code>if</code> 裡面的程式，也就是我們上面寫的 <code>&lt;若滿足條件要執行的程式&gt;</code> 才會執行。</p>
+<blockquote>
+<p>註：在 C 語言中，條件判斷其實是看「運算結果是否為 0」：0 代表 <code>false</code>，非 0 代表 <code>true</code>。如果想在程式碼裡直接寫 <code>true</code> 或 <code>false</code>，則需要引入 <code>stdbool.h</code>。</p>
+</blockquote>
+<h2 id="如果…不然的話就…-if-else"><a href="#如果…不然的話就…-if-else" class="headerlink" title="如果…不然的話就… (if - else)"></a>如果…不然的話就… (if - else)</h2><p>延續剛剛的例子，如果我們說</p>
+<blockquote>
+<p>如果明天早上下雨了，我就帶雨傘出門；不然的話我就戴墨鏡出門。</p>
+</blockquote>
+<p>這樣要如何表示呢？<br>我們可以用 <code>else</code> 來表示類似「<strong>不然的話</strong>」，或者是說「<strong>否則</strong>」的概念。<br>語法：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以我們可以根據上面的文意寫出一段pseudo-code</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (明天早上下雨) &#123;</span><br><span class="line">  帶雨傘出門;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  戴墨鏡出門;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，當使用者輸入偶數時，印出 <code>even number</code>，否則印出 <code>odd number</code>。</p>
+<h4 id="範例輸入1"><a href="#範例輸入1" class="headerlink" title="範例輸入1"></a>範例輸入1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸出1"><a href="#範例輸出1" class="headerlink" title="範例輸出1"></a>範例輸出1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">odd number</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸入2"><a href="#範例輸入2" class="headerlink" title="範例輸入2"></a>範例輸入2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<h4 id="範例輸出2"><a href="#範例輸出2" class="headerlink" title="範例輸出2"></a>範例輸出2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">even number</span><br></pre></td></tr></table></figure>
+
+<h2 id="如果…不然的話如果…不然的話…-if-else-if-else"><a href="#如果…不然的話如果…不然的話…-if-else-if-else" class="headerlink" title="如果…不然的話如果…不然的話… (if - else if - else)"></a>如果…不然的話如果…不然的話… (if - else if - else)</h2><p>假設今天我們說</p>
+<blockquote>
+<p>如果便當一份100元(含)以下我就吃便當，不然的話要是早餐店A套餐一份100元(含)以下我就吃早餐店A套餐，如果以上條件都沒辦法滿足，那我就去早餐店吃「豬排漢堡 + 薯條 + 紅茶」。</p>
+</blockquote>
+<p>我們可以怎麼用pseudo-code表示？<br>先來說語法，<code>if - else if - else</code> 的語法長這樣</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以pseudo-code應該長得像是這樣</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (便當價格 &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">  吃便當;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (早餐店A套餐價格 &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">  吃早餐店A套餐;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  去早餐店吃「豬排漢堡 + 薯條 + 紅茶」;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，若使用者輸入之數大於 <code>100</code>，則輸出 <code>bigger than 100</code>，否則若使用者輸入之數大於等於 <code>50</code>，則輸出 <code>bigger than or equal to 50</code>，否則輸出<code>smaller than 50</code></p>
+<h4 id="參考解答"><a href="#參考解答" class="headerlink" title="參考解答"></a>參考解答</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than 100&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= <span class="number">50</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than or equal to 50&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;smaller than 50&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="What-if…"><a href="#What-if…" class="headerlink" title="What if…"></a>What if…</h4><p>如果將條件順序顛倒，意即先判斷使用者輸入之數是否大於等於 <code>50</code>，再判斷使用者輸入之數是否大於 <code>100</code>，輸出會有所不同嗎？</p>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言條件判斷簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
 ]]></content>
       <categories>
         <category>C語言簡介</category>
       </categories>
       <tags>
-        <tag>迴圈控制</tag>
+        <tag>if</tag>
+        <tag>條件判斷</tag>
       </tags>
   </entry>
   <entry>
@@ -235,62 +257,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C語言簡介：條件判斷</title>
-    <url>/c-intro/c-intro-conditional/</url>
-    <content><![CDATA[<div class="note info"><p>本教學面向新手，故教學內容多為基礎知識，倘若您希望學習進階內容，本文並不符合您的需求。</p>
-</div>
-<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第二篇文章，前一篇文章為<a href="/c-intro/c-intro-io/">C語言簡介：基本輸入輸出</a>。</p>
-</div>
-
-<h2 id="如果…（if）"><a href="#如果…（if）" class="headerlink" title="如果…（if）"></a>如果…（if）</h2><p>我們生活中很多時候會依照不同情況做不同的決定，例如我們說</p>
-<blockquote>
-<p>如果明天早上下雨了，我就帶雨傘出門。</p>
-</blockquote>
-<p>這裡我們可以看到，「下雨」是我們的「條件」，而有沒有帶雨傘則是條件滿足或不滿足所帶來的結果。</p>
-<h3 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h3><p>那我們要怎麼使用「如果…」的<strong>條件判斷</strong>呢？<br>我們可以使用 <code>if</code> 來實作，語法如下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>當條件為 <code>true</code>，或是說「成立」時，<code>if</code> 裡面的程式，也就是我們上面寫的 <code>&lt;若滿足條件要執行的程式&gt;</code> 才會執行。</p>
-<blockquote>
-<p>註：在 C 語言中，條件判斷其實是看「運算結果是否為 0」：0 代表 <code>false</code>，非 0 代表 <code>true</code>。如果想在程式碼裡直接寫 <code>true</code> 或 <code>false</code>，則需要引入 <code>stdbool.h</code>。</p>
-</blockquote>
-<h2 id="如果…不然的話就…-if-else"><a href="#如果…不然的話就…-if-else" class="headerlink" title="如果…不然的話就… (if - else)"></a>如果…不然的話就… (if - else)</h2><p>延續剛剛的例子，如果我們說</p>
-<blockquote>
-<p>如果明天早上下雨了，我就帶雨傘出門；不然的話我就戴墨鏡出門。</p>
-</blockquote>
-<p>這樣要如何表示呢？<br>我們可以用 <code>else</code> 來表示類似「<strong>不然的話</strong>」，或者是說「<strong>否則</strong>」的概念。<br>語法：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以我們可以根據上面的文意寫出一段pseudo-code</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (明天早上下雨) &#123;</span><br><span class="line">  帶雨傘出門;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  戴墨鏡出門;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，當使用者輸入偶數時，印出 <code>even number</code>，否則印出 <code>odd number</code>。</p>
-<h4 id="範例輸入1"><a href="#範例輸入1" class="headerlink" title="範例輸入1"></a>範例輸入1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
-<h4 id="範例輸出1"><a href="#範例輸出1" class="headerlink" title="範例輸出1"></a>範例輸出1</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">odd number</span><br></pre></td></tr></table></figure>
-<h4 id="範例輸入2"><a href="#範例輸入2" class="headerlink" title="範例輸入2"></a>範例輸入2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
-<h4 id="範例輸出2"><a href="#範例輸出2" class="headerlink" title="範例輸出2"></a>範例輸出2</h4><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">even number</span><br></pre></td></tr></table></figure>
-
-<h2 id="如果…不然的話如果…不然的話…-if-else-if-else"><a href="#如果…不然的話如果…不然的話…-if-else-if-else" class="headerlink" title="如果…不然的話如果…不然的話… (if - else if - else)"></a>如果…不然的話如果…不然的話… (if - else if - else)</h2><p>假設今天我們說</p>
-<blockquote>
-<p>如果便當一份100元(含)以下我就吃便當，不然的話要是早餐店A套餐一份100元(含)以下我就吃早餐店A套餐，如果以上條件都沒辦法滿足，那我就去早餐店吃「豬排漢堡 + 薯條 + 紅茶」。</p>
-</blockquote>
-<p>我們可以怎麼用pseudo-code表示？<br>先來說語法，<code>if - else if - else</code> 的語法長這樣</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (&lt;條件&gt;) &#123;</span><br><span class="line">  &lt;若滿足條件要執行的程式&gt;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  &lt;要執行的程式&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>所以pseudo-code應該長得像是這樣</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (便當價格 &lt;= <span class="number">100</span>) &#123;</span><br><span class="line">  吃便當;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (早餐店A套餐價格 &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">  吃早餐店A套餐;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  去早餐店吃「豬排漢堡 + 薯條 + 紅茶」;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>請試寫一段程式，若使用者輸入之數大於 <code>100</code>，則輸出 <code>bigger than 100</code>，否則若使用者輸入之數大於等於 <code>50</code>，則輸出 <code>bigger than or equal to 50</code>，否則輸出<code>smaller than 50</code></p>
-<h4 id="參考解答"><a href="#參考解答" class="headerlink" title="參考解答"></a>參考解答</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than 100&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (n &gt;= <span class="number">50</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;bigger than or equal to 50&quot;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;smaller than 50&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="What-if…"><a href="#What-if…" class="headerlink" title="What if…"></a>What if…</h4><p>如果將條件順序顛倒，意即先判斷使用者輸入之數是否大於等於 <code>50</code>，再判斷使用者輸入之數是否大於 <code>100</code>，輸出會有所不同嗎？</p>
-<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言條件判斷簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>C語言簡介</category>
-      </categories>
-      <tags>
-        <tag>if</tag>
-        <tag>條件判斷</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>題解｜ZeroJudge c002. 10696 - f91</title>
     <url>/solution/ZeroJudge/c002/</url>
     <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=c002">c002. 10696 - f91</a></p>
@@ -364,54 +330,37 @@
       </tags>
   </entry>
   <entry>
-    <title>題解｜ZeroJudge d046. 文文採西瓜</title>
-    <url>/solution/ZeroJudge/d046/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d046">d046. 文文採西瓜</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><div class="tabs" id="s"><ul class="nav-tabs"><li class="tab active"><a href="#s-1">Python解法</a></li><li class="tab"><a href="#s-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="s-1"><figure class="highlight py"><figcaption><span>d046.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">melons=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">count=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> melons:</span><br><span class="line">    <span class="keyword">if</span> m&lt;=<span class="number">10</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="s-2"><figure class="highlight cpp"><figcaption><span>d046.cpp</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n,y=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="type">int</span> w[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		cin&gt;&gt;w[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(w[i]&lt;=<span class="number">10</span>) &#123;</span><br><span class="line">			y+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;y;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
-
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題說穿了，就是要你找出陣列中&lt;&#x3D;10的數值的數量，所以該怎麼做呢？</p>
-<div class="tabs" id="t"><ul class="nav-tabs"><li class="tab active"><a href="#t-1">Python解法</a></li><li class="tab"><a href="#t-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="t-1"><p>首先我們令一個變數n來接第一行輸入，也就是要採收的西瓜的數量<br>再來，我們令一個list，名叫<code>melons</code>，負責用來記錄西瓜重量，至於<code>map</code>，我們曾在<a href="/solution/ZeroJudge/c004/#%E8%A7%A3%E8%AA%AA">這篇</a>提及，這裡我們再來看一下他在這裡的應用：<br>這裡，他是把一大串的輸入（如<code>1 3 5 7 9 11</code>）一個一個分開、遇到空格就把他們分開…<code>split()</code><br>然後，把分開後的，一個個轉為int型態…<code>map(int,input().split())</code><br>再然後，把他們變成一個list…<code>list()</code><br>接著，我們就可以找&lt;&#x3D;10的數啦！<br>我們用for迴圈遍歷陣列，遇到&lt;&#x3D;10的數字，就把用來記錄數量的變數<code>count</code>+1<br>最後，再輸出<code>count</code>即為所求！</p></div><div class="tab-pane" id="t-2"><p>首先，我們令一個變數n，用來接收第一行輸入，也就是要採收的西瓜的數量<br>然後，我們再宣告一個長度為100的array（這裡選100是因為輸入說明有提到西瓜數量不大於100）<br>用for迴圈，將數值一個一個輸入到陣列中<br>接著，就是要找出&lt;&#x3D;10的數值的數量！<br>用for迴圈遍歷陣列，當遇到&lt;&#x3D;10的數字，用來計數的變數<code>y</code>就+1<br>最後，再輸出<code>y</code>即為所求！</p></div></div></div>
-
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>今天這題主要利用迴圈、if來解題！<br>以上就是今天的題解，倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+    <title>C語言簡介：迴圈控制</title>
+    <url>/c-intro/c-intro-loop-control-statements/</url>
+    <content><![CDATA[<div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第四篇文章，前一篇文章為<a href="/c-intro/c-intro-loop/">C語言簡介：迴圈</a>。</p>
+</div>
+<p>在<a href="/c-intro/c-intro-loop/">上篇</a>提到薛西弗斯的故事，如果今天眾神給薛西弗斯優待，只要達到某些條件就能提前結束推石頭的任務？<br>或者，在程式上，當我有以下程式</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但我想遇到特定情況就退出迴圈，或是只要符合某些特定條件就不要輸出呢？</p>
+<h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><p>假設今天我要讓我的迴圈輸出我所輸入的數直到EOF，我們可以寫出</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>對吧？<br>不過，如果我今天加上一個限制：只要輸入的數字是 <code>-1</code>，我不但不輸出 <code>-1</code>，還直接退出迴圈呢？<br>這時 <code>break</code> 就能派上用場啦！<br>先提供以下程式碼給各位參考</p>
+<figure class="highlight c"><figcaption><span>break_example.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">-1</span>) &#123; <span class="comment">// 當 n 為 -1 時</span></span><br><span class="line">      <span class="keyword">break</span>; <span class="comment">// 跳出迴圈</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第5至7行的程式的意思是說，如果我輸入的數是 <code>-1</code>（<code>if (n == -1)</code>），則跳出迴圈（<code>break</code>）。<br>由此可見，<code>break</code> 的作用是使程式離開當前的迴圈。</p>
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>試寫出一程式，輸出使用者輸入的數直到EOF，當輸入的數為-1或7時跳出迴圈。</p>
+<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>觀察以下程式碼，並試推論輸出為何？</p>
+<figure class="highlight c"><figcaption><span>break_try.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">2</span> &amp;&amp; j == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;i = %d, j = %d\n&quot;</span>, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h2><p>如果我想把程式改成「輸出使用者輸入的數直到EOF，但當使用者輸入的數為10時，不輸出但也<strong>不結束程式</strong>」怎麼辦呢？<br>一樣，先提供以下程式碼給各位參考</p>
+<figure class="highlight c"><figcaption><span>continue_example.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n) != EOF) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">10</span>) &#123; <span class="comment">// 當 n 為 10 時</span></span><br><span class="line">      <span class="keyword">continue</span>; <span class="comment">// 跳過本次迴圈</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第6行備註寫「跳過本次迴圈」，這裡的意思是指回到第4行的 <code>scanf()</code> 繼續讀取輸入，而不是執行第8行的 <code>printf(&quot;%d\n&quot;, n)</code>。也就是說，<strong>跳過本次迴圈剩餘的程式，直接進入下一次的迴圈</strong>。</p>
+<h3 id="試試看-2"><a href="#試試看-2" class="headerlink" title="試試看"></a>試試看</h3><p>試寫出一程式，輸出使用者輸入的數直到EOF，當輸入的數為-1時不輸出但<strong>不結束程式</strong>。</p>
+<h2 id="break與continue的特性"><a href="#break與continue的特性" class="headerlink" title="break與continue的特性"></a>break與continue的特性</h2><p><code>break</code> 與 <code>continue</code> 有一個共同的特性就是：他作用的是他所在的最內層的迴圈。<br>舉個例子</p>
+<figure class="highlight c"><figcaption><span>break1.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123; <span class="comment">// 迴圈1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123; <span class="comment">// 迴圈2</span></span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;i = %d, j = %d\n&quot;</span>, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大家可以觀察一下，實際執行後會發現 <code>break1.c</code> 的 <code>break</code> 跳離的是<strong>迴圈2</strong>但並未跳出迴圈1，這就是我所指的，<code>break</code> 會使程式離開他所屬的最內層的迴圈。</p>
+<h3 id="試試看-3"><a href="#試試看-3" class="headerlink" title="試試看"></a>試試看</h3><p>觀察以下程式碼，並試推論輸出為何？</p>
+<figure class="highlight c"><figcaption><span>continue_try.c</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i == <span class="number">2</span> &amp;&amp; j == <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;i = %d, j = %d\n&quot;</span>, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言迴圈控制（break與continue部分）的簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
 ]]></content>
       <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
+        <category>C語言簡介</category>
       </categories>
       <tags>
-        <tag>迴圈</tag>
-        <tag>if</tag>
-        <tag>陣列</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>題解｜ZeroJudge d051. 糟糕，我發燒了！</title>
-    <url>/solution/ZeroJudge/d051/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d051">d051. 糟糕，我發燒了！</a></p>
-<span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d051.py</span></figcaption><table><tr><td class="code"><pre><span class="line">f=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>本題簡單來說就是希望華氏溫標轉攝氏溫標。<br>提示：<strong><u>攝氏&#x3D;(華氏-32)*5&#x2F;9</u></strong><br>所以我們可以寫出公式：</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br></pre></td></tr></table></figure>
-<p>接著就是輸出格式的部分，<br>在看到題目說小數點以下三位，可能會很本能地想用<code>round()</code><br>但是！請注意，假如使用<code>round()</code>，可能導致輸出結果並非固定到小數點後3位。<br>例如</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">3.100000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(x, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
-<p>輸出結果為</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3.1</span><br></pre></td></tr></table></figure>
-<p>我們必須保證輸出結果必為顯示到小數點後3位。<br>因此我們今天採用f-string的寫法</p>
-<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p><code>&#123;c:.3f&#125;</code>的意義是：對於變數c，我希望我的輸出是到小數點後第3位<br>假如今天題目要求是輸出到小數點後第2位，則改成<code>&#123;c:.2f&#125;</code>，依此類推…<br>這樣，即可保證輸出結果到小數點後第3位。</p>
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，今天練習了f-string跟浮點數的輸出。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
-]]></content>
-      <categories>
-        <category>題解</category>
-        <category>ZeroJudge</category>
-      </categories>
-      <tags>
-        <tag>f-string</tag>
-        <tag>數學</tag>
-        <tag>小數點</tag>
+        <tag>迴圈控制</tag>
       </tags>
   </entry>
   <entry>
@@ -446,6 +395,61 @@
         <tag>迴圈</tag>
         <tag>if</tag>
         <tag>數學</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge d046. 文文採西瓜</title>
+    <url>/solution/ZeroJudge/d046/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d046">d046. 文文採西瓜</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><div class="tabs" id="s"><ul class="nav-tabs"><li class="tab active"><a href="#s-1">Python解法</a></li><li class="tab"><a href="#s-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="s-1"><figure class="highlight py"><figcaption><span>d046.py</span></figcaption><table><tr><td class="code"><pre><span class="line">n=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">melons=<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>,<span class="built_in">input</span>().split()))</span><br><span class="line">count=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m <span class="keyword">in</span> melons:</span><br><span class="line">    <span class="keyword">if</span> m&lt;=<span class="number">10</span>:</span><br><span class="line">        count+=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(count)</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="s-2"><figure class="highlight cpp"><figcaption><span>d046.cpp</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> n,y=<span class="number">0</span>;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	<span class="type">int</span> w[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		cin&gt;&gt;w[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span>(w[i]&lt;=<span class="number">10</span>) &#123;</span><br><span class="line">			y+=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;y;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>這題說穿了，就是要你找出陣列中&lt;&#x3D;10的數值的數量，所以該怎麼做呢？</p>
+<div class="tabs" id="t"><ul class="nav-tabs"><li class="tab active"><a href="#t-1">Python解法</a></li><li class="tab"><a href="#t-2">C++解法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="t-1"><p>首先我們令一個變數n來接第一行輸入，也就是要採收的西瓜的數量<br>再來，我們令一個list，名叫<code>melons</code>，負責用來記錄西瓜重量，至於<code>map</code>，我們曾在<a href="/solution/ZeroJudge/c004/#%E8%A7%A3%E8%AA%AA">這篇</a>提及，這裡我們再來看一下他在這裡的應用：<br>這裡，他是把一大串的輸入（如<code>1 3 5 7 9 11</code>）一個一個分開、遇到空格就把他們分開…<code>split()</code><br>然後，把分開後的，一個個轉為int型態…<code>map(int,input().split())</code><br>再然後，把他們變成一個list…<code>list()</code><br>接著，我們就可以找&lt;&#x3D;10的數啦！<br>我們用for迴圈遍歷陣列，遇到&lt;&#x3D;10的數字，就把用來記錄數量的變數<code>count</code>+1<br>最後，再輸出<code>count</code>即為所求！</p></div><div class="tab-pane" id="t-2"><p>首先，我們令一個變數n，用來接收第一行輸入，也就是要採收的西瓜的數量<br>然後，我們再宣告一個長度為100的array（這裡選100是因為輸入說明有提到西瓜數量不大於100）<br>用for迴圈，將數值一個一個輸入到陣列中<br>接著，就是要找出&lt;&#x3D;10的數值的數量！<br>用for迴圈遍歷陣列，當遇到&lt;&#x3D;10的數字，用來計數的變數<code>y</code>就+1<br>最後，再輸出<code>y</code>即為所求！</p></div></div></div>
+
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>今天這題主要利用迴圈、if來解題！<br>以上就是今天的題解，倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>迴圈</tag>
+        <tag>if</tag>
+        <tag>陣列</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>題解｜ZeroJudge e578. 10222 - Decode the Mad man</title>
+    <url>/solution/ZeroJudge/e578/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=e578">e578. 10222 - Decode the Mad man</a></p>
+<span id="more"></span>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>e578.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d=&#123;<span class="string">&quot; &quot;</span>:<span class="string">&quot; &quot;</span>,<span class="string">&quot;e&quot;</span>:<span class="string">&quot;q&quot;</span>,<span class="string">&quot;r&quot;</span>:<span class="string">&quot;w&quot;</span>,<span class="string">&quot;t&quot;</span>:<span class="string">&quot;e&quot;</span>,<span class="string">&quot;y&quot;</span>:<span class="string">&quot;r&quot;</span>,<span class="string">&quot;u&quot;</span>:<span class="string">&quot;t&quot;</span>,<span class="string">&quot;i&quot;</span>:<span class="string">&quot;y&quot;</span>,<span class="string">&quot;o&quot;</span>:<span class="string">&quot;u&quot;</span>,<span class="string">&quot;p&quot;</span>:<span class="string">&quot;i&quot;</span>,<span class="string">&quot;[&quot;</span>:<span class="string">&quot;o&quot;</span>,<span class="string">&quot;]&quot;</span>:<span class="string">&quot;p&quot;</span>,<span class="string">&quot;\\&quot;</span>:<span class="string">&quot;[&quot;</span>,<span class="string">&quot;d&quot;</span>:<span class="string">&quot;a&quot;</span>,<span class="string">&quot;f&quot;</span>:<span class="string">&quot;s&quot;</span>,<span class="string">&quot;g&quot;</span>:<span class="string">&quot;d&quot;</span>,<span class="string">&quot;h&quot;</span>:<span class="string">&quot;f&quot;</span>,<span class="string">&quot;j&quot;</span>:<span class="string">&quot;g&quot;</span>,<span class="string">&quot;k&quot;</span>:<span class="string">&quot;h&quot;</span>,<span class="string">&quot;l&quot;</span>:<span class="string">&quot;j&quot;</span>,<span class="string">&quot;;&quot;</span>:<span class="string">&quot;k&quot;</span>,<span class="string">&quot;&#x27;&quot;</span>:<span class="string">&quot;l&quot;</span>,<span class="string">&quot;c&quot;</span>:<span class="string">&quot;z&quot;</span>,<span class="string">&quot;v&quot;</span>:<span class="string">&quot;x&quot;</span>,<span class="string">&quot;b&quot;</span>:<span class="string">&quot;c&quot;</span>,<span class="string">&quot;n&quot;</span>:<span class="string">&quot;v&quot;</span>,<span class="string">&quot;m&quot;</span>:<span class="string">&quot;b&quot;</span>,<span class="string">&quot;,&quot;</span>:<span class="string">&quot;n&quot;</span>,<span class="string">&quot;.&quot;</span>:<span class="string">&quot;m&quot;</span>,<span class="string">&quot;/&quot;</span>:<span class="string">&quot;,&quot;</span>,<span class="string">&quot;2&quot;</span>:<span class="string">&quot;`&quot;</span>,<span class="string">&quot;3&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;4&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;5&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;6&quot;</span>:<span class="string">&quot;4&quot;</span>,<span class="string">&quot;7&quot;</span>:<span class="string">&quot;5&quot;</span>,<span class="string">&quot;8&quot;</span>:<span class="string">&quot;6&quot;</span>,<span class="string">&quot;9&quot;</span>:<span class="string">&quot;7&quot;</span>,<span class="string">&quot;0&quot;</span>:<span class="string">&quot;8&quot;</span>,<span class="string">&quot;-&quot;</span>:<span class="string">&quot;9&quot;</span>,<span class="string">&quot;=&quot;</span>:<span class="string">&quot;0&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n=<span class="built_in">list</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):</span><br><span class="line">            <span class="built_in">print</span>(d.get(n[i]),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們可以先看向題目的<code>【輸出說明】</code>，這裡我們可以注意到一句話：</p>
+<blockquote>
+<p>只要把每個字母或符號以鍵盤上它左邊第二個鍵的符號來取代就行了。</p>
+</blockquote>
+<p>所以，在寫這題時，我的第一個動作是先建立一個字典d，裡面放的是QWERTY鍵盤字母左移兩個鍵之後的結果。<br>注意到<code>【輸出說明】</code>有說空白和換行直接輸出<br>之後，我們觀察範例輸入，可以發現輸入可能有多行資料，所以我們的程式寫法是直到EOF結束。<br>直到EOF結束的程式架構大概是這樣的：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>這個的意思是：<br>持續執行try裡面的程式，直到出現Except的情況（<code>EOFError</code>）。<br>接著，我們就可以寫try裡面的程式啦！<br>那這裡我們用<code>d.get(n[i])</code>，至於為什麼不是用<code>d[n[i]]</code>，請見<a href="/solution/ZeroJudge/a135/#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8a-get-w-%EF%BC%9F%E6%88%91%E8%A8%98%E5%BE%97a-w-%E4%B8%8D%E6%98%AF%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E6%84%8F%E6%80%9D%E5%97%8E%EF%BC%9F%E6%9C%89%E5%B7%AE%E5%97%8E%EF%BC%9F">這篇文</a></p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="print-裡的end是甚麼？"><a href="#print-裡的end是甚麼？" class="headerlink" title="print()裡的end是甚麼？"></a>print()裡的<code>end</code>是甚麼？</h2><p>這裡的<code>end</code>是在控制<code>print()</code>的結尾，舉例：<code>print(&quot;Hello World&quot;,end=&quot;&amp;&amp;&quot;)</code>，輸出結果會是<code>Hello World&amp;&amp;</code>，在沒有另外設置end的情況下，<code>print()</code>的預設<code>end</code>是<code>&#39;\n&#39;</code>，也就是換行，這就是為什麼執行以下程式碼：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>的結果是</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br></pre></td></tr></table></figure>
+
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+]]></content>
+      <categories>
+        <category>題解</category>
+        <category>ZeroJudge</category>
+      </categories>
+      <tags>
+        <tag>迴圈</tag>
+        <tag>EOF</tag>
+        <tag>字典</tag>
+        <tag>例外處理</tag>
       </tags>
   </entry>
   <entry>
@@ -513,35 +517,31 @@
       </tags>
   </entry>
   <entry>
-    <title>題解｜ZeroJudge e578. 10222 - Decode the Mad man</title>
-    <url>/solution/ZeroJudge/e578/</url>
-    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=e578">e578. 10222 - Decode the Mad man</a></p>
+    <title>題解｜ZeroJudge d051. 糟糕，我發燒了！</title>
+    <url>/solution/ZeroJudge/d051/</url>
+    <content><![CDATA[<p>【題目】<a href="https://zerojudge.tw/ShowProblem?problemid=d051">d051. 糟糕，我發燒了！</a></p>
 <span id="more"></span>
-<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight python"><figcaption><span>e578.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    d=&#123;<span class="string">&quot; &quot;</span>:<span class="string">&quot; &quot;</span>,<span class="string">&quot;e&quot;</span>:<span class="string">&quot;q&quot;</span>,<span class="string">&quot;r&quot;</span>:<span class="string">&quot;w&quot;</span>,<span class="string">&quot;t&quot;</span>:<span class="string">&quot;e&quot;</span>,<span class="string">&quot;y&quot;</span>:<span class="string">&quot;r&quot;</span>,<span class="string">&quot;u&quot;</span>:<span class="string">&quot;t&quot;</span>,<span class="string">&quot;i&quot;</span>:<span class="string">&quot;y&quot;</span>,<span class="string">&quot;o&quot;</span>:<span class="string">&quot;u&quot;</span>,<span class="string">&quot;p&quot;</span>:<span class="string">&quot;i&quot;</span>,<span class="string">&quot;[&quot;</span>:<span class="string">&quot;o&quot;</span>,<span class="string">&quot;]&quot;</span>:<span class="string">&quot;p&quot;</span>,<span class="string">&quot;\\&quot;</span>:<span class="string">&quot;[&quot;</span>,<span class="string">&quot;d&quot;</span>:<span class="string">&quot;a&quot;</span>,<span class="string">&quot;f&quot;</span>:<span class="string">&quot;s&quot;</span>,<span class="string">&quot;g&quot;</span>:<span class="string">&quot;d&quot;</span>,<span class="string">&quot;h&quot;</span>:<span class="string">&quot;f&quot;</span>,<span class="string">&quot;j&quot;</span>:<span class="string">&quot;g&quot;</span>,<span class="string">&quot;k&quot;</span>:<span class="string">&quot;h&quot;</span>,<span class="string">&quot;l&quot;</span>:<span class="string">&quot;j&quot;</span>,<span class="string">&quot;;&quot;</span>:<span class="string">&quot;k&quot;</span>,<span class="string">&quot;&#x27;&quot;</span>:<span class="string">&quot;l&quot;</span>,<span class="string">&quot;c&quot;</span>:<span class="string">&quot;z&quot;</span>,<span class="string">&quot;v&quot;</span>:<span class="string">&quot;x&quot;</span>,<span class="string">&quot;b&quot;</span>:<span class="string">&quot;c&quot;</span>,<span class="string">&quot;n&quot;</span>:<span class="string">&quot;v&quot;</span>,<span class="string">&quot;m&quot;</span>:<span class="string">&quot;b&quot;</span>,<span class="string">&quot;,&quot;</span>:<span class="string">&quot;n&quot;</span>,<span class="string">&quot;.&quot;</span>:<span class="string">&quot;m&quot;</span>,<span class="string">&quot;/&quot;</span>:<span class="string">&quot;,&quot;</span>,<span class="string">&quot;2&quot;</span>:<span class="string">&quot;`&quot;</span>,<span class="string">&quot;3&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;4&quot;</span>:<span class="string">&quot;2&quot;</span>,<span class="string">&quot;5&quot;</span>:<span class="string">&quot;3&quot;</span>,<span class="string">&quot;6&quot;</span>:<span class="string">&quot;4&quot;</span>,<span class="string">&quot;7&quot;</span>:<span class="string">&quot;5&quot;</span>,<span class="string">&quot;8&quot;</span>:<span class="string">&quot;6&quot;</span>,<span class="string">&quot;9&quot;</span>:<span class="string">&quot;7&quot;</span>,<span class="string">&quot;0&quot;</span>:<span class="string">&quot;8&quot;</span>,<span class="string">&quot;-&quot;</span>:<span class="string">&quot;9&quot;</span>,<span class="string">&quot;=&quot;</span>:<span class="string">&quot;0&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        n=<span class="built_in">list</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(n)):</span><br><span class="line">            <span class="built_in">print</span>(d.get(n[i]),end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="題解"><a href="#題解" class="headerlink" title="題解"></a>題解</h1><figure class="highlight py"><figcaption><span>d051.py</span></figcaption><table><tr><td class="code"><pre><span class="line">f=<span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>首先我們可以先看向題目的<code>【輸出說明】</code>，這裡我們可以注意到一句話：</p>
-<blockquote>
-<p>只要把每個字母或符號以鍵盤上它左邊第二個鍵的符號來取代就行了。</p>
-</blockquote>
-<p>所以，在寫這題時，我的第一個動作是先建立一個字典d，裡面放的是QWERTY鍵盤字母左移兩個鍵之後的結果。<br>注意到<code>【輸出說明】</code>有說空白和換行直接輸出<br>之後，我們觀察範例輸入，可以發現輸入可能有多行資料，所以我們的程式寫法是直到EOF結束。<br>直到EOF結束的程式架構大概是這樣的：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#code</span></span><br><span class="line">    <span class="keyword">except</span> EOFError:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>這個的意思是：<br>持續執行try裡面的程式，直到出現Except的情況（<code>EOFError</code>）。<br>接著，我們就可以寫try裡面的程式啦！<br>那這裡我們用<code>d.get(n[i])</code>，至於為什麼不是用<code>d[n[i]]</code>，請見<a href="/solution/ZeroJudge/a135/#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8a-get-w-%EF%BC%9F%E6%88%91%E8%A8%98%E5%BE%97a-w-%E4%B8%8D%E6%98%AF%E4%B9%9F%E6%98%AF%E4%B8%80%E6%A8%A3%E6%84%8F%E6%80%9D%E5%97%8E%EF%BC%9F%E6%9C%89%E5%B7%AE%E5%97%8E%EF%BC%9F">這篇文</a></p>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><h2 id="print-裡的end是甚麼？"><a href="#print-裡的end是甚麼？" class="headerlink" title="print()裡的end是甚麼？"></a>print()裡的<code>end</code>是甚麼？</h2><p>這裡的<code>end</code>是在控制<code>print()</code>的結尾，舉例：<code>print(&quot;Hello World&quot;,end=&quot;&amp;&amp;&quot;)</code>，輸出結果會是<code>Hello World&amp;&amp;</code>，在沒有另外設置end的情況下，<code>print()</code>的預設<code>end</code>是<code>&#39;\n&#39;</code>，也就是換行，這就是為什麼執行以下程式碼：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;World&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>的結果是</p>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">Hello</span><br><span class="line">World</span><br></pre></td></tr></table></figure>
-
-<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，倘若有誤或是對於解題仍有疑問，歡迎於底下留言區留言。</p>
+<h1 id="解說"><a href="#解說" class="headerlink" title="解說"></a>解說</h1><p>本題簡單來說就是希望華氏溫標轉攝氏溫標。<br>提示：<strong><u>攝氏&#x3D;(華氏-32)*5&#x2F;9</u></strong><br>所以我們可以寫出公式：</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">c=(f-<span class="number">32</span>)*<span class="number">5</span>/<span class="number">9</span></span><br></pre></td></tr></table></figure>
+<p>接著就是輸出格式的部分，<br>在看到題目說小數點以下三位，可能會很本能地想用<code>round()</code><br>但是！請注意，假如使用<code>round()</code>，可能導致輸出結果並非固定到小數點後3位。<br>例如</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">x = <span class="number">3.100000</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">round</span>(x, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>輸出結果為</p>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">3.1</span><br></pre></td></tr></table></figure>
+<p>我們必須保證輸出結果必為顯示到小數點後3位。<br>因此我們今天採用f-string的寫法</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;c:<span class="number">.3</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p><code>&#123;c:.3f&#125;</code>的意義是：對於變數c，我希望我的輸出是到小數點後第3位<br>假如今天題目要求是輸出到小數點後第2位，則改成<code>&#123;c:.2f&#125;</code>，依此類推…<br>這樣，即可保證輸出結果到小數點後第3位。</p>
+<h1 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h1><p>以上就是本題題解，今天練習了f-string跟浮點數的輸出。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
 ]]></content>
       <categories>
         <category>題解</category>
         <category>ZeroJudge</category>
       </categories>
       <tags>
-        <tag>迴圈</tag>
-        <tag>EOF</tag>
-        <tag>字典</tag>
-        <tag>例外處理</tag>
+        <tag>數學</tag>
+        <tag>f-string</tag>
+        <tag>小數點</tag>
       </tags>
   </entry>
 </search>
