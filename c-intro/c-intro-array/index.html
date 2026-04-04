@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wmcs.dev","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/tomorrow-night","dark":"base16/tomorrow-night"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本篇主題：陣列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C語言簡介：陣列">
+<meta property="og:url" content="https://wmcs.dev/c-intro/c-intro-array/index.html">
+<meta property="og:site_name" content="大學生想當工程師">
+<meta property="og:description" content="本篇主題：陣列">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-04-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-04T13:41:01.117Z">
+<meta property="article:author" content="棕熊">
+<meta property="article:tag" content="陣列">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wmcs.dev/c-intro/c-intro-array/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wmcs.dev/c-intro/c-intro-array/","path":"c-intro/c-intro-array/","title":"C語言簡介：陣列"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C語言簡介：陣列 | 大學生想當工程師</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9NXXYGRKY"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-Z9NXXYGRKY","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://wmcs.dev/c-intro/c-intro-array/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="大學生想當工程師" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="大學生想當工程師" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">大學生想當工程師</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">程式筆記資料庫</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-政策"><a href="/policy/" rel="section"><i class="fa fa-file-lines fa-fw"></i>政策</a></li><li class="menu-item menu-item-聯絡表單"><a href="https://forms.gle/mRr7jmkjqd9Htxoa9" rel="section" target="_blank"><i class="fa fa-envelope fa-fw"></i>聯絡表單</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A"><span class="nav-number">1.</span> <span class="nav-text">宣告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC0%E8%99%9F%E6%AB%83"><span class="nav-number">2.</span> <span class="nav-text">第0號櫃</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%A3%E5%88%97%E7%9A%84%E8%BC%B8%E5%85%A5-%E8%BC%B8%E5%87%BA"><span class="nav-number">4.</span> <span class="nav-text">陣列的輸入&#x2F;輸出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5"><span class="nav-number">4.1.</span> <span class="nav-text">輸入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA"><span class="nav-number">4.2.</span> <span class="nav-text">輸出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A9%A6%E8%A9%A6%E7%9C%8B"><span class="nav-number">4.3.</span> <span class="nav-text">試試看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A9%A6%E8%A9%A6%E7%9C%8B-1"><span class="nav-number">4.4.</span> <span class="nav-text">試試看</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%B6%AD%E9%99%A3%E5%88%97"><span class="nav-number">5.</span> <span class="nav-text">二維陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%B6%AD%E9%99%A3%E5%88%97%E5%AE%A3%E5%91%8A"><span class="nav-number">6.</span> <span class="nav-text">二維陣列宣告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%B6%AD%E9%99%A3%E5%88%97%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">7.</span> <span class="nav-text">二維陣列的初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E7%B6%AD%E9%99%A3%E5%88%97%E7%9A%84%E8%BC%B8%E5%85%A5-%E8%BC%B8%E5%87%BA"><span class="nav-number">8.</span> <span class="nav-text">二維陣列的輸入&#x2F;輸出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BC%B8%E5%85%A5-1"><span class="nav-number">8.1.</span> <span class="nav-text">輸入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BC%B8%E5%87%BA-1"><span class="nav-number">8.2.</span> <span class="nav-text">輸出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">9.</span> <span class="nav-text">結語</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="棕熊"
+      src="/image/avatar.jpg">
+  <p class="site-author-name" itemprop="name">棕熊</p>
+  <div class="site-description" itemprop="description">我要成為工程師！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>Atom</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          連結
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://zerojudge.tw/" title="https:&#x2F;&#x2F;zerojudge.tw&#x2F;" rel="noopener" target="_blank">ZeroJudge</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://wmcs.dev/c-intro/c-intro-array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/avatar.jpg">
+      <meta itemprop="name" content="棕熊">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大學生想當工程師">
+      <meta itemprop="description" content="我要成為工程師！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C語言簡介：陣列 | 大學生想當工程師">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C語言簡介：陣列
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2026-04-04 00:00:00 / 修改時間：21:41:01" itemprop="dateCreated datePublished" datetime="2026-04-04T00:00:00+08:00">2026-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c-intro/" itemprop="url" rel="index"><span itemprop="name">C語言簡介</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>5 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第五篇文章，前一篇文章為<a href="/c-intro/c-intro-loop-control-statements/">C語言簡介：迴圈控制</a>。</p>
+</div>
+<p>我們常可以在車站、健身房等場所看到公共置物櫃方便我們放置物品，而置物櫃有編號第0號、第1號、第2號、第3號…每個櫃子都能放一個東西，這排櫃子就有點像是<strong>陣列</strong>的概念。</p>
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>本行程式的意思是說：我要宣告一個叫做 <code>arr</code> 的陣列，而這個陣列有5個位子。大家可以想像成這是在宣告一個叫做 <code>arr</code> 的櫃子，而這個櫃子共有5個位子可以放東西。<br>在這段宣告中我們可以看到我們在 <code>arr</code> 裡面存放了5個元素，分別是 <code>1</code>、<code>2</code>、<code>3</code>、<code>4</code>、<code>5</code>。那我們如何使用這5個元素呢？<br>當我要印出 <code>4</code> 時，我們可以寫</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, arr[<span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
+<p>明明 <code>4</code> 是陣列裡第4個元素，為什麼不是 <code>arr[4]</code> 呢？</p>
+<h2 id="第0號櫃"><a href="#第0號櫃" class="headerlink" title="第0號櫃"></a>第0號櫃</h2><p>實際上，C語言中，陣列的第1個元素，其索引值其實是 <code>0</code> 而不是 <code>1</code>！<br>所以！在 <code>arr</code> 陣列中，<code>1</code> 的索引值為 <code>0</code>、<code>2</code> 的索引值為 <code>1</code>……以此類推。</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>在我們宣告一個陣列後，我們會希望陣列內的值都是受我們控制的、指定的值才存入，對吧？<br>此時我們會需要一個叫做<strong>初始化</strong>的步驟！<br>聽起來很耳熟對吧！<br>在<a href="/c-intro/c-intro-io/#%E9%82%A3%E6%88%91%E5%8F%AF%E4%BB%A5%E5%AE%A3%E5%91%8A%E8%AE%8A%E6%95%B8%E5%BE%8C%E4%B8%8D%E8%B3%A6%E5%80%BC%E5%97%8E%EF%BC%9F">C語言簡介：基本輸入輸出</a>我們曾提過這個概念<br>當時我說</p>
+<blockquote>
+<p>那我可以宣告變數後不賦值嗎？<br>先說答案：可以。<br>但是，實務上通常建議宣告後初始化，避免「垃圾值」可能帶來的困擾。</p>
+</blockquote>
+<p>在本篇「陣列」的概念中，初始化的理由跟在「變數」的概念一樣，都是為了避免「垃圾值」帶來的影響。<br>那如何初始化呢？<br>我們可以在宣告時這樣寫</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> anotherArr[<span class="number">10</span>] = &#123;<span class="number">0</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>這裡，我們宣告了一個長度為10、叫做 <code>anotherArr</code> 的陣列，與前面宣告 <code>arr</code> 時不同的是，我賦值的部分寫的是 <code>&#123;0&#125;</code>，這樣我們就完成了陣列的初始化，從 <code>anotherArr[0]</code> 到 <code>anotherArr[9]</code> 的值都是 <code>0</code>。</p>
+<h2 id="陣列的輸入-輸出"><a href="#陣列的輸入-輸出" class="headerlink" title="陣列的輸入&#x2F;輸出"></a>陣列的輸入&#x2F;輸出</h2><h3 id="輸入"><a href="#輸入" class="headerlink" title="輸入"></a>輸入</h3><p>當我們要依序將資料輸入陣列裡時，可以使用 <code>for</code> 迴圈。<br>舉例如下：</p>
+<figure class="highlight c"><figcaption><span>array_input.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> a[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我們利用這個結構可以依序輸入資料到陣列中。<br>至於為什麼 <code>for</code> 的條件式是 <code>i &lt; 5</code> 是因為我們前面提過在C語言中，陣列的索引值是從 <code>0</code> 開始，所以最後一個元素的索引值是 <code>陣列長度 - 1</code>。</p>
+<h3 id="輸出"><a href="#輸出" class="headerlink" title="輸出"></a>輸出</h3><p>而輸出的部分則與輸入的方法相似。當我要依序輸出陣列內容時，我們可以利用</p>
+<figure class="highlight c"><figcaption><span>array_output.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> a[<span class="number">5</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>來完成。</p>
+<h3 id="試試看"><a href="#試試看" class="headerlink" title="試試看"></a>試試看</h3><p>請試宣告一個陣列，當使用者輸入</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">1 2 3 4 5 6 7 8 9 0</span><br></pre></td></tr></table></figure>
+<p>請輸出</p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">0 9 8 7 6 5 4 3 2 1 </span><br></pre></td></tr></table></figure>
+<h3 id="試試看-1"><a href="#試試看-1" class="headerlink" title="試試看"></a>試試看</h3><p>請試宣告一個長度為10的陣列，並依序輸入數值，然後輸出剛剛所輸入的最大值。</p>
+<h2 id="二維陣列"><a href="#二維陣列" class="headerlink" title="二維陣列"></a>二維陣列</h2><p>二維陣列像是一張表格（table）。</p>
+<h2 id="二維陣列宣告"><a href="#二維陣列宣告" class="headerlink" title="二維陣列宣告"></a>二維陣列宣告</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> arr[<span class="number">3</span>][<span class="number">5</span>] = &#123;</span><br><span class="line">  &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;,</span><br><span class="line">  &#123;<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>&#125;,</span><br><span class="line">  &#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>這裡我們宣告了一個3×5的二維陣列。<br>至於讀取資料的方法與前面提到的一維陣列很像！</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, arr[<span class="number">1</span>][<span class="number">3</span>]);</span><br></pre></td></tr></table></figure>
+<p>就會輸出 <code>9</code> 囉！</p>
+<h2 id="二維陣列的初始化"><a href="#二維陣列的初始化" class="headerlink" title="二維陣列的初始化"></a>二維陣列的初始化</h2><p>二維陣列的初始化跟一維陣列也很像！<br>我們可以這樣寫</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> another2DArr[<span class="number">5</span>][<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>這樣初始化就完成囉！</p>
+<h2 id="二維陣列的輸入-輸出"><a href="#二維陣列的輸入-輸出" class="headerlink" title="二維陣列的輸入&#x2F;輸出"></a>二維陣列的輸入&#x2F;輸出</h2><p>你大概也猜到我要說什麼了！<br>沒錯！二維陣列的輸入&#x2F;輸出長得跟一維陣列的輸入&#x2F;輸出很像！<br>只是稍微麻煩了一些</p>
+<h3 id="輸入-1"><a href="#輸入-1" class="headerlink" title="輸入"></a>輸入</h3><p>當我們要將數值依序輸入時，可以使用兩個 <code>for</code> 迴圈。舉例如下：</p>
+<figure class="highlight c"><figcaption><span>array2d_input.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> a[<span class="number">2</span>][<span class="number">3</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而為何兩個 <code>for</code> 迴圈的條件式要這樣設定，原因則與上面（一維陣列的輸入&#x2F;輸出）所提到的相同，在此不多贅述。</p>
+<h3 id="輸出-1"><a href="#輸出-1" class="headerlink" title="輸出"></a>輸出</h3><p>輸出的部分與輸入的方法相似。舉例如下：</p>
+<figure class="highlight c"><figcaption><span>array2d_output.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">int</span> a[<span class="number">2</span>][<span class="number">3</span>] = &#123;</span><br><span class="line">    &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;,</span><br><span class="line">    &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>&#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>註：外層 <code>for</code> 迴圈的 <code>printf(&quot;\n&quot;)</code> 是為排版美觀，非必要。</p>
+</blockquote>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言陣列簡介。<br>雖經過校對，本文內容仍可能有錯誤之處。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>棕熊
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://wmcs.dev/c-intro/c-intro-array/" title="C語言簡介：陣列">https://wmcs.dev/c-intro/c-intro-array/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E9%99%A3%E5%88%97/" rel="tag"># 陣列</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/c-intro/c-intro-loop-control-statements/" rel="prev" title="C語言簡介：迴圈控制">
+                  <i class="fa fa-angle-left"></i> C語言簡介：迴圈控制
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-solid fa-code-pull-request"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder"><a href="/about" target="_blank" rel="noopener">棕熊</a></span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div><div><a href="/">首頁</a>｜<a href="/about">關於</a>｜<a href="/policy/privacy-policy/">隱私權政策</a>｜<a target="_blank" rel="noopener" href="https://forms.gle/mRr7jmkjqd9Htxoa9">聯絡表單</a></div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"wmcsdev-grizzlybr","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js" defer></script>
+
+</body>
+</html>
