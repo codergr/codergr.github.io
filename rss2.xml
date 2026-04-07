@@ -15,8 +15,29 @@
     <atom:link href="https://wmcs.dev/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我要成為工程師！</description>
-    <pubDate>Sat, 04 Apr 2026 13:41:01 GMT</pubDate>
+    <pubDate>Tue, 07 Apr 2026 14:29:35 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>C語言簡介：字串</title>
+      <link>https://wmcs.dev/c-intro/c-intro-string/</link>
+      <guid>https://wmcs.dev/c-intro/c-intro-string/</guid>
+      <pubDate>Mon, 06 Apr 2026 16:00:00 GMT</pubDate>
+      
+      <description>本篇主題：字串</description>
+      
+      
+      
+      
+      <category domain="https://wmcs.dev/categories/c-intro/">C語言簡介</category>
+      
+      
+      <category domain="https://wmcs.dev/tags/%E5%AD%97%E4%B8%B2/">字串</category>
+      
+      
+      <comments>https://wmcs.dev/c-intro/c-intro-string/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>C語言簡介：陣列</title>

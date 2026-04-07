@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wmcs.dev","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/tomorrow-night","dark":"base16/tomorrow-night"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":"flat"},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"找到 ${hits} 個搜索結果（用時 ${time} 毫秒）","hits":"找到 ${hits} 個搜索結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="本篇主題：字串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C語言簡介：字串">
+<meta property="og:url" content="https://wmcs.dev/c-intro/c-intro-string/index.html">
+<meta property="og:site_name" content="大學生想當工程師">
+<meta property="og:description" content="本篇主題：字串">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2026-04-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-07T14:29:35.137Z">
+<meta property="article:author" content="棕熊">
+<meta property="article:tag" content="字串">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wmcs.dev/c-intro/c-intro-string/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://wmcs.dev/c-intro/c-intro-string/","path":"c-intro/c-intro-string/","title":"C語言簡介：字串"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C語言簡介：字串 | 大學生想當工程師</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9NXXYGRKY"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-Z9NXXYGRKY","only_pageview":false,"measure_protocol_api_secret":null}</script>
+  <script src="/js/third-party/analytics/google-analytics.js" defer></script>
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/3.0.1/quicklink.umd.js" integrity="sha256-44BednzIpUeQJcY8qtLyarFu0UCCTbgmWOvaoehiFQQ=" crossorigin="anonymous" defer></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://wmcs.dev/c-intro/c-intro-string/"}</script>
+  <script src="/js/third-party/quicklink.js" defer></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="大學生想當工程師" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="大學生想當工程師" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">大學生想當工程師</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">程式筆記資料庫</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜尋" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li><li class="menu-item menu-item-政策"><a href="/policy/" rel="section"><i class="fa fa-file-lines fa-fw"></i>政策</a></li><li class="menu-item menu-item-聯絡表單"><a href="https://forms.gle/mRr7jmkjqd9Htxoa9" rel="section" target="_blank"><i class="fa fa-envelope fa-fw"></i>聯絡表單</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜尋..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A3%E5%91%8A"><span class="nav-number">1.</span> <span class="nav-text">宣告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E9%A0%AD%E6%AA%94"><span class="nav-number">2.</span> <span class="nav-text">標頭檔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B8"><span class="nav-number">3.</span> <span class="nav-text">函數</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#strlen"><span class="nav-number">3.1.</span> <span class="nav-text">strlen()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">使用示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcpy"><span class="nav-number">3.2.</span> <span class="nav-text">strcpy()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">使用示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcat"><span class="nav-number">3.3.</span> <span class="nav-text">strcat()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">使用示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcmp"><span class="nav-number">3.4.</span> <span class="nav-text">strcmp()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B-3"><span class="nav-number">3.4.1.</span> <span class="nav-text">使用示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">4.</span> <span class="nav-text">結語</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="棕熊"
+      src="/image/avatar.jpg">
+  <p class="site-author-name" itemprop="name">棕熊</p>
+  <div class="site-description" itemprop="description">我要成為工程師！</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>Atom</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+          連結
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://zerojudge.tw/" title="https:&#x2F;&#x2F;zerojudge.tw&#x2F;" rel="noopener" target="_blank">ZeroJudge</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://wmcs.dev/c-intro/c-intro-string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/avatar.jpg">
+      <meta itemprop="name" content="棕熊">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大學生想當工程師">
+      <meta itemprop="description" content="我要成為工程師！">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="C語言簡介：字串 | 大學生想當工程師">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C語言簡介：字串
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2026-04-07 00:00:00 / 修改時間：22:29:35" itemprop="dateCreated datePublished" datetime="2026-04-07T00:00:00+08:00">2026-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/c-intro/" itemprop="url" rel="index"><span itemprop="name">C語言簡介</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>2 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div class="note info"><p>本文為<a href="/categories/c-intro/">C語言簡介</a>系列第六篇文章，前一篇文章為<a href="/c-intro/c-intro-array/">C語言簡介：陣列</a>。</p>
+</div>
+<p>其實我們可以把字串看作一個<strong>字元（char）陣列</strong>！</p>
+<h2 id="宣告"><a href="#宣告" class="headerlink" title="宣告"></a>宣告</h2><p>如同上面所說，我們可以把字串看做一個字元陣列！<br>所以字串的宣告跟陣列的宣告很像：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">char</span> s[<span class="number">11</span>] = <span class="string">&quot;HelloWorld&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>數一數會發現</p>
+<table>
+<thead>
+<tr>
+<th>字元</th>
+<th>H</th>
+<th>e</th>
+<th>l</th>
+<th>l</th>
+<th>o</th>
+<th>W</th>
+<th>o</th>
+<th>r</th>
+<th>l</th>
+<th>d</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字元個數</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<p>明明只有10個字元欸？為何要宣告長度為11的陣列？<br>這是因為字串的最後會再加上一個 <code>\0</code>！</p>
+<table>
+<thead>
+<tr>
+<th>字元</th>
+<th>H</th>
+<th>e</th>
+<th>l</th>
+<th>l</th>
+<th>o</th>
+<th>W</th>
+<th>o</th>
+<th>r</th>
+<th>l</th>
+<th>d</th>
+<th><strong>\0</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>字元個數</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td><strong>11</strong></td>
+</tr>
+</tbody></table>
+<h2 id="標頭檔"><a href="#標頭檔" class="headerlink" title="標頭檔"></a>標頭檔</h2><p>在今天開始使用字串相關的函數前，請大家先在程式碼最上方加上</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>因為 <code>strlen()</code>、<code>strcpy()</code> 等字串相關函數並不在 <code>stdio.h</code> 裡面！<br>今天只跟大家簡要說明幾個函數，因為 <code>string.h</code> 裡的函數其實不少！有興趣的讀者可以自行上網搜尋。</p>
+<h2 id="函數"><a href="#函數" class="headerlink" title="函數"></a>函數</h2><h3 id="strlen"><a href="#strlen" class="headerlink" title="strlen()"></a><code>strlen()</code></h3><p>這個函數可以讓我們取得字串長度。</p>
+<h4 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h4><p><strong>程式範例</strong></p>
+<figure class="highlight c"><figcaption><span>strlen_example.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">char</span> str[] = <span class="string">&quot;Welcome to wmcs.dev&quot;</span>;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  n = <span class="built_in">strlen</span>(str);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, n);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>輸出</strong></p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">19</span><br></pre></td></tr></table></figure>
+<h3 id="strcpy"><a href="#strcpy" class="headerlink" title="strcpy()"></a><code>strcpy()</code></h3><p>此函數用以將字串複製到另一字串。<br>使用方法為<br><code>strcpy(dest, src)</code>：將 <code>src</code> 字串複製至 <code>dest</code> 字串。</p>
+<blockquote>
+<p>註：<code>dest</code> 之陣列長度應 &gt;&#x3D; <code>strlen(src)</code> + 1（因為還有 <code>\0</code>）。</p>
+</blockquote>
+<h4 id="使用示例-1"><a href="#使用示例-1" class="headerlink" title="使用示例"></a>使用示例</h4><p><strong>程式範例</strong></p>
+<figure class="highlight c"><figcaption><span>strcpy_example.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">char</span> s1[] = <span class="string">&quot;This is S1&quot;</span>;</span><br><span class="line">  <span class="type">char</span> s2[<span class="number">15</span>];</span><br><span class="line">  <span class="built_in">strcpy</span>(s2, s1);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, s2);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>輸出</strong></p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">This is S1</span><br></pre></td></tr></table></figure>
+<h3 id="strcat"><a href="#strcat" class="headerlink" title="strcat()"></a><code>strcat()</code></h3><p>此函數用以將字串串接到另一字串尾端。<br>使用方法為<br><code>strcat(str1, str2)</code>：將 <code>str2</code> 字串接到 <code>str1</code> 後。</p>
+<blockquote>
+<p>註：<code>str1</code> 之陣列長度應 &gt;&#x3D; <code>strlen(str1)</code> + <code>strlen(str2)</code> + 1（因為還有 <code>\0</code>）。</p>
+</blockquote>
+<h4 id="使用示例-2"><a href="#使用示例-2" class="headerlink" title="使用示例"></a>使用示例</h4><p><strong>程式範例</strong></p>
+<figure class="highlight c"><figcaption><span>strcat_example.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">char</span> s1[<span class="number">50</span>] = <span class="string">&quot;Welcome to&quot;</span>;</span><br><span class="line">  <span class="type">char</span> s2[<span class="number">25</span>] = <span class="string">&quot; wmcs.dev&quot;</span>;</span><br><span class="line">  <span class="built_in">strcat</span>(s1, s2);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>, s1);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>輸出</strong></p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">Welcome to wmcs.dev</span><br></pre></td></tr></table></figure>
+<h3 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a><code>strcmp()</code></h3><p>此函數用以比較兩字串。<br>使用方法為<br><code>strcmp(str1, str2)</code>：比較 <code>str1</code> 與 <code>str2</code>。<br>若return值 &gt; <code>0</code>：前者字典序較後<br>若return值 &lt; <code>0</code>：前者字典序較前<br>若return值 &#x3D; <code>0</code>：兩者相等</p>
+<h4 id="使用示例-3"><a href="#使用示例-3" class="headerlink" title="使用示例"></a>使用示例</h4><p><strong>程式範例</strong></p>
+<figure class="highlight c"><figcaption><span>strcmp_example.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="type">char</span> s1[<span class="number">50</span>] = <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">  <span class="type">char</span> s2[<span class="number">25</span>] = <span class="string">&quot;acegi&quot;</span>;</span><br><span class="line">  <span class="type">int</span> n = <span class="number">0</span>;</span><br><span class="line">  n = <span class="built_in">strcmp</span>(s1, s2);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, n);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>輸出</strong></p>
+<figure class="highlight txt"><table><tr><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>註：實際數值依實作而定，本例可能輸出 -1。</p>
+</blockquote>
+<h2 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h2><p>以上就是C語言字串簡介。<br>倘內容有誤或仍有疑問，歡迎在下方留言區留言！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>棕熊
+  </li>
+  <li class="post-copyright-link">
+      <strong>文章連結：</strong>
+      <a href="https://wmcs.dev/c-intro/c-intro-string/" title="C語言簡介：字串">https://wmcs.dev/c-intro/c-intro-string/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%97%E4%B8%B2/" rel="tag"># 字串</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/c-intro/c-intro-array/" rel="prev" title="C語言簡介：陣列">
+                  <i class="fa fa-angle-left"></i> C語言簡介：陣列
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments utterances-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa-solid fa-code-pull-request"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder"><a href="/about" target="_blank" rel="noopener">棕熊</a></span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div><div><a href="/">首頁</a>｜<a href="/about">關於</a>｜<a href="/policy/privacy-policy/">隱私權政策</a>｜<a href="/policy/disclaimer/">免責聲明</a>｜<a target="_blank" rel="noopener" href="https://forms.gle/mRr7jmkjqd9Htxoa9">聯絡表單</a></div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+<script class="next-config" data-name="utterances" type="application/json">{"enable":true,"repo":"codergr/comment","issue_term":"pathname","theme":"github-light"}</script>
+<script src="/js/third-party/comments/utterances.js" defer></script>
+
+</body>
+</html>
