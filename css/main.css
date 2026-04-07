@@ -1340,7 +1340,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #f96321;
+    background: #d169c8;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2490,6 +2490,9 @@ ul.breadcrumb li:last-child {
 .tag-cloud-10 {
   border-bottom-color: #111;
   color: #111;
+}
+.utterances {
+  max-width: unset;
 }
 .search-active {
   overflow: hidden;
